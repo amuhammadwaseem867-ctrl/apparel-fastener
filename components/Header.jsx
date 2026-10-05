@@ -70,10 +70,6 @@ export default function Header() {
 
   const isActive = (href) => pathname === href;
 
-  /* ==================================================
-     SCROLL DETECTION
-  ================================================== */
-
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 45);
@@ -89,10 +85,6 @@ export default function Header() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
-  /* ==================================================
-     HEADER INTRO ANIMATION
-  ================================================== */
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -141,10 +133,6 @@ export default function Header() {
     return () => ctx.revert();
   }, []);
 
-  /* ==================================================
-     MOBILE MENU ANIMATION
-  ================================================== */
-
   useEffect(() => {
     const panel = mobileMenuRef.current;
 
@@ -154,53 +142,57 @@ export default function Header() {
     const heading = panel.querySelector(".mobile-menu__heading");
     const footer = panel.querySelector(".mobile-menu__footer");
 
+    gsap.killTweensOf([
+      panel,
+      heading,
+      footer,
+      ...links,
+    ]);
+
     if (menuOpen) {
       gsap.set(panel, {
         display: "block",
+        clipPath: "inset(0 0 100% 0)",
       });
 
       const timeline = gsap.timeline();
 
       timeline
-        .fromTo(
-          panel,
-          {
-            clipPath: "inset(0 0 100% 0)",
-          },
-          {
-            clipPath: "inset(0 0 0% 0)",
-            duration: 0.8,
-            ease: "power4.inOut",
-          }
-        )
+        .to(panel, {
+          clipPath: "inset(0 0 0% 0)",
+          duration: 0.7,
+          ease: "power4.inOut",
+        })
         .from(
           heading,
           {
             opacity: 0,
             y: -15,
-            duration: 0.45,
+            duration: 0.4,
+            ease: "power3.out",
           },
-          "-=0.35"
+          "-=0.3"
         )
         .from(
           links,
           {
             opacity: 0,
-            y: 50,
-            duration: 0.65,
-            stagger: 0.055,
+            y: 40,
+            duration: 0.55,
+            stagger: 0.05,
             ease: "power4.out",
           },
-          "-=0.15"
+          "-=0.2"
         )
         .from(
           footer,
           {
             opacity: 0,
             y: 15,
-            duration: 0.45,
+            duration: 0.4,
+            ease: "power3.out",
           },
-          "-=0.3"
+          "-=0.25"
         );
 
       return () => timeline.kill();
@@ -215,18 +207,27 @@ export default function Header() {
     });
 
     timeline
-      .to(links, {
+      .to(footer, {
         opacity: 0,
-        y: -20,
-        duration: 0.25,
-        stagger: 0.02,
-        ease: "power2.in",
+        y: 10,
+        duration: 0.2,
       })
+      .to(
+        links,
+        {
+          opacity: 0,
+          y: -15,
+          duration: 0.2,
+          stagger: 0.02,
+          ease: "power2.in",
+        },
+        "-=0.1"
+      )
       .to(
         panel,
         {
           clipPath: "inset(0 0 100% 0)",
-          duration: 0.6,
+          duration: 0.55,
           ease: "power4.inOut",
         },
         "-=0.05"
@@ -243,44 +244,43 @@ export default function Header() {
     setMenuOpen(false);
   };
 
-  /* ==================================================
-     ESCAPE TO CLOSE
-  ================================================== */
-
   useEffect(() => {
     if (!menuOpen) return;
 
     const handleKeyDown = (event) => {
-      if (event.key === "Escape") closeMenu();
+      if (event.key === "Escape") {
+        closeMenu();
+      }
     };
 
     window.addEventListener("keydown", handleKeyDown);
 
-    return () =>
+    return () => {
       window.removeEventListener("keydown", handleKeyDown);
+    };
   }, [menuOpen]);
-
-  /* ==================================================
-     SCROLL LOCK
-     Locks both html (Lenis) and body.
-  ================================================== */
 
   useEffect(() => {
     const root = document.documentElement;
+    const body = document.body;
 
     if (menuOpen) {
       root.classList.add("menu-open");
-      document.body.classList.add("menu-is-open");
+      body.classList.add("menu-is-open");
     } else {
       root.classList.remove("menu-open");
-      document.body.classList.remove("menu-is-open");
+      body.classList.remove("menu-is-open");
     }
 
     return () => {
       root.classList.remove("menu-open");
-      document.body.classList.remove("menu-is-open");
+      body.classList.remove("menu-is-open");
     };
   }, [menuOpen]);
+
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [pathname]);
 
   return (
     <>
@@ -294,10 +294,6 @@ export default function Header() {
           .filter(Boolean)
           .join(" ")}
       >
-        {/* ==================================================
-            TOP CONTACT BAR
-        ================================================== */}
-
         <div className="header__utility">
           <div className="header__utility-inner">
             <div className="header__contacts">
@@ -335,14 +331,8 @@ export default function Header() {
           </div>
         </div>
 
-        {/* ==================================================
-            MAIN NAVIGATION
-        ================================================== */}
-
         <div className="header__main">
           <div className="header__main-inner">
-            {/* LOGO */}
-
             <Link
               href="/"
               className="header__brand"
@@ -369,8 +359,6 @@ export default function Header() {
                 />
               </span>
             </Link>
-
-            {/* DESKTOP NAVIGATION */}
 
             <nav
               className="header__nav"
@@ -403,8 +391,6 @@ export default function Header() {
               ))}
             </nav>
 
-            {/* INQUIRE */}
-
             <Link
               href="/contact"
               className="header__inquire"
@@ -421,8 +407,6 @@ export default function Header() {
               </span>
             </Link>
 
-            {/* MOBILE MENU BUTTON */}
-
             <button
               type="button"
               className="header__mobile-button"
@@ -433,6 +417,7 @@ export default function Header() {
                   : "Open navigation"
               }
               aria-expanded={menuOpen}
+              aria-controls="mobile-navigation"
             >
               <span>
                 {menuOpen ? "Close" : "Menu"}
@@ -456,11 +441,8 @@ export default function Header() {
         </div>
       </header>
 
-      {/* ==================================================
-          MOBILE MENU
-      ================================================== */}
-
       <aside
+        id="mobile-navigation"
         ref={mobileMenuRef}
         className="mobile-menu"
         aria-hidden={!menuOpen}
@@ -478,12 +460,16 @@ export default function Header() {
                 href={item.href}
                 className={[
                   "mobile-menu__item",
-                  isActive(item.href) ? "is-active" : "",
+                  isActive(item.href)
+                    ? "is-active"
+                    : "",
                 ]
                   .filter(Boolean)
                   .join(" ")}
                 aria-current={
-                  isActive(item.href) ? "page" : undefined
+                  isActive(item.href)
+                    ? "page"
+                    : undefined
                 }
                 onClick={closeMenu}
               >
