@@ -1,0 +1,353 @@
+.garment-accessories-collections {
+  position: relative;
+  overflow: hidden;
+
+  background: #f3f3f1;
+  color: #243146;
+}
+
+/* INTRO */
+
+.garment-accessories-collections__intro {
+  display: grid;
+  grid-template-columns: 0.7fr 1.5fr 0.9fr;
+  gap: 5vw;
+  align-items: end;
+
+  padding: 8rem 6vw 6rem;
+
+  border-top: 1px solid rgba(36, 49, 70, 0.14);
+}
+
+.garment-accessories-collections__eyebrow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+
+  font-family: var(--font-body);
+  font-size: max(12px, 0.68rem);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+}
+
+.garment-accessories-collections__eyebrow span:first-child {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.garment-accessories-collections__heading p {
+  margin: 0 0 1.5rem;
+
+  font-family: var(--font-body);
+  font-size: max(12px, 0.7rem);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+
+  color: #6b7075;
+}
+
+.garment-accessories-collections__heading h2 {
+  margin: 0;
+
+  font-family: var(--font-heading);
+  font-size: clamp(3.5rem, 6.4vw, 7.2rem);
+  font-weight: 600;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+}
+
+.garment-accessories-collections__intro-copy {
+  max-width: 380px;
+}
+
+.garment-accessories-collections__intro-copy > p {
+  margin: 0 0 3rem;
+
+  font-family: var(--font-body);
+  font-size: 0.87rem;
+  line-height: 1.85;
+
+  color: #6b7075;
+}
+
+.garment-accessories-collections__stats {
+  display: flex;
+  gap: 3rem;
+}
+
+.garment-accessories-collections__stats div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.garment-accessories-collections__stats strong {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.garment-accessories-collections__stats span {
+  font-family: var(--font-body);
+  font-size: max(12px, 0.58rem);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: #6b7075;
+}
+
+/* GROUP */
+
+.garment-accessories-collections__groups {
+  border-top: 1px solid rgba(36, 49, 70, 0.14);
+}
+
+.garment-accessories-collections__group {
+  display: grid;
+  grid-template-columns: 0.7fr 1fr 1.5fr;
+  gap: 4vw;
+
+  padding: 4.5rem 6vw;
+
+  border-bottom: 1px solid rgba(36, 49, 70, 0.14);
+
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease;
+}
+
+.garment-accessories-collections__group:hover {
+  background: #243146;
+  color: #ffffff;
+}
+
+/* GROUP HEADER */
+
+.garment-accessories-collections__group-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.garment-accessories-collections__number {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.garment-accessories-collections__category {
+  font-family: var(--font-body);
+  font-size: max(12px, 0.61rem);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: #6b7075;
+}
+
+.garment-accessories-collections__group:hover
+  .garment-accessories-collections__category {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* TITLE */
+
+.garment-accessories-collections__group-title h3 {
+  max-width: 340px;
+  margin: 0 0 1.2rem;
+
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 2.4vw, 3rem);
+  font-weight: 600;
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+}
+
+.garment-accessories-collections__group-title p {
+  max-width: 340px;
+  margin: 0;
+
+  font-family: var(--font-body);
+  font-size: 0.76rem;
+  line-height: 1.8;
+
+  color: #6b7075;
+}
+
+.garment-accessories-collections__group:hover
+  .garment-accessories-collections__group-title
+  p {
+  color: rgba(255, 255, 255, 0.58);
+}
+
+/* ITEMS */
+
+.garment-accessories-collections__items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  align-content: start;
+}
+
+.garment-accessories-collections__item {
+  display: grid;
+  grid-template-columns: 35px 1fr auto;
+  gap: 1rem;
+  align-items: center;
+
+  min-height: 72px;
+
+  border-top: 1px solid rgba(36, 49, 70, 0.14);
+
+  transition: padding 0.3s ease;
+}
+
+.garment-accessories-collections__item:nth-child(odd) {
+  margin-right: 1.5rem;
+}
+
+.garment-accessories-collections__item:nth-child(even) {
+  margin-left: 1.5rem;
+}
+
+.garment-accessories-collections__item:nth-child(-n + 2) {
+  border-top: 0;
+}
+
+.garment-accessories-collections__item > span {
+  font-family: var(--font-body);
+  font-size: max(12px, 0.58rem);
+  color: #6b7075;
+}
+
+.garment-accessories-collections__item h4 {
+  margin: 0;
+
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.garment-accessories-collections__item svg {
+  opacity: 0;
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.garment-accessories-collections__item:hover {
+  padding-left: 0.4rem;
+}
+
+.garment-accessories-collections__item:hover svg {
+  opacity: 1;
+  transform: translate(2px, -2px);
+}
+
+.garment-accessories-collections__group:hover
+  .garment-accessories-collections__item {
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.garment-accessories-collections__group:hover
+  .garment-accessories-collections__item
+  > span {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+/* TABLET */
+
+@media (max-width: 1100px) {
+  .garment-accessories-collections__intro {
+    grid-template-columns: 0.45fr 1.5fr;
+  }
+
+  .garment-accessories-collections__intro-copy {
+    grid-column: 2;
+    margin-top: 2rem;
+  }
+
+  .garment-accessories-collections__group {
+    grid-template-columns: 0.5fr 1fr;
+  }
+
+  .garment-accessories-collections__items {
+    grid-column: 2;
+  }
+
+  .garment-accessories-collections__group-header {
+    grid-row: span 2;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+  .garment-accessories-collections__intro {
+    display: block;
+    padding: 5rem 6vw 4rem;
+  }
+
+  .garment-accessories-collections__eyebrow {
+    margin-bottom: 4rem;
+  }
+
+  .garment-accessories-collections__heading h2 {
+    font-size: clamp(36px, 11.5vw, 48px);
+  }
+
+  .garment-accessories-collections__intro-copy {
+    margin-top: 2.5rem;
+  }
+
+  .garment-accessories-collections__stats {
+    gap: 2.5rem;
+  }
+
+  .garment-accessories-collections__group {
+    display: block;
+    padding: 3.5rem 6vw;
+  }
+
+  .garment-accessories-collections__group-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 3rem;
+  }
+
+  .garment-accessories-collections__group-title {
+    margin-bottom: 2.5rem;
+  }
+
+  .garment-accessories-collections__group-title h3 {
+    font-size: 2rem;
+  }
+
+  .garment-accessories-collections__items {
+    display: block;
+  }
+
+  .garment-accessories-collections__item,
+  .garment-accessories-collections__item:nth-child(odd),
+  .garment-accessories-collections__item:nth-child(even) {
+    grid-template-columns: 30px 1fr auto;
+
+    margin: 0;
+
+    min-height: 64px;
+
+    border-top: 1px solid rgba(36, 49, 70, 0.14);
+  }
+
+  .garment-accessories-collections__item:nth-child(-n + 2) {
+    border-top: 1px solid rgba(36, 49, 70, 0.14);
+  }
+
+  .garment-accessories-collections__item:first-child {
+    border-top: 0;
+  }
+}

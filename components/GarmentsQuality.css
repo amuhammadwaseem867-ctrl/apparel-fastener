@@ -1,0 +1,571 @@
+.garments-quality {
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+  color: #243146;
+}
+
+/* --------------------------------------------------
+   HERO
+-------------------------------------------------- */
+
+.garments-quality__hero {
+  position: relative;
+  min-height: 88vh;
+  overflow: hidden;
+
+  background: #243146;
+  color: #ffffff;
+}
+
+.garments-quality__media {
+  position: absolute;
+  inset: 0;
+}
+
+.garments-quality__media img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.garments-quality__overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(36, 49, 70, 0.94) 0%,
+      rgba(36, 49, 70, 0.69) 38%,
+      rgba(36, 49, 70, 0.22) 78%,
+      rgba(36, 49, 70, 0.45) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(36, 49, 70, 0.38) 0%,
+      rgba(36, 49, 70, 0.03) 45%,
+      rgba(36, 49, 70, 0.78) 100%
+    );
+}
+
+/* --------------------------------------------------
+   TOP
+-------------------------------------------------- */
+
+.garments-quality__top {
+  position: absolute;
+  z-index: 2;
+
+  top: 38px;
+  left: 6vw;
+  right: 6vw;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-family: var(--font-body);
+  font-size: max(12px, 10px);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.garments-quality__number {
+  width: 31px;
+  height: 31px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+
+  font-size: max(12px, 9px);
+}
+
+/* --------------------------------------------------
+   HERO CONTENT
+-------------------------------------------------- */
+
+.garments-quality__content {
+  position: relative;
+  z-index: 2;
+
+  min-height: 88vh;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.7fr);
+
+  align-items: center;
+  gap: 8vw;
+
+  padding: 120px 6vw 120px;
+}
+
+.garments-quality__title p {
+  margin: 0 0 22px;
+
+  font-family: var(--font-body);
+  font-size: max(12px, 11px);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+
+  color: rgba(255, 255, 255, 0.64);
+}
+
+.garments-quality__title h2 {
+  margin: 0;
+
+  font-family: var(--font-heading);
+  font-size: clamp(58px, 7.6vw, 125px);
+  font-weight: 600;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.garments-quality__title h2 em {
+  font-style: normal;
+  color: #ffffff;
+}
+
+/* --------------------------------------------------
+   SIDE
+-------------------------------------------------- */
+
+.garments-quality__side {
+  max-width: 410px;
+  align-self: center;
+  padding-top: 75px;
+}
+
+.garments-quality__line {
+  width: 52px;
+  height: 2px;
+  margin-bottom: 28px;
+
+  background: #ffffff;
+}
+
+.garments-quality__side > p {
+  margin: 0;
+
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.85;
+
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.garments-quality__meta {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  margin-top: 36px;
+
+  font-family: var(--font-body);
+  font-size: max(12px, 8px);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+
+  color: rgba(255, 255, 255, 0.58);
+}
+
+.garments-quality__meta i {
+  width: 3px;
+  height: 3px;
+
+  background: rgba(255, 255, 255, 0.65);
+}
+
+/* --------------------------------------------------
+   HERO BOTTOM
+-------------------------------------------------- */
+
+.garments-quality__bottom {
+  position: absolute;
+  z-index: 3;
+
+  left: 6vw;
+  right: 6vw;
+  bottom: 34px;
+
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  font-family: var(--font-body);
+  font-size: max(12px, 9px);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.garments-quality__bottom i {
+  width: 3px;
+  height: 3px;
+
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* --------------------------------------------------
+   QUALITY BODY
+-------------------------------------------------- */
+
+.garments-quality__body {
+  max-width: 1500px;
+  margin: 0 auto;
+
+  padding: 145px 6vw 160px;
+
+  display: grid;
+  grid-template-columns: minmax(300px, 0.72fr) minmax(0, 1.28fr);
+  gap: 9vw;
+}
+
+.garments-quality__intro > p:first-child {
+  margin: 0 0 21px;
+
+  font-family: var(--font-body);
+  font-size: max(12px, 10px);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+
+  color: #6b7075;
+}
+
+.garments-quality__intro h3 {
+  margin: 0;
+
+  font-family: var(--font-heading);
+  font-size: clamp(42px, 4.5vw, 70px);
+  font-weight: 600;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.garments-quality__intro h3 em {
+  font-style: normal;
+}
+
+.garments-quality__intro-line {
+  width: 45px;
+  height: 1px;
+
+  margin: 35px 0 27px;
+
+  background: #243146;
+}
+
+.garments-quality__intro-copy {
+  max-width: 390px;
+  margin: 0;
+
+  font-family: var(--font-body);
+  font-size: 12px;
+  line-height: 1.85;
+
+  color: #6b7075;
+}
+
+/* --------------------------------------------------
+   QUALITY POINTS
+-------------------------------------------------- */
+
+.garments-quality__points {
+  border-top: 1px solid #d8dadc;
+}
+
+.garments-quality__point {
+  display: grid;
+  grid-template-columns: 75px minmax(0, 1fr);
+
+  padding: 29px 0 34px;
+
+  border-bottom: 1px solid #d8dadc;
+}
+
+.garments-quality__point-top {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  min-height: 105px;
+
+  color: #8a8f94;
+}
+
+.garments-quality__point-top span {
+  font-family: var(--font-body);
+  font-size: max(12px, 9px);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.garments-quality__point-content h4 {
+  margin: 0 0 13px;
+
+  font-family: var(--font-heading);
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 1;
+
+  letter-spacing: -0.02em;
+}
+
+.garments-quality__point-content p {
+  max-width: 520px;
+  margin: 0;
+
+  font-family: var(--font-body);
+  font-size: 12px;
+  line-height: 1.8;
+
+  color: #6b7075;
+}
+
+/* --------------------------------------------------
+   STATEMENT
+-------------------------------------------------- */
+
+.garments-quality__statement {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+  min-height: 690px;
+
+  background: #243146;
+  color: #ffffff;
+}
+
+.garments-quality__statement-image {
+  position: relative;
+  min-height: 600px;
+}
+
+.garments-quality__statement-image img {
+  object-fit: cover;
+}
+
+.garments-quality__statement-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 100px 8vw;
+}
+
+.garments-quality__statement-content > span {
+  margin-bottom: 25px;
+
+  font-family: var(--font-body);
+  font-size: max(12px, 9px);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.garments-quality__statement-content h3 {
+  margin: 0 0 38px;
+
+  font-family: var(--font-heading);
+  font-size: clamp(43px, 5vw, 76px);
+  font-weight: 600;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.garments-quality__statement-content h3 em {
+  font-style: normal;
+}
+
+.garments-quality__statement-content p {
+  max-width: 450px;
+  margin: 0;
+
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 1.9;
+
+  color: rgba(255, 255, 255, 0.67);
+}
+
+/* --------------------------------------------------
+   TABLET
+-------------------------------------------------- */
+
+@media (max-width: 1050px) {
+  .garments-quality__content {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .garments-quality__side {
+    padding-top: 0;
+  }
+
+  .garments-quality__body {
+    grid-template-columns: 1fr;
+    gap: 70px;
+  }
+
+  .garments-quality__statement-content {
+    padding: 80px 6vw;
+  }
+}
+
+/* --------------------------------------------------
+   MOBILE
+-------------------------------------------------- */
+
+@media (max-width: 760px) {
+  .garments-quality__hero {
+    min-height: 760px;
+  }
+
+  .garments-quality__media img {
+    object-position: 58% center;
+  }
+
+  .garments-quality__overlay {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(36, 49, 70, 0.95) 0%,
+        rgba(36, 49, 70, 0.55) 100%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(36, 49, 70, 0.35) 0%,
+        rgba(36, 49, 70, 0.08) 42%,
+        rgba(36, 49, 70, 0.86) 100%
+      );
+  }
+
+  .garments-quality__top {
+    top: 25px;
+    left: 22px;
+    right: 22px;
+
+    font-size: max(12px, 8px);
+  }
+
+  .garments-quality__content {
+    min-height: 760px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    gap: 42px;
+
+    padding: 100px 22px 110px;
+  }
+
+  .garments-quality__title p {
+    margin-bottom: 17px;
+    font-size: max(12px, 9px);
+  }
+
+  .garments-quality__title h2 {
+    font-size: clamp(50px, 14vw, 74px);
+    line-height: 0.9;
+  }
+
+  .garments-quality__side {
+    width: 100%;
+    max-width: 430px;
+  }
+
+  .garments-quality__side > p {
+    font-size: 12px;
+    line-height: 1.8;
+  }
+
+  .garments-quality__meta {
+    margin-top: 27px;
+    font-size: max(12px, 7px);
+  }
+
+  .garments-quality__bottom {
+    left: 22px;
+    right: 22px;
+    bottom: 25px;
+
+    flex-wrap: wrap;
+
+    font-size: max(12px, 7px);
+  }
+
+  .garments-quality__body {
+    display: block;
+
+    padding: 95px 22px 110px;
+  }
+
+  .garments-quality__intro {
+    margin-bottom: 65px;
+  }
+
+  .garments-quality__intro > p:first-child {
+    margin-bottom: 17px;
+    font-size: max(12px, 9px);
+  }
+
+  .garments-quality__intro h3 {
+    font-size: clamp(36px, 10vw, 54px);
+  }
+
+  .garments-quality__intro-line {
+    margin: 29px 0 23px;
+  }
+
+  .garments-quality__intro-copy {
+    font-size: max(12px, 11px);
+    line-height: 1.8;
+  }
+
+  .garments-quality__point {
+    grid-template-columns: 45px minmax(0, 1fr);
+
+    padding: 25px 0 29px;
+  }
+
+  .garments-quality__point-content h4 {
+    font-size: 19px;
+  }
+
+  .garments-quality__point-content p {
+    font-size: max(12px, 11px);
+    line-height: 1.75;
+  }
+
+  .garments-quality__statement {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .garments-quality__statement-image {
+    min-height: 430px;
+  }
+
+  .garments-quality__statement-content {
+    padding: 80px 22px 90px;
+  }
+
+  .garments-quality__statement-content h3 {
+    font-size: clamp(43px, 12vw, 62px);
+    margin-bottom: 30px;
+  }
+
+  .garments-quality__statement-content p {
+    font-size: 12px;
+    line-height: 1.8;
+  }
+}

@@ -1,26 +1,264 @@
-@import "tailwindcss";
+/* =========================================================
+   APPAREL FASTENER — GLOBAL DESIGN SYSTEM
+   ========================================================= */
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Core palette */
+  --navy: #243146;
+  --white: #ffffff;
+  --grey: #f3f3f1;
+  --text-grey: #6b7075;
+
+  /* Derived */
+  --navy-08: rgba(36, 49, 70, 0.08);
+  --navy-14: rgba(36, 49, 70, 0.14);
+  --navy-40: rgba(36, 49, 70, 0.4);
+  --white-60: rgba(255, 255, 255, 0.6);
+  --line: rgba(36, 49, 70, 0.14);
+  --line-invert: rgba(255, 255, 255, 0.18);
+
+  /* Typography (bound to next/font in app/layout.js) */
+  --font-heading: "Montserrat", system-ui, sans-serif;
+  --font-body: "Poppins", system-ui, sans-serif;
+
+  /* Layout */
+  --container: 1360px;
+  --pad-x: clamp(20px, 5vw, 72px);
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-inout: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 0.3s;
+  --dur-base: 0.5s;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--navy);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.6;
+  letter-spacing: 0.005em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+img,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+::selection {
+  background: var(--navy);
+  color: #ffffff;
+}
+
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   LAYOUT PRIMITIVES
+   ========================================================= */
+
+.container {
+  width: min(var(--container), calc(100% - var(--pad-x) * 2));
+  margin-inline: auto;
+}
+
+/* Shared section rhythm */
+.section {
+  padding-block: clamp(88px, 11vw, 170px);
+}
+
+/* =========================================================
+   BUTTON SYSTEM
+   One height, one padding rhythm, one border treatment,
+   one arrow behaviour across every CTA on the site.
+   ========================================================= */
+
+.af-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+
+  min-height: 54px;
+  padding: 0 28px;
+
+  border: 1px solid rgba(255, 255, 255, 0.45);
+
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+
+  transition:
+    background-color var(--dur-fast) ease,
+    border-color var(--dur-fast) ease,
+    color var(--dur-fast) ease;
+}
+
+.af-button__icon {
+  display: inline-flex;
+  flex: 0 0 auto;
+
+  transition: transform 0.35s var(--ease-out);
+}
+
+/* Inverted — default, for CTAs sitting on navy */
+.af-button:hover {
+  background: var(--white);
+  border-color: var(--white);
+  color: var(--navy);
+}
+
+.af-button:hover .af-button__icon {
+  transform: translate(3px, -3px);
+}
+
+/* Solid navy — for CTAs sitting on light surfaces */
+.af-button--navy {
+  border-color: var(--navy);
+  color: var(--navy);
+}
+
+.af-button--navy:hover {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: var(--white);
+}
+
+@media (max-width: 760px) {
+  .af-button {
+    min-height: 48px;
+    padding: 0 20px;
+    font-size: 12px;
+    letter-spacing: 0.03em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .af-button,
+  .af-button__icon {
+    transition: none;
+  }
+}
+
+/* Accessibility: keyboard skip link */
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 2000;
+
+  padding: 12px 20px;
+
+  background: var(--white);
+  color: var(--navy);
+
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+
+  transform: translateY(-160%);
+  transition: transform 0.25s var(--ease-out);
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
+}
+
+/* =========================================================
+   LENIS SMOOTH SCROLL
+   ========================================================= */
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Scroll lock while the mobile menu is open */
+html.menu-open,
+body.menu-is-open {
+  overflow: hidden;
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

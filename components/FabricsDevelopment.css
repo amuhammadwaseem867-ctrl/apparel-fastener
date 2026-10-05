@@ -1,0 +1,355 @@
+.fabrics-development {
+  position: relative;
+  background: #ffffff;
+  color: #243146;
+  overflow: hidden;
+}
+
+/* INTRO */
+
+.fabrics-development__intro {
+  display: grid;
+  grid-template-columns: 0.7fr 1.5fr 0.9fr;
+  gap: 5vw;
+  align-items: end;
+  padding: 8rem 6vw 6rem;
+  border-top: 1px solid rgba(36, 49, 70, 0.14);
+}
+
+.fabrics-development__eyebrow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+
+  font-family: var(--font-body);
+  font-size: max(12px, 0.68rem);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.fabrics-development__eyebrow span:first-child {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.fabrics-development__heading {
+  max-width: 800px;
+}
+
+.fabrics-development__kicker {
+  margin: 0 0 1.5rem;
+
+  font-family: var(--font-body);
+  font-size: max(12px, 0.72rem);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: #6b7075;
+}
+
+.fabrics-development__heading h2 {
+  margin: 0;
+
+  font-family: var(--font-heading);
+  font-size: clamp(3.5rem, 6.5vw, 7.5rem);
+  font-weight: 600;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+}
+
+.fabrics-development__description {
+  max-width: 360px;
+  margin: 0;
+
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.8;
+  color: #6b7075;
+}
+
+/* MAIN IMAGE */
+
+.fabrics-development__visual {
+  position: relative;
+  width: 100%;
+  height: min(72vh, 780px);
+  overflow: hidden;
+  background: #243146;
+}
+
+.fabrics-development__visual img {
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(0.82);
+}
+
+.fabrics-development__visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(36, 49, 70, 0.05) 40%,
+    rgba(36, 49, 70, 0.6) 100%
+  );
+  pointer-events: none;
+}
+
+.fabrics-development__visual-label {
+  position: absolute;
+  z-index: 2;
+  left: 6vw;
+  right: 6vw;
+  bottom: 2rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  color: #ffffff;
+
+  font-family: var(--font-body);
+  font-size: max(12px, 0.66rem);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+}
+
+/* PROCESS */
+
+.fabrics-development__process {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  border-bottom: 1px solid rgba(36, 49, 70, 0.14);
+}
+
+.fabrics-development__stage {
+  min-height: 310px;
+  padding: 2rem 2.2vw;
+
+  border-right: 1px solid rgba(36, 49, 70, 0.14);
+
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease;
+}
+
+.fabrics-development__stage:last-child {
+  border-right: 0;
+}
+
+.fabrics-development__stage:hover {
+  background: #243146;
+  color: #ffffff;
+}
+
+.fabrics-development__stage-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 4rem;
+
+  font-family: var(--font-body);
+  font-size: max(12px, 0.68rem);
+  letter-spacing: 0.08em;
+}
+
+.fabrics-development__stage h3 {
+  margin: 0 0 1rem;
+
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.fabrics-development__stage p {
+  max-width: 270px;
+  margin: 0;
+
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  line-height: 1.8;
+  color: #6b7075;
+}
+
+.fabrics-development__stage:hover p {
+  color: rgba(255, 255, 255, 0.68);
+}
+
+/* DETAIL */
+
+.fabrics-development__detail {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  min-height: 680px;
+
+  background: #f3f3f1;
+}
+
+.fabrics-development__detail-image {
+  position: relative;
+  min-height: 680px;
+  overflow: hidden;
+}
+
+.fabrics-development__detail-image img {
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(0.8);
+}
+
+.fabrics-development__detail-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 6vw;
+}
+
+.fabrics-development__detail-number {
+  margin-bottom: 3rem;
+
+  font-family: var(--font-body);
+  font-size: max(12px, 0.68rem);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: #6b7075;
+}
+
+.fabrics-development__detail-copy h3 {
+  margin: 0 0 2rem;
+
+  font-family: var(--font-heading);
+  font-size: clamp(2.4rem, 4vw, 5rem);
+  font-weight: 600;
+  line-height: 0.94;
+  letter-spacing: -0.02em;
+}
+
+.fabrics-development__detail-copy p {
+  max-width: 440px;
+  margin: 0 0 2.5rem;
+
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  line-height: 1.85;
+  color: #6b7075;
+}
+
+.fabrics-development__detail-copy a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  width: fit-content;
+
+  color: #243146;
+
+  font-family: var(--font-body);
+  font-size: max(12px, 0.68rem);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+
+  transition: gap 0.3s ease;
+}
+
+.fabrics-development__detail-copy a:hover {
+  gap: 1.15rem;
+}
+
+/* TABLET */
+
+@media (max-width: 1100px) {
+  .fabrics-development__intro {
+    grid-template-columns: 0.45fr 1.5fr;
+  }
+
+  .fabrics-development__description {
+    grid-column: 2;
+    margin-top: 2rem;
+  }
+
+  .fabrics-development__process {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .fabrics-development__stage:nth-child(2) {
+    border-right: 0;
+  }
+
+  .fabrics-development__stage:nth-child(-n + 2) {
+    border-bottom: 1px solid rgba(36, 49, 70, 0.14);
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+  .fabrics-development__intro {
+    display: block;
+    padding: 5rem 6vw 4rem;
+  }
+
+  .fabrics-development__eyebrow {
+    margin-bottom: 4rem;
+  }
+
+  .fabrics-development__heading h2 {
+    font-size: clamp(38px, 12vw, 50px);
+  }
+
+  .fabrics-development__description {
+    margin-top: 2.5rem;
+  }
+
+  .fabrics-development__visual {
+    height: 58vh;
+  }
+
+  .fabrics-development__visual-label {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    bottom: 1.5rem;
+  }
+
+  .fabrics-development__process {
+    grid-template-columns: 1fr;
+  }
+
+  .fabrics-development__stage,
+  .fabrics-development__stage:nth-child(2) {
+    min-height: 260px;
+    border-right: 0;
+    border-bottom: 1px solid rgba(36, 49, 70, 0.14);
+  }
+
+  .fabrics-development__stage:last-child {
+    border-bottom: 0;
+  }
+
+  .fabrics-development__stage-top {
+    margin-bottom: 3rem;
+  }
+
+  .fabrics-development__detail {
+    display: block;
+  }
+
+  .fabrics-development__detail-image {
+    min-height: 55vh;
+  }
+
+  .fabrics-development__detail-copy {
+    padding: 5rem 6vw;
+  }
+
+  .fabrics-development__detail-copy h3 {
+    font-size: clamp(2.5rem, 11vw, 4rem);
+  }
+}

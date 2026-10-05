@@ -1,0 +1,232 @@
+.fabrics-cta {
+  position: relative;
+  min-height: 100svh;
+  overflow: hidden;
+
+  background: #243146;
+  color: #ffffff;
+}
+
+/* IMAGE */
+
+.fabrics-cta__image {
+  position: absolute;
+  inset: 0;
+}
+
+.fabrics-cta__image img {
+  object-fit: cover;
+  object-position: center;
+
+  filter: saturate(0.65);
+}
+
+.fabrics-cta__overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(36, 49, 70, 0.94) 0%,
+      rgba(36, 49, 70, 0.72) 48%,
+      rgba(36, 49, 70, 0.32) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(36, 49, 70, 0.2) 0%,
+      rgba(36, 49, 70, 0.75) 100%
+    );
+}
+
+/* CONTENT */
+
+.fabrics-cta__content {
+  position: relative;
+  z-index: 2;
+
+  min-height: 100svh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 2rem 6vw;
+}
+
+/* TOP */
+
+.fabrics-cta__top,
+.fabrics-cta__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-family: var(--font-body);
+  font-size: max(12px, 0.66rem);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+}
+
+.fabrics-cta__top span:first-child {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+}
+
+/* MAIN */
+
+.fabrics-cta__main {
+  max-width: 1000px;
+  padding: 8rem 0;
+}
+
+.fabrics-cta__eyebrow {
+  margin: 0 0 2rem;
+
+  font-family: var(--font-body);
+  font-size: max(12px, 0.7rem);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.fabrics-cta__main h2 {
+  margin: 0;
+
+  font-family: var(--font-heading);
+  font-size: clamp(4rem, 8vw, 9rem);
+  font-weight: 600;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+}
+
+.fabrics-cta__description {
+  max-width: 470px;
+  margin: 3rem 0 2.5rem;
+
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  line-height: 1.85;
+
+  color: rgba(255, 255, 255, 0.68);
+}
+
+/* BUTTON */
+
+.fabrics-cta__button {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+
+  width: fit-content;
+
+  padding: 1rem 1.35rem;
+
+  border: 1px solid rgba(255, 255, 255, 0.55);
+
+  color: #ffffff;
+
+  font-family: var(--font-body);
+  font-size: max(12px, 0.68rem);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    gap 0.3s ease;
+}
+
+.fabrics-cta__button:hover {
+  gap: 1.3rem;
+
+  background: #ffffff;
+  color: #243146;
+}
+
+/* BOTTOM */
+
+.fabrics-cta__bottom {
+  padding-top: 1.5rem;
+  padding-bottom: 0.5rem;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.fabrics-cta__bottom span:last-child {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .fabrics-cta__overlay {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(36, 49, 70, 0.92) 0%,
+        rgba(36, 49, 70, 0.65) 100%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(36, 49, 70, 0.2) 0%,
+        rgba(36, 49, 70, 0.8) 100%
+      );
+  }
+
+  .fabrics-cta__main {
+    max-width: 760px;
+  }
+
+  .fabrics-cta__main h2 {
+    font-size: clamp(3.8rem, 10vw, 7rem);
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .fabrics-cta__content {
+    padding: 1.5rem 6vw;
+  }
+
+  .fabrics-cta__top {
+    font-size: max(12px, 0.58rem);
+  }
+
+  .fabrics-cta__main {
+    padding: 5rem 0;
+  }
+
+  .fabrics-cta__eyebrow {
+    margin-bottom: 1.5rem;
+    font-size: max(12px, 0.62rem);
+  }
+
+  .fabrics-cta__main h2 {
+    font-size: clamp(3.3rem, 15vw, 5.5rem);
+    line-height: 0.9;
+  }
+
+  .fabrics-cta__description {
+    margin-top: 2.5rem;
+
+    font-size: 0.8rem;
+    line-height: 1.8;
+  }
+
+  .fabrics-cta__button {
+    padding: 0.9rem 1rem;
+    font-size: max(12px, 0.61rem);
+  }
+
+  .fabrics-cta__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+
+    font-size: max(12px, 0.58rem);
+  }
+}

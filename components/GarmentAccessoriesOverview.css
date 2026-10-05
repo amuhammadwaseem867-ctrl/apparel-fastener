@@ -1,0 +1,326 @@
+.garment-accessories-overview {
+  position: relative;
+  overflow: hidden;
+
+  background: #ffffff;
+  color: #243146;
+}
+
+/* INTRO */
+
+.garment-accessories-overview__intro {
+  display: grid;
+  grid-template-columns: 0.7fr 1.5fr 0.9fr;
+  gap: 5vw;
+  align-items: end;
+
+  padding: 8rem 6vw 6rem;
+
+  border-top: 1px solid rgba(36, 49, 70, 0.14);
+}
+
+.garment-accessories-overview__eyebrow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+
+  font-family: var(--font-body);
+  font-size: max(12px, 0.68rem);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+}
+
+.garment-accessories-overview__eyebrow span:first-child {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.garment-accessories-overview__heading p {
+  margin: 0 0 1.5rem;
+
+  font-family: var(--font-body);
+  font-size: max(12px, 0.7rem);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+
+  color: #6b7075;
+}
+
+.garment-accessories-overview__heading h2 {
+  margin: 0;
+
+  font-family: var(--font-heading);
+  font-size: clamp(3.5rem, 6.3vw, 7.2rem);
+  font-weight: 600;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+}
+
+.garment-accessories-overview__copy {
+  max-width: 380px;
+}
+
+.garment-accessories-overview__copy p {
+  margin: 0 0 1.4rem;
+
+  font-family: var(--font-body);
+  font-size: 0.87rem;
+  line-height: 1.85;
+
+  color: #6b7075;
+}
+
+.garment-accessories-overview__copy p:last-child {
+  margin-bottom: 0;
+}
+
+/* STATEMENT */
+
+.garment-accessories-overview__statement {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+
+  min-height: 700px;
+
+  background: #f3f3f1;
+}
+
+.garment-accessories-overview__statement-image {
+  position: relative;
+  min-height: 700px;
+  overflow: hidden;
+}
+
+.garment-accessories-overview__statement-image img {
+  object-fit: cover;
+  object-position: center;
+
+  filter: saturate(0.78);
+}
+
+.garment-accessories-overview__statement-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 6vw;
+}
+
+.garment-accessories-overview__statement-content > span {
+  margin-bottom: 3rem;
+
+  font-family: var(--font-body);
+  font-size: max(12px, 0.65rem);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+
+  color: #6b7075;
+}
+
+.garment-accessories-overview__statement-content h3 {
+  margin: 0 0 2rem;
+
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 5vw, 5.8rem);
+  font-weight: 600;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+}
+
+.garment-accessories-overview__statement-content p {
+  max-width: 430px;
+  margin: 0 0 2.5rem;
+
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  line-height: 1.85;
+
+  color: #6b7075;
+}
+
+.garment-accessories-overview__statement-content a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+
+  width: fit-content;
+
+  color: #243146;
+
+  font-family: var(--font-body);
+  font-size: max(12px, 0.67rem);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+
+  transition: gap 0.3s ease;
+}
+
+.garment-accessories-overview__statement-content a:hover {
+  gap: 1.2rem;
+}
+
+/* SYSTEMS */
+
+.garment-accessories-overview__systems {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.garment-accessories-overview__system {
+  border-right: 1px solid rgba(36, 49, 70, 0.14);
+}
+
+.garment-accessories-overview__system:last-child {
+  border-right: 0;
+}
+
+.garment-accessories-overview__system-image {
+  position: relative;
+  height: 430px;
+  overflow: hidden;
+}
+
+.garment-accessories-overview__system-image img {
+  object-fit: cover;
+
+  filter: saturate(0.75);
+
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.garment-accessories-overview__system:hover img {
+  transform: scale(1.04);
+}
+
+.garment-accessories-overview__system-image span {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+
+  font-family: var(--font-body);
+  font-size: max(12px, 0.68rem);
+  letter-spacing: 0.08em;
+
+  color: #ffffff;
+}
+
+.garment-accessories-overview__system-content {
+  padding: 2rem 2.2rem 3rem;
+}
+
+.garment-accessories-overview__system-content h3 {
+  margin: 0 0 1rem;
+
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.garment-accessories-overview__system-content p {
+  max-width: 360px;
+  margin: 0;
+
+  font-family: var(--font-body);
+  font-size: 0.77rem;
+  line-height: 1.8;
+
+  color: #6b7075;
+}
+
+/* TABLET */
+
+@media (max-width: 1100px) {
+  .garment-accessories-overview__intro {
+    grid-template-columns: 0.45fr 1.5fr;
+  }
+
+  .garment-accessories-overview__copy {
+    grid-column: 2;
+    margin-top: 2rem;
+  }
+
+  .garment-accessories-overview__systems {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .garment-accessories-overview__system:nth-child(2) {
+    border-right: 0;
+  }
+
+  .garment-accessories-overview__system:last-child {
+    grid-column: 1 / -1;
+    border-top: 1px solid rgba(36, 49, 70, 0.14);
+    border-right: 0;
+  }
+
+  .garment-accessories-overview__system:last-child
+    .garment-accessories-overview__system-image {
+    height: 500px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+  .garment-accessories-overview__intro {
+    display: block;
+    padding: 5rem 6vw 4rem;
+  }
+
+  .garment-accessories-overview__eyebrow {
+    margin-bottom: 4rem;
+  }
+
+  .garment-accessories-overview__heading h2 {
+    font-size: clamp(3rem, 14vw, 5rem);
+  }
+
+  .garment-accessories-overview__copy {
+    margin-top: 2.5rem;
+  }
+
+  .garment-accessories-overview__statement {
+    display: block;
+  }
+
+  .garment-accessories-overview__statement-image {
+    min-height: 55vh;
+  }
+
+  .garment-accessories-overview__statement-content {
+    padding: 5rem 6vw;
+  }
+
+  .garment-accessories-overview__statement-content h3 {
+    font-size: clamp(2.8rem, 12vw, 4.5rem);
+  }
+
+  .garment-accessories-overview__systems {
+    display: block;
+  }
+
+  .garment-accessories-overview__system,
+  .garment-accessories-overview__system:nth-child(2),
+  .garment-accessories-overview__system:last-child {
+    border-right: 0;
+    border-top: 1px solid rgba(36, 49, 70, 0.14);
+  }
+
+  .garment-accessories-overview__system:first-child {
+    border-top: 0;
+  }
+
+  .garment-accessories-overview__system-image,
+  .garment-accessories-overview__system:last-child
+    .garment-accessories-overview__system-image {
+    height: 72vw;
+    min-height: 340px;
+  }
+
+  .garment-accessories-overview__system-content {
+    padding: 1.8rem 6vw 2.5rem;
+  }
+}

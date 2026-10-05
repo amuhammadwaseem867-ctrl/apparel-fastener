@@ -1,0 +1,445 @@
+.garments-products {
+  position: relative;
+  overflow: hidden;
+  background: #f3f3f1;
+  color: #243146;
+  padding: 155px 6vw 175px;
+}
+
+/* --------------------------------------------------
+   HEADER
+-------------------------------------------------- */
+
+.garments-products__header {
+  max-width: 1500px;
+  margin: 0 auto 125px;
+}
+
+.garments-products__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  margin-bottom: 72px;
+
+  font-family: var(--font-body);
+  font-size: max(12px, 10px);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+
+  color: #6b7075;
+}
+
+.garments-products__eyebrow span:first-child {
+  width: 30px;
+  height: 30px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid #dcdcd8;
+  border-radius: 50%;
+
+  color: #243146;
+  font-size: max(12px, 9px);
+}
+
+.garments-products__header-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+  gap: 8vw;
+  align-items: end;
+}
+
+.garments-products__kicker {
+  margin: 0 0 22px;
+
+  font-family: var(--font-body);
+  font-size: max(12px, 11px);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+
+  color: #6b7075;
+}
+
+.garments-products__header h2 {
+  margin: 0;
+
+  font-family: var(--font-heading);
+  font-size: clamp(60px, 7.5vw, 124px);
+  font-weight: 600;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.garments-products__header h2 em {
+  font-style: normal;
+  color: #243146;
+}
+
+.garments-products__intro {
+  max-width: 430px;
+  padding-bottom: 4px;
+}
+
+.garments-products__intro p {
+  margin: 0 0 28px;
+
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.85;
+
+  color: #6b7075;
+}
+
+.garments-products__intro span {
+  display: inline-block;
+
+  padding-top: 14px;
+  border-top: 1px solid #dcdcd8;
+
+  font-family: var(--font-body);
+  font-size: max(12px, 9px);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+
+  color: #243146;
+}
+
+/* --------------------------------------------------
+   COLLECTION GROUP
+-------------------------------------------------- */
+
+.garments-products__collections {
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.garments-products__group {
+  margin-bottom: 150px;
+}
+
+.garments-products__group:last-child {
+  margin-bottom: 0;
+}
+
+.garments-products__group-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.55fr);
+  gap: 7vw;
+  align-items: end;
+
+  padding-bottom: 27px;
+  margin-bottom: 35px;
+
+  border-bottom: 1px solid #dcdcd8;
+}
+
+.garments-products__group-title {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.garments-products__group-title > span {
+  font-family: var(--font-body);
+  font-size: max(12px, 10px);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+
+  color: #8b9095;
+}
+
+.garments-products__group-title p {
+  margin: 0 0 9px;
+
+  font-family: var(--font-body);
+  font-size: max(12px, 9px);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+
+  color: #8b9095;
+}
+
+.garments-products__group-title h3 {
+  margin: 0;
+
+  font-family: var(--font-heading);
+  font-size: clamp(30px, 3vw, 48px);
+  font-weight: 600;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.garments-products__group-description {
+  max-width: 420px;
+  margin: 0;
+
+  font-family: var(--font-body);
+  font-size: 12px;
+  line-height: 1.8;
+
+  color: #6b7075;
+}
+
+/* --------------------------------------------------
+   PRODUCT GRID
+-------------------------------------------------- */
+
+.garments-products__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 38px 24px;
+}
+
+.garments-products__card {
+  min-width: 0;
+}
+
+.garments-products__image {
+  position: relative;
+  aspect-ratio: 0.82;
+  overflow: hidden;
+  background: #e9e9e6;
+}
+
+/*
+  Product cut-outs sit on a flat studio background, so the garment
+  must never be cropped. `contain` keeps the full silhouette visible
+  and centred; the scrim below preserves the overlay legibility.
+*/
+.garments-products__image img {
+  object-fit: contain;
+  object-position: center;
+  padding: 7% 7% 9%;
+
+  transition:
+    transform 800ms cubic-bezier(0.2, 0.65, 0.2, 1);
+}
+
+.garments-products__card:hover
+  .garments-products__image
+  img {
+  transform: scale(1.035);
+}
+
+.garments-products__image-overlay {
+  position: absolute;
+  inset: 0;
+
+  /* Very light scrim: enough for the index/arrow, not enough to
+     muddy the light product plate. */
+  background: linear-gradient(
+    180deg,
+    rgba(36, 49, 70, 0.1) 0%,
+    transparent 32%,
+    rgba(36, 49, 70, 0.06) 100%
+  );
+
+  pointer-events: none;
+}
+
+.garments-products__index {
+  position: absolute;
+  top: 18px;
+  left: 20px;
+
+  font-family: var(--font-body);
+  font-size: max(12px, 9px);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+
+  color: var(--navy);
+}
+
+.garments-products__arrow {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+
+  width: 38px;
+  height: 38px;
+
+  display: grid;
+  place-items: center;
+
+  background: var(--navy);
+  color: var(--white);
+
+  transform: translateY(5px);
+  opacity: 0;
+
+  transition:
+    opacity 250ms ease,
+    transform 250ms ease,
+    background-color 250ms ease;
+}
+
+.garments-products__card:hover
+  .garments-products__arrow {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --------------------------------------------------
+   CARD INFO
+-------------------------------------------------- */
+
+.garments-products__card-info {
+  padding: 17px 2px 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 20px;
+
+  border-top: 1px solid #dcdcd8;
+}
+
+.garments-products__card-info span {
+  font-family: var(--font-body);
+  font-size: max(12px, 8px);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+
+  color: #8b9095;
+}
+
+.garments-products__card-info h3 {
+  margin: 0;
+
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+
+  color: #243146;
+}
+
+/* --------------------------------------------------
+   TABLET
+-------------------------------------------------- */
+
+@media (max-width: 1100px) {
+  .garments-products {
+    padding: 125px 5vw 145px;
+  }
+
+  .garments-products__header {
+    margin-bottom: 95px;
+  }
+
+  .garments-products__header-grid {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .garments-products__group-header {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .garments-products__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* --------------------------------------------------
+   MOBILE
+-------------------------------------------------- */
+
+@media (max-width: 760px) {
+  .garments-products {
+    padding: 95px 22px 110px;
+  }
+
+  .garments-products__header {
+    margin-bottom: 75px;
+  }
+
+  .garments-products__eyebrow {
+    margin-bottom: 45px;
+    font-size: max(12px, 9px);
+  }
+
+  .garments-products__kicker {
+    margin-bottom: 16px;
+    font-size: max(12px, 9px);
+  }
+
+  .garments-products__header h2 {
+    font-size: clamp(50px, 14vw, 74px);
+    line-height: 0.9;
+  }
+
+  .garments-products__intro p {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .garments-products__group {
+    margin-bottom: 100px;
+  }
+
+  .garments-products__group-header {
+    gap: 25px;
+    padding-bottom: 22px;
+    margin-bottom: 25px;
+  }
+
+  .garments-products__group-title {
+    gap: 17px;
+  }
+
+  .garments-products__group-title h3 {
+    font-size: 31px;
+  }
+
+  .garments-products__group-description {
+    font-size: max(12px, 11px);
+    line-height: 1.75;
+  }
+
+  .garments-products__grid {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  .garments-products__image {
+    aspect-ratio: 0.82;
+  }
+
+  .garments-products__arrow {
+    opacity: 1;
+    transform: none;
+  }
+
+  .garments-products__card-info {
+    padding-top: 14px;
+  }
+
+  .garments-products__card-info h3 {
+    font-size: 13px;
+  }
+}
+
+/* --------------------------------------------------
+   REDUCED MOTION
+-------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .garments-products__image img,
+  .garments-products__arrow {
+    transition: none;
+  }
+
+  .garments-products__card:hover
+    .garments-products__image
+    img {
+    transform: none;
+  }
+}

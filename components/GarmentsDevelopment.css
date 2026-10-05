@@ -1,0 +1,442 @@
+.garments-development {
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+  color: #243146;
+}
+
+/* --------------------------------------------------
+   HERO IMAGE
+-------------------------------------------------- */
+
+.garments-development__hero {
+  position: relative;
+  min-height: 86vh;
+  overflow: hidden;
+
+  background: #243146;
+  color: #ffffff;
+}
+
+.garments-development__image {
+  position: absolute;
+  inset: 0;
+}
+
+.garments-development__image img {
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.015);
+}
+
+.garments-development__image-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(36, 49, 70, 0.92) 0%,
+      rgba(36, 49, 70, 0.67) 38%,
+      rgba(36, 49, 70, 0.22) 78%,
+      rgba(36, 49, 70, 0.38) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(36, 49, 70, 0.42) 0%,
+      rgba(36, 49, 70, 0.04) 45%,
+      rgba(36, 49, 70, 0.72) 100%
+    );
+}
+
+/* --------------------------------------------------
+   TOP LABEL
+-------------------------------------------------- */
+
+.garments-development__top {
+  position: absolute;
+  top: 38px;
+  left: 6vw;
+  right: 6vw;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-family: var(--font-body);
+  font-size: max(12px, 10px);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.garments-development__top span:first-child {
+  width: 31px;
+  height: 31px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+
+  font-size: max(12px, 9px);
+}
+
+/* --------------------------------------------------
+   HERO CONTENT
+-------------------------------------------------- */
+
+.garments-development__hero-content {
+  position: relative;
+  z-index: 2;
+
+  min-height: 86vh;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+  align-items: center;
+
+  gap: 8vw;
+
+  padding: 120px 6vw 120px;
+}
+
+.garments-development__hero-content > div:first-child p {
+  margin: 0 0 22px;
+
+  font-family: var(--font-body);
+  font-size: max(12px, 11px);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+
+  color: rgba(255, 255, 255, 0.66);
+}
+
+.garments-development__hero-content h2 {
+  margin: 0;
+
+  font-family: var(--font-heading);
+  font-size: clamp(58px, 7.6vw, 125px);
+  font-weight: 600;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.garments-development__hero-content h2 em {
+  font-style: normal;
+  color: #ffffff;
+}
+
+/* --------------------------------------------------
+   HERO SIDE
+-------------------------------------------------- */
+
+.garments-development__hero-side {
+  align-self: center;
+
+  max-width: 390px;
+  padding-top: 80px;
+}
+
+.garments-development__hero-line {
+  display: block;
+
+  width: 52px;
+  height: 2px;
+
+  margin-bottom: 28px;
+
+  background: #ffffff;
+}
+
+.garments-development__hero-side p {
+  margin: 0;
+
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.85;
+
+  color: rgba(255, 255, 255, 0.76);
+}
+
+/* --------------------------------------------------
+   HERO BOTTOM
+-------------------------------------------------- */
+
+.garments-development__hero-bottom {
+  position: absolute;
+  z-index: 3;
+
+  left: 6vw;
+  right: 6vw;
+  bottom: 34px;
+
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  font-family: var(--font-body);
+  font-size: max(12px, 9px);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.garments-development__hero-bottom i {
+  width: 3px;
+  height: 3px;
+  flex: 0 0 auto;
+
+  background: rgba(255, 255, 255, 0.55);
+}
+
+/* --------------------------------------------------
+   PROCESS
+-------------------------------------------------- */
+
+.garments-development__process {
+  max-width: 1500px;
+  margin: 0 auto;
+
+  padding: 145px 6vw 165px;
+
+  display: grid;
+  grid-template-columns: minmax(300px, 0.72fr) minmax(0, 1.28fr);
+  gap: 9vw;
+}
+
+.garments-development__process-intro > p {
+  margin: 0 0 22px;
+
+  font-family: var(--font-body);
+  font-size: max(12px, 10px);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+
+  color: #6b7075;
+}
+
+.garments-development__process-intro h3 {
+  margin: 0;
+
+  font-family: var(--font-heading);
+  font-size: clamp(38px, 4.3vw, 68px);
+  font-weight: 600;
+  line-height: 0.91;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.garments-development__process-intro h3 em {
+  font-style: normal;
+  color: #243146;
+}
+
+/* --------------------------------------------------
+   STEPS
+-------------------------------------------------- */
+
+.garments-development__steps {
+  border-top: 1px solid #d8dadc;
+}
+
+.garments-development__step {
+  display: grid;
+  grid-template-columns: 75px minmax(0, 1fr);
+
+  padding: 29px 0 34px;
+
+  border-bottom: 1px solid #d8dadc;
+}
+
+.garments-development__step-top {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  min-height: 105px;
+
+  color: #8a8f94;
+}
+
+.garments-development__step-top span {
+  font-family: var(--font-body);
+  font-size: max(12px, 9px);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.garments-development__step-content h4 {
+  margin: 0 0 13px;
+
+  font-family: var(--font-heading);
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.02em;
+
+  color: #243146;
+}
+
+.garments-development__step-content p {
+  max-width: 520px;
+  margin: 0;
+
+  font-family: var(--font-body);
+  font-size: 12px;
+  line-height: 1.8;
+
+  color: #6b7075;
+}
+
+/* --------------------------------------------------
+   TABLET
+-------------------------------------------------- */
+
+@media (max-width: 1050px) {
+  .garments-development__hero-content {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .garments-development__hero-side {
+    padding-top: 0;
+  }
+
+  .garments-development__process {
+    grid-template-columns: 1fr;
+    gap: 70px;
+  }
+}
+
+/* --------------------------------------------------
+   MOBILE
+-------------------------------------------------- */
+
+@media (max-width: 760px) {
+  .garments-development__hero {
+    min-height: 760px;
+  }
+
+  .garments-development__image img {
+    object-position: 58% center;
+  }
+
+  .garments-development__image-overlay {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(36, 49, 70, 0.94) 0%,
+        rgba(36, 49, 70, 0.52) 100%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(36, 49, 70, 0.35) 0%,
+        rgba(36, 49, 70, 0.1) 42%,
+        rgba(36, 49, 70, 0.82) 100%
+      );
+  }
+
+  .garments-development__top {
+    top: 25px;
+    left: 22px;
+    right: 22px;
+
+    font-size: max(12px, 8px);
+  }
+
+  .garments-development__hero-content {
+    min-height: 760px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    gap: 40px;
+
+    padding: 100px 22px 110px;
+  }
+
+  .garments-development__hero-content > div:first-child p {
+    margin-bottom: 17px;
+    font-size: max(12px, 9px);
+  }
+
+  .garments-development__hero-content h2 {
+    font-size: clamp(36px, 12vw, 52px);
+    line-height: 0.9;
+  }
+
+  .garments-development__hero-side {
+    width: 100%;
+    max-width: 440px;
+  }
+
+  .garments-development__hero-side p {
+    font-size: 12px;
+    line-height: 1.8;
+  }
+
+  .garments-development__hero-bottom {
+    left: 22px;
+    right: 22px;
+    bottom: 25px;
+
+    flex-wrap: wrap;
+    gap: 9px;
+
+    font-size: max(12px, 7px);
+  }
+
+  .garments-development__process {
+    padding: 95px 22px 110px;
+
+    display: block;
+  }
+
+  .garments-development__process-intro {
+    margin-bottom: 65px;
+  }
+
+  .garments-development__process-intro > p {
+    margin-bottom: 17px;
+    font-size: max(12px, 9px);
+  }
+
+  .garments-development__process-intro h3 {
+    font-size: clamp(36px, 10vw, 54px);
+  }
+
+  .garments-development__step {
+    grid-template-columns: 48px minmax(0, 1fr);
+
+    padding: 25px 0 29px;
+  }
+
+  .garments-development__step-top {
+    min-height: 100px;
+  }
+
+  .garments-development__step-content h4 {
+    font-size: 19px;
+  }
+
+  .garments-development__step-content p {
+    font-size: max(12px, 11px);
+    line-height: 1.75;
+  }
+}
+
+/* --------------------------------------------------
+   REDUCED MOTION
+-------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .garments-development__image img {
+    transform: none;
+  }
+}

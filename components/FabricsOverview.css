@@ -1,0 +1,402 @@
+.fabrics-overview {
+  background: #ffffff;
+  color: #243146;
+}
+
+/* --------------------------------------------------
+   INTRO
+-------------------------------------------------- */
+
+.fabrics-overview__intro {
+  padding: 115px 6vw 82px;
+}
+
+.fabrics-overview__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  margin-bottom: 72px;
+
+  font-family: var(--font-body);
+  font-size: max(12px, 9px);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+
+  color: #6b7075;
+}
+
+.fabrics-overview__eyebrow span:first-child {
+  width: 29px;
+  height: 29px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid #d2d2ce;
+  border-radius: 50%;
+
+  color: #243146;
+  font-size: max(12px, 8px);
+}
+
+.fabrics-overview__intro-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+
+  gap: 8vw;
+
+  align-items: end;
+}
+
+.fabrics-overview__heading > p {
+  margin: 0 0 22px;
+
+  font-family: var(--font-body);
+  font-size: max(12px, 10px);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+
+  color: #6b7075;
+}
+
+.fabrics-overview__heading h2 {
+  margin: 0;
+
+  font-family: var(--font-heading);
+  font-size: clamp(60px, 7.7vw, 125px);
+  font-weight: 600;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+
+  text-transform: uppercase;
+}
+
+.fabrics-overview__heading h2 em {
+  font-style: normal;
+}
+
+.fabrics-overview__copy {
+  max-width: 430px;
+  padding-bottom: 5px;
+}
+
+.fabrics-overview__copy p {
+  margin: 0 0 21px;
+
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 1.9;
+
+  color: #6b7075;
+}
+
+.fabrics-overview__copy p:last-child {
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------
+   SYSTEMS
+-------------------------------------------------- */
+
+.fabrics-overview__systems {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  border-top: 1px solid #dfe1e3;
+}
+
+.fabrics-overview__system {
+  min-width: 0;
+
+  border-right: 1px solid #dfe1e3;
+}
+
+.fabrics-overview__system:last-child {
+  border-right: 0;
+}
+
+/* --------------------------------------------------
+   IMAGE
+-------------------------------------------------- */
+
+.fabrics-overview__image {
+  position: relative;
+
+  height: 520px;
+
+  overflow: hidden;
+
+  background: #243146;
+}
+
+.fabrics-overview__image img {
+  object-fit: cover;
+
+  transition:
+    transform 600ms cubic-bezier(0.2, 0.65, 0.25, 1);
+}
+
+.fabrics-overview__image-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(36, 49, 70, 0.08) 20%,
+      rgba(36, 49, 70, 0.65) 100%
+    );
+
+  pointer-events: none;
+}
+
+.fabrics-overview__system:hover
+  .fabrics-overview__image img {
+  transform: scale(1.045);
+}
+
+.fabrics-overview__number {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+
+  width: 32px;
+  height: 32px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 50%;
+
+  color: #ffffff;
+
+  font-family: var(--font-body);
+  font-size: max(12px, 8px);
+  font-weight: 600;
+}
+
+.fabrics-overview__category {
+  position: absolute;
+  left: 25px;
+  bottom: 24px;
+
+  color: #ffffff;
+
+  font-family: var(--font-body);
+  font-size: max(12px, 9px);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+/* --------------------------------------------------
+   DETAILS
+-------------------------------------------------- */
+
+.fabrics-overview__details {
+  min-height: 300px;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 31px 30px 34px;
+}
+
+.fabrics-overview__detail-heading > span {
+  display: block;
+
+  margin-bottom: 13px;
+
+  font-family: var(--font-body);
+  font-size: max(12px, 8px);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+
+  color: #8a8f94;
+}
+
+.fabrics-overview__detail-heading h3 {
+  max-width: 330px;
+
+  margin: 0;
+
+  font-family: var(--font-heading);
+  font-size: clamp(20px, 2vw, 28px);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.fabrics-overview__details > p {
+  max-width: 350px;
+
+  margin: 25px 0 0;
+
+  font-family: var(--font-body);
+  font-size: 12px;
+  line-height: 1.8;
+
+  color: #6b7075;
+}
+
+/* --------------------------------------------------
+   LINK
+-------------------------------------------------- */
+
+.fabrics-overview__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  width: fit-content;
+
+  margin-top: auto;
+  padding-top: 28px;
+
+  color: #243146;
+  text-decoration: none;
+
+  font-family: var(--font-body);
+  font-size: max(12px, 8px);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.fabrics-overview__link-icon {
+  width: 33px;
+  height: 33px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid #cfd2d5;
+
+  transition:
+    transform 250ms ease,
+    background 250ms ease,
+    color 250ms ease;
+}
+
+.fabrics-overview__link:hover
+  .fabrics-overview__link-icon {
+  transform: translate(3px, -3px);
+
+  background: #243146;
+  color: #ffffff;
+}
+
+/* --------------------------------------------------
+   TABLET
+-------------------------------------------------- */
+
+@media (max-width: 1050px) {
+  .fabrics-overview__intro {
+    padding-top: 90px;
+  }
+
+  .fabrics-overview__intro-grid {
+    gap: 5vw;
+  }
+
+  .fabrics-overview__systems {
+    grid-template-columns: 1fr;
+  }
+
+  .fabrics-overview__system {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    border-right: 0;
+    border-bottom: 1px solid #dfe1e3;
+  }
+
+  .fabrics-overview__system:last-child {
+    border-bottom: 0;
+  }
+
+  .fabrics-overview__image {
+    height: 470px;
+  }
+
+  .fabrics-overview__details {
+    min-height: 470px;
+  }
+}
+
+/* --------------------------------------------------
+   MOBILE
+-------------------------------------------------- */
+
+@media (max-width: 760px) {
+  .fabrics-overview__intro {
+    padding: 75px 22px 58px;
+  }
+
+  .fabrics-overview__eyebrow {
+    margin-bottom: 48px;
+    font-size: max(12px, 8px);
+  }
+
+  .fabrics-overview__intro-grid {
+    display: block;
+  }
+
+  .fabrics-overview__heading h2 {
+    font-size: clamp(54px, 15vw, 80px);
+  }
+
+  .fabrics-overview__copy {
+    margin-top: 42px;
+  }
+
+  .fabrics-overview__copy p {
+    font-size: 12px;
+    line-height: 1.8;
+  }
+
+  .fabrics-overview__systems {
+    display: block;
+  }
+
+  .fabrics-overview__system {
+    display: block;
+
+    border-right: 0;
+    border-bottom: 1px solid #dfe1e3;
+  }
+
+  .fabrics-overview__system:last-child {
+    border-bottom: 0;
+  }
+
+  .fabrics-overview__image {
+    height: 390px;
+  }
+
+  .fabrics-overview__details {
+    min-height: 300px;
+
+    padding: 27px 22px 30px;
+  }
+
+  .fabrics-overview__detail-heading h3 {
+    font-size: 23px;
+  }
+
+  .fabrics-overview__details > p {
+    font-size: 12px;
+  }
+}
+
+/* --------------------------------------------------
+   REDUCED MOTION
+-------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .fabrics-overview__image img,
+  .fabrics-overview__link-icon {
+    transition: none;
+  }
+}

@@ -1,0 +1,493 @@
+.fabrics-hero {
+  position: relative;
+
+  min-height: 100svh;
+  height: 100svh;
+
+  overflow: hidden;
+  isolation: isolate;
+
+  background: #243146;
+  color: #ffffff;
+}
+
+/* --------------------------------------------------
+   MEDIA
+-------------------------------------------------- */
+
+.fabrics-hero__media {
+  position: absolute;
+  inset: 0;
+  z-index: -4;
+}
+
+.fabrics-hero__media img {
+  object-fit: cover;
+  object-position: center;
+
+  transform: scale(1.015);
+}
+
+/* --------------------------------------------------
+   CINEMATIC OVERLAY
+-------------------------------------------------- */
+
+.fabrics-hero__veil {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(36, 49, 70, 0.94) 0%,
+      rgba(36, 49, 70, 0.68) 38%,
+      rgba(36, 49, 70, 0.24) 76%,
+      rgba(36, 49, 70, 0.48) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(36, 49, 70, 0.42) 0%,
+      rgba(36, 49, 70, 0.04) 45%,
+      rgba(36, 49, 70, 0.82) 100%
+    );
+}
+
+/* --------------------------------------------------
+   TECHNICAL GRID
+-------------------------------------------------- */
+
+.fabrics-hero__grid {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+
+  pointer-events: none;
+
+  opacity: 0.14;
+
+  background-image:
+    linear-gradient(
+      90deg,
+      transparent 0,
+      transparent calc(25% - 1px),
+      rgba(255, 255, 255, 0.14) 25%,
+      transparent calc(25% + 1px),
+      transparent calc(50% - 1px),
+      rgba(255, 255, 255, 0.14) 50%,
+      transparent calc(50% + 1px),
+      transparent calc(75% - 1px),
+      rgba(255, 255, 255, 0.14) 75%,
+      transparent calc(75% + 1px)
+    ),
+    linear-gradient(
+      180deg,
+      transparent 0,
+      transparent calc(50% - 1px),
+      rgba(255, 255, 255, 0.1) 50%,
+      transparent calc(50% + 1px)
+    );
+}
+
+/* --------------------------------------------------
+   CONTENT
+-------------------------------------------------- */
+
+.fabrics-hero__content {
+  position: relative;
+  z-index: 2;
+
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 38px 6vw 130px;
+}
+
+/* --------------------------------------------------
+   TOP
+-------------------------------------------------- */
+
+.fabrics-hero__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-family: var(--font-body);
+  font-size: max(12px, 10px);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.fabrics-hero__top span:last-child {
+  color: rgba(255, 255, 255, 0.64);
+}
+
+/* --------------------------------------------------
+   BODY
+-------------------------------------------------- */
+
+.fabrics-hero__body {
+  flex: 1;
+
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.35fr)
+    minmax(300px, 0.65fr);
+
+  align-items: center;
+
+  gap: 8vw;
+}
+
+.fabrics-hero__kicker {
+  margin: 0 0 22px;
+
+  font-family: var(--font-body);
+  font-size: max(12px, 11px);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+
+  color: rgba(255, 255, 255, 0.66);
+}
+
+.fabrics-hero__title-wrap h1 {
+  margin: 0;
+
+  font-family: var(--font-heading);
+  font-size: clamp(68px, 9vw, 150px);
+  font-weight: 600;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+
+  text-transform: uppercase;
+}
+
+.fabrics-hero__title-wrap h1 em {
+  font-style: normal;
+}
+
+/* --------------------------------------------------
+   SIDE CONTENT
+-------------------------------------------------- */
+
+.fabrics-hero__side {
+  width: 100%;
+  max-width: 410px;
+
+  padding-top: 78px;
+}
+
+.fabrics-hero__line {
+  display: block;
+
+  width: 52px;
+  height: 2px;
+
+  margin-bottom: 28px;
+
+  background: #ffffff;
+}
+
+.fabrics-hero__side p {
+  margin: 0;
+
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.85;
+
+  color: rgba(255, 255, 255, 0.76);
+}
+
+/* --------------------------------------------------
+   CTA
+-------------------------------------------------- */
+
+/* Matches the global .af-button system */
+.fabrics-hero__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+
+  width: fit-content;
+
+  min-height: 54px;
+  margin-top: 32px;
+  padding: 0 28px;
+
+  border: 1px solid rgba(255, 255, 255, 0.45);
+
+  color: #ffffff;
+  text-decoration: none;
+
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+
+  transition:
+    background-color 250ms ease,
+    border-color 250ms ease,
+    color 250ms ease;
+}
+
+.fabrics-hero__cta-icon {
+  display: inline-flex;
+  flex: 0 0 auto;
+
+  transition: transform 250ms ease;
+}
+
+.fabrics-hero__cta:hover {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #243146;
+}
+
+.fabrics-hero__cta:hover
+  .fabrics-hero__cta-icon {
+  transform: translate(3px, -3px);
+}
+
+/* --------------------------------------------------
+   BOTTOM
+-------------------------------------------------- */
+
+.fabrics-hero__bottom {
+  position: absolute;
+
+  left: 6vw;
+  right: 6vw;
+  bottom: 34px;
+
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+
+  font-family: var(--font-body);
+  font-size: max(12px, 9px);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.fabrics-hero__system {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.fabrics-hero__system i,
+.fabrics-hero__location i {
+  width: 3px;
+  height: 3px;
+
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.fabrics-hero__scroll {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.fabrics-hero__scroll-icon {
+  width: 27px;
+  height: 27px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 50%;
+}
+
+.fabrics-hero__location {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 11px;
+
+  color: rgba(255, 255, 255, 0.58);
+}
+
+/* --------------------------------------------------
+   CORNERS
+-------------------------------------------------- */
+
+.fabrics-hero__corner {
+  position: absolute;
+
+  width: 34px;
+  height: 34px;
+
+  opacity: 0.7;
+
+  pointer-events: none;
+}
+
+.fabrics-hero__corner--tl {
+  top: 78px;
+  left: 4vw;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.32);
+  border-left: 1px solid rgba(255, 255, 255, 0.32);
+}
+
+.fabrics-hero__corner--br {
+  right: 4vw;
+  bottom: 82px;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.32);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.32);
+}
+
+/* --------------------------------------------------
+   TABLET
+-------------------------------------------------- */
+
+@media (max-width: 1050px) {
+  .fabrics-hero__body {
+    grid-template-columns:
+      minmax(0, 1.2fr)
+      minmax(260px, 0.8fr);
+
+    gap: 5vw;
+  }
+
+  .fabrics-hero__title-wrap h1 {
+    font-size: clamp(62px, 9vw, 115px);
+  }
+}
+
+/* --------------------------------------------------
+   MOBILE
+-------------------------------------------------- */
+
+@media (max-width: 760px) {
+  .fabrics-hero {
+    min-height: 760px;
+    height: 100svh;
+  }
+
+  .fabrics-hero__media img {
+    object-position: 62% center;
+  }
+
+  .fabrics-hero__veil {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(36, 49, 70, 0.96) 0%,
+        rgba(36, 49, 70, 0.62) 100%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(36, 49, 70, 0.4) 0%,
+        rgba(36, 49, 70, 0.06) 44%,
+        rgba(36, 49, 70, 0.9) 100%
+      );
+  }
+
+  .fabrics-hero__grid {
+    opacity: 0.1;
+  }
+
+  .fabrics-hero__content {
+    padding: 25px 22px 120px;
+  }
+
+  .fabrics-hero__top {
+    font-size: max(12px, 8px);
+  }
+
+  .fabrics-hero__body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    gap: 42px;
+  }
+
+  .fabrics-hero__kicker {
+    margin-bottom: 17px;
+    font-size: max(12px, 9px);
+  }
+
+  .fabrics-hero__title-wrap h1 {
+    font-size: clamp(62px, 17vw, 92px);
+    line-height: 0.9;
+  }
+
+  .fabrics-hero__side {
+    max-width: 430px;
+    padding-top: 0;
+  }
+
+  .fabrics-hero__side p {
+    font-size: 12px;
+    line-height: 1.8;
+  }
+
+  .fabrics-hero__cta {
+    margin-top: 25px;
+    min-height: 48px;
+    padding: 0 20px;
+    font-size: max(12px, 9px);
+  }
+
+  .fabrics-hero__bottom {
+    left: 22px;
+    right: 22px;
+    bottom: 25px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 12px;
+
+    font-size: max(12px, 7px);
+  }
+
+  .fabrics-hero__scroll {
+    order: -1;
+  }
+
+  .fabrics-hero__location {
+    justify-content: flex-start;
+  }
+
+  .fabrics-hero__corner {
+    width: 24px;
+    height: 24px;
+  }
+
+  .fabrics-hero__corner--tl {
+    top: 70px;
+    left: 18px;
+  }
+
+  .fabrics-hero__corner--br {
+    right: 18px;
+    bottom: 74px;
+  }
+}
+
+/* --------------------------------------------------
+   REDUCED MOTION
+-------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .fabrics-hero__media img,
+  .fabrics-hero__cta-icon {
+    transition: none;
+    transform: none;
+  }
+}

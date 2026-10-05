@@ -1,0 +1,277 @@
+.clients {
+  position: relative;
+  overflow: hidden;
+
+  padding: 125px 0 0;
+
+  background: #ffffff;
+  color: #243146;
+}
+
+/* HEADER */
+
+.clients__header {
+  padding: 0 6vw;
+}
+
+.clients__eyebrow {
+  display: flex;
+  justify-content: space-between;
+
+  padding-bottom: 22px;
+
+  border-bottom: 1px solid rgba(36, 49, 70, 0.16);
+
+  font-family: var(--font-body);
+  font-size: max(12px, 10px);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.clients__eyebrow span:last-child {
+  color: rgba(36, 49, 70, 0.42);
+}
+
+.clients__intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.5fr);
+  gap: 9vw;
+
+  align-items: end;
+
+  padding: 75px 0 82px;
+}
+
+.clients__intro h2 {
+  margin: 0;
+
+  font-family: var(--font-heading);
+  font-size: clamp(55px, 7vw, 108px);
+  font-weight: 600;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.clients__intro h2 strong {
+  color: #243146;
+  font-weight: 600;
+}
+
+.clients__intro p {
+  max-width: 430px;
+
+  margin: 0 0 5px;
+
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.9;
+
+  color: rgba(36, 49, 70, 0.62);
+}
+
+/* MARQUEE */
+
+.clients__marquee {
+  position: relative;
+
+  width: 100%;
+
+  border-top: 1px solid rgba(36, 49, 70, 0.12);
+  border-bottom: 1px solid rgba(36, 49, 70, 0.12);
+
+  background: #f7f8f9;
+}
+
+.clients__track {
+  display: flex;
+
+  width: max-content;
+
+  will-change: transform;
+}
+
+.clients__track--forward {
+  animation: clients-forward 42s linear infinite;
+}
+
+.clients__track--reverse {
+  animation: clients-reverse 48s linear infinite;
+
+  border-top: 1px solid rgba(36, 49, 70, 0.1);
+}
+
+.clients__group {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.clients__logo {
+  width: 230px;
+  height: 130px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px 35px;
+
+  border-right: 1px solid rgba(36, 49, 70, 0.09);
+}
+
+.clients__logo img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  filter: grayscale(1);
+
+  opacity: 0.72;
+
+  transition:
+    opacity 220ms ease,
+    filter 220ms ease,
+    transform 220ms ease;
+}
+
+.clients__logo:hover img {
+  filter: grayscale(0);
+  opacity: 1;
+  transform: scale(1.04);
+}
+
+@keyframes clients-forward {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes clients-reverse {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* FOOTER */
+
+.clients__footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+
+  padding: 24px 6vw 28px;
+
+  font-family: var(--font-body);
+  font-size: max(12px, 8px);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+
+  color: rgba(36, 49, 70, 0.43);
+}
+
+.clients__footer i {
+  width: 3px;
+  height: 3px;
+
+  background: #243146;
+}
+
+/* TABLET */
+
+@media (max-width: 1000px) {
+  .clients {
+    padding-top: 100px;
+  }
+
+  .clients__header {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+
+  .clients__intro {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .clients__intro p {
+    max-width: 600px;
+  }
+
+  .clients__logo {
+    width: 200px;
+    height: 115px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 760px) {
+  .clients {
+    padding-top: 78px;
+  }
+
+  .clients__header {
+    padding: 0 22px;
+  }
+
+  .clients__eyebrow {
+    font-size: max(12px, 8px);
+    letter-spacing: 0.08em;
+  }
+
+  .clients__intro {
+    padding: 55px 0 60px;
+    gap: 32px;
+  }
+
+  .clients__intro h2 {
+    font-size: clamp(48px, 13vw, 68px);
+  }
+
+  .clients__intro p {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .clients__logo {
+    width: 155px;
+    height: 100px;
+
+    padding: 22px 27px;
+  }
+
+  .clients__track--forward {
+    animation-duration: 34s;
+  }
+
+  .clients__track--reverse {
+    animation-duration: 38s;
+  }
+
+  .clients__footer {
+    flex-wrap: wrap;
+
+    padding: 20px 22px 24px;
+
+    font-size: max(12px, 7px);
+    gap: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .clients__track {
+    animation: none;
+    transform: none;
+  }
+}
