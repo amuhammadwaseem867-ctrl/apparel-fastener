@@ -11,6 +11,7 @@ export async function POST(request) {
     const division = String(body.division || "").trim();
     const message = String(body.message || "").trim();
 
+    // Required fields
     if (!name || !email || !division || !message) {
       return Response.json(
         { error: "Please complete all required fields." },
@@ -18,6 +19,7 @@ export async function POST(request) {
       );
     }
 
+    // Email validation
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       return Response.json(
         { error: "Please enter a valid email address." },
@@ -25,8 +27,10 @@ export async function POST(request) {
       );
     }
 
+    // Environment variables
     if (!process.env.RESEND_API_KEY) {
       console.error("RESEND_API_KEY is missing.");
+
       return Response.json(
         { error: "Email service is not configured." },
         { status: 500 }
@@ -35,6 +39,7 @@ export async function POST(request) {
 
     if (!process.env.CONTACT_EMAIL) {
       console.error("CONTACT_EMAIL is missing.");
+
       return Response.json(
         { error: "Receiving email is not configured." },
         { status: 500 }
@@ -43,14 +48,17 @@ export async function POST(request) {
 
     if (!process.env.CONTACT_FROM_EMAIL) {
       console.error("CONTACT_FROM_EMAIL is missing.");
+
       return Response.json(
         { error: "Sender email is not configured." },
         { status: 500 }
       );
     }
 
+    // Initialize Resend
     const resend = new Resend(process.env.RESEND_API_KEY);
 
+    // Send email
     const { error } = await resend.emails.send({
       from: process.env.CONTACT_FROM_EMAIL,
       to: [process.env.CONTACT_EMAIL],
@@ -72,6 +80,7 @@ export async function POST(request) {
       ].join("\n"),
     });
 
+    // Resend error
     if (error) {
       console.error("Resend error:", error);
 
@@ -81,6 +90,7 @@ export async function POST(request) {
       );
     }
 
+    // Success
     return Response.json({
       success: true,
       message: "Your enquiry has been sent successfully.",
