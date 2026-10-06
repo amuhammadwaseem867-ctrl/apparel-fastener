@@ -8,21 +8,21 @@ const accessorySystems = [
     title: "FASTENING",
     description:
       "Components that bring garments together while supporting function, durability and ease of use.",
-    image: "/garments/detail.webp",
+    image: "/home/12%20%E2%80%94%20Zipper%20Macro.webp",
   },
   {
     number: "02",
     title: "STRUCTURE",
     description:
       "Supporting materials that influence garment shape, flexibility, stability and overall construction.",
-    image: "/garments/development.webp",
+    image: "/home/05%20%E2%80%94%20Fabric%20Inspection.webp",
   },
   {
     number: "03",
     title: "DETAIL",
     description:
       "Decorative and functional elements that add character, identity and finishing to the garment.",
-    image: "/garments/collection.webp",
+    image: "/home/09%20%E2%80%94%20Apparel%20Detail2.webp",
   },
 ];
 

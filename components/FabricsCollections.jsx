@@ -30,7 +30,6 @@ const wovenFabrics = [
   "Cambric",
   "Chiffon",
   "Crepe",
-  "Denim",
   "Flannel",
   "Sateen",
   "Lawn",

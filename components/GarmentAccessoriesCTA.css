@@ -1,234 +1,548 @@
 .accessories-cta {
   position: relative;
+  width: 100%;
   min-height: 100svh;
   overflow: hidden;
   background: #243146;
   color: #ffffff;
 }
 
-.accessories-cta__image {
-  position: absolute !important;
+/* =========================================================
+   MEDIA
+   ========================================================= */
+
+.accessories-cta__media {
+  position: absolute;
   inset: 0;
   z-index: 0;
+  overflow: hidden;
+}
+
+.accessories-cta__image {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
   object-fit: cover;
-  object-position: center;
+  object-position: center center;
+  transform: scale(1.055);
+  transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.accessories-cta:hover .accessories-cta__image {
+  transform: scale(1);
 }
 
 .accessories-cta__overlay {
   position: absolute;
   inset: 0;
   z-index: 1;
-
-  background:
-    linear-gradient(
-      90deg,
-      rgba(36, 49, 70, 0.94) 0%,
-      rgba(36, 49, 70, 0.82) 48%,
-      rgba(36, 49, 70, 0.48) 100%
-    );
+  background: rgba(36, 49, 70, 0.48);
 }
 
-.accessories-cta__grid {
+.accessories-cta__vignette {
   position: absolute;
   inset: 0;
   z-index: 2;
   pointer-events: none;
+  background:
+    radial-gradient(
+      ellipse at center,
+      transparent 35%,
+      rgba(0, 0, 0, 0.12) 100%
+    );
+}
+
+/* =========================================================
+   TECHNICAL GRID
+   ========================================================= */
+
+.accessories-cta__grid {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0.7;
 
   background-image:
     linear-gradient(
       90deg,
       transparent 0,
       transparent calc(50% - 0.5px),
-      rgba(255, 255, 255, 0.08) calc(50% - 0.5px),
-      rgba(255, 255, 255, 0.08) 50%,
+      rgba(255, 255, 255, 0.09) calc(50% - 0.5px),
+      rgba(255, 255, 255, 0.09) 50%,
       transparent 50%,
       transparent 100%
     );
 }
 
-.accessories-cta__content {
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.accessories-cta__container {
   position: relative;
-  z-index: 3;
+  z-index: 4;
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
+  width: calc(100% - 10vw);
+  max-width: 1360px;
   min-height: 100svh;
-  padding: 32px 6vw;
+
+  margin: 0 auto;
+  padding: 108px 0 34px;
 }
 
-/* TOP */
+/* =========================================================
+   TOP
+   ========================================================= */
 
 .accessories-cta__top {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 
-  padding-bottom: 24px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  width: 100%;
+}
+
+.accessories-cta__section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 
   font-family: var(--font-body);
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 500;
+  line-height: 1;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
-.accessories-cta__top span:last-child {
-  opacity: 0.55;
+.accessories-cta__section-number {
+  font-family: var(--font-heading);
+  font-weight: 600;
 }
 
-/* MAIN */
+.accessories-cta__section-line {
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.65);
+}
 
-.accessories-cta__main {
+.accessories-cta__brand {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+.accessories-cta__content {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(260px, 0.75fr);
+  gap: 7vw;
+  align-items: end;
+
   width: 100%;
-  max-width: 1100px;
-  padding: 100px 0;
+  padding: 70px 0 60px;
 }
+
+/* EYEBROW */
 
 .accessories-cta__eyebrow {
-  margin: 0 0 28px;
+  margin: 0 0 22px;
 
   font-family: var(--font-body);
   font-size: 12px;
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.08em;
-  color: rgba(255, 255, 255, 0.55);
-}
-
-.accessories-cta__main h1 {
-  margin: 0;
-
-  font-family: var(--font-heading);
-  font-size: clamp(58px, 8vw, 128px);
-  font-weight: 600;
-  line-height: 0.9;
-  letter-spacing: -0.02em;
-}
-
-.accessories-cta__description {
-  max-width: 560px;
-  margin: 48px 0 38px;
-
-  font-family: var(--font-body);
-  font-size: 14px;
-  line-height: 1.85;
   color: rgba(255, 255, 255, 0.68);
 }
 
-.accessories-cta__button {
+/* TITLE */
+
+.accessories-cta__title {
+  display: flex;
+  flex-direction: column;
+
+  margin: 0;
+
+  font-family: var(--font-heading);
+  font-size: clamp(64px, 7.2vw, 118px);
+  font-weight: 600;
+  line-height: 0.86;
+  letter-spacing: -0.055em;
+  text-transform: uppercase;
+}
+
+.accessories-cta__title span {
+  display: block;
+  white-space: nowrap;
+}
+
+/* COPY */
+
+.accessories-cta__copy {
+  align-self: end;
+  max-width: 390px;
+  padding-bottom: 5px;
+}
+
+.accessories-cta__copy p {
+  margin: 0 0 28px;
+
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.76);
+}
+
+/* CTA */
+
+.accessories-cta__link {
   display: inline-flex;
   align-items: center;
-  gap: 20px;
+  gap: 12px;
 
   width: fit-content;
-  padding: 16px 0;
 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.65);
+  padding-bottom: 9px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
 
   color: #ffffff;
-  text-decoration: none;
 
   font-family: var(--font-body);
   font-size: 12px;
   font-weight: 600;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  text-transform: uppercase;
 
   transition:
     gap 0.3s ease,
     border-color 0.3s ease;
 }
 
-.accessories-cta__button span {
-  font-size: 19px;
+.accessories-cta__arrow {
+  font-size: 17px;
   line-height: 1;
 }
 
-.accessories-cta__button:hover {
-  gap: 28px;
+.accessories-cta__link:hover {
+  gap: 18px;
   border-color: #ffffff;
 }
 
-/* BOTTOM */
+/* =========================================================
+   BOTTOM
+   ========================================================= */
 
 .accessories-cta__bottom {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 
-  padding-top: 24px;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  width: 100%;
+  padding-top: 18px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
 
   font-family: var(--font-body);
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.08em;
-  color: rgba(255, 255, 255, 0.52);
   text-transform: uppercase;
 }
 
-/* TABLET */
+.accessories-cta__locations {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
 
-@media (max-width: 900px) {
-  .accessories-cta__main {
-    max-width: 800px;
+.accessories-cta__locations i {
+  display: block;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.accessories-cta__label {
+  color: rgba(255, 255, 255, 0.62);
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+  .accessories-cta__content {
+    grid-template-columns: 1fr 0.65fr;
+    gap: 5vw;
   }
 
-  .accessories-cta__main h1 {
-    font-size: clamp(52px, 10vw, 92px);
+  .accessories-cta__title {
+    font-size: clamp(58px, 7.8vw, 92px);
+  }
+
+  .accessories-cta__copy {
+    max-width: 340px;
   }
 }
 
-/* MOBILE */
+/* =========================================================
+   MOBILE
+   ========================================================= */
 
-@media (max-width: 700px) {
-  .accessories-cta__content {
-    padding: 24px 6vw;
+@media (max-width: 768px) {
+  /*
+    GarmentsHero mobile master treatment:
+    controlled 16:9 hero instead of a stretched full-height section.
+  */
+
+  .accessories-cta {
+    min-height: 0;
+    aspect-ratio: 16 / 9;
+    height: auto;
   }
+
+  .accessories-cta__media {
+    position: absolute;
+    inset: 0;
+  }
+
+  /*
+    Catalogue image is landscape.
+    Keep the main garment/product area visible instead of
+    forcing a portrait-style crop.
+  */
+
+  .accessories-cta__image {
+    transform: none;
+    object-position: center center;
+  }
+
+  .accessories-cta:hover .accessories-cta__image {
+    transform: none;
+  }
+
+  .accessories-cta__overlay {
+    background: rgba(36, 49, 70, 0.52);
+  }
+
+  .accessories-cta__vignette {
+    background:
+      radial-gradient(
+        ellipse at center,
+        transparent 30%,
+        rgba(0, 0, 0, 0.14) 100%
+      );
+  }
+
+  .accessories-cta__grid {
+    opacity: 0.55;
+    background-image:
+      linear-gradient(
+        90deg,
+        transparent 0,
+        transparent calc(50% - 0.5px),
+        rgba(255, 255, 255, 0.08) calc(50% - 0.5px),
+        rgba(255, 255, 255, 0.08) 50%,
+        transparent 50%,
+        transparent 100%
+      );
+  }
+
+  .accessories-cta__container {
+    width: calc(100% - 10vw);
+    max-width: none;
+    min-height: 0;
+    height: 100%;
+    padding: 12px 0 10px;
+  }
+
+  /* TOP */
 
   .accessories-cta__top {
-    padding-bottom: 18px;
-    font-size: 12px;
+    align-items: center;
   }
 
-  .accessories-cta__top span:last-child {
-    display: none;
+  .accessories-cta__section {
+    gap: 7px;
+    font-size: 6.5px;
   }
 
-  .accessories-cta__main {
-    padding: 70px 0;
+  .accessories-cta__section-line {
+    width: 15px;
+  }
+
+  .accessories-cta__brand {
+    font-size: 6.5px;
+  }
+
+  /* MAIN */
+
+  .accessories-cta__content {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(90px, 0.42fr);
+    gap: 4vw;
+    align-items: end;
+
+    padding: 8px 0;
   }
 
   .accessories-cta__eyebrow {
-    margin-bottom: 22px;
-    font-size: 12px;
+    margin-bottom: 7px;
+    font-size: 6px;
+    line-height: 1.3;
+    letter-spacing: 0.07em;
   }
 
-  .accessories-cta__main h1 {
-    font-size: clamp(38px, 12vw, 50px);
-    line-height: 0.91;
+  .accessories-cta__title {
+    font-size: clamp(27px, 7vw, 48px);
+    line-height: 0.86;
+    letter-spacing: -0.055em;
   }
 
-  .accessories-cta__description {
-    margin: 35px 0 32px;
-    font-size: 13px;
-    line-height: 1.75;
+  .accessories-cta__title span {
+    white-space: nowrap;
   }
 
-  .accessories-cta__button {
-    font-size: 12px;
+  .accessories-cta__copy {
+    max-width: 155px;
+    padding-bottom: 0;
   }
+
+  .accessories-cta__copy p {
+    margin-bottom: 9px;
+    font-size: 6px;
+    line-height: 1.45;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .accessories-cta__link {
+    gap: 5px;
+    padding-bottom: 3px;
+    font-size: 6px;
+    letter-spacing: 0.04em;
+  }
+
+  .accessories-cta__arrow {
+    font-size: 8px;
+  }
+
+  /* BOTTOM */
 
   .accessories-cta__bottom {
-    padding-top: 18px;
-    font-size: 12px;
+    padding-top: 7px;
+    font-size: 6px;
+    letter-spacing: 0.07em;
   }
 
-  .accessories-cta__bottom span:first-child {
-    max-width: 160px;
+  .accessories-cta__locations {
+    gap: 5px;
+  }
+
+  .accessories-cta__locations i {
+    width: 2px;
+    height: 2px;
+  }
+
+  .accessories-cta__label {
+    text-align: right;
   }
 }
 
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
 
+@media (max-width: 480px) {
+  .accessories-cta__container {
+    width: calc(100% - 9vw);
+    padding-top: 10px;
+    padding-bottom: 8px;
+  }
+
+  .accessories-cta__section,
+  .accessories-cta__brand {
+    font-size: 6px;
+  }
+
+  .accessories-cta__content {
+    grid-template-columns: minmax(0, 1fr) minmax(82px, 0.4fr);
+    gap: 3vw;
+  }
+
+  .accessories-cta__eyebrow {
+    font-size: 5.5px;
+  }
+
+  .accessories-cta__title {
+    font-size: clamp(24px, 7vw, 34px);
+  }
+
+  .accessories-cta__copy {
+    max-width: 140px;
+  }
+
+  .accessories-cta__copy p {
+    font-size: 5.5px;
+  }
+
+  .accessories-cta__link {
+    font-size: 5.5px;
+  }
+
+  .accessories-cta__bottom {
+    font-size: 5.5px;
+  }
+}
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 375px) {
+  .accessories-cta__container {
+    width: calc(100% - 8vw);
+    padding-top: 8px;
+    padding-bottom: 7px;
+  }
+
+  .accessories-cta__content {
+    grid-template-columns: minmax(0, 1fr) minmax(75px, 0.38fr);
+  }
+
+  .accessories-cta__title {
+    font-size: 23px;
+  }
+
+  .accessories-cta__copy {
+    max-width: 125px;
+  }
+
+  .accessories-cta__copy p {
+    font-size: 5px;
+    line-height: 1.4;
+  }
+
+  .accessories-cta__link {
+    font-size: 5px;
+  }
+
+  .accessories-cta__bottom {
+    font-size: 5px;
+  }
+}

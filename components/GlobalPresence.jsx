@@ -9,7 +9,7 @@ const locations = [
     number: "01",
     city: "LAHORE",
     country: "PAKISTAN",
-    role: "MANUFACTURING",
+    role: "GLOBAL OFFICE",
     description:
       "Our Lahore base connects apparel manufacturing with production, development and finishing capabilities.",
     image: "/home/22%20%E2%80%94%20Factory%20Architecture.webp",

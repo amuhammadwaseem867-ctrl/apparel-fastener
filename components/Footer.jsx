@@ -121,9 +121,9 @@ export default function Footer() {
             </div>
 
             <p>
-              Rm 701-702, 7/F, Fu Fai Commercial Centre,
-              27 Hillier Street, Sheung Wan,
-              Hong Kong
+              UNIT 2406B, 24/F, LOW BLOCK,
+              GRAND MILLENNIUM PLAZA, 181 QUEEN'S ROAD CENTRAL,
+              SHEUNG WAN, HONG KONG
             </p>
 
             <a href="tel:+85298509479">
@@ -138,9 +138,9 @@ export default function Footer() {
             </div>
 
             <p>
-              Rm C214-C215, Poly International Plaza,
-              West Building, 686 Yuejiang Middle Road,
-              Haizhu District, Guangzhou, China
+              RM 1101, 11/F, BLOCK A,
+              GUANGZHOU INTERNATIONAL TRADE CENTER, 6 ZHONGXIN ROAD,
+              HAIZHU DISTRICT, GUANGZHOU, CHINA
             </p>
 
             <a href="tel:+862089637634">
@@ -155,8 +155,8 @@ export default function Footer() {
             </div>
 
             <p>
-              20 KM Ferozepur Road,
-              Lahore, Pakistan
+              33B PUNJAB SMALL INDUSTRIES CORPORATION,
+              SUNDER II, LAHORE, PAKISTAN
             </p>
 
             <a href="tel:+923134710325">

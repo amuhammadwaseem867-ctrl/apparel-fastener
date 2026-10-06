@@ -2,35 +2,34 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowUpRight, Phone, MapPin } from "lucide-react";
-import "./QualityPage.css";
+import { ArrowUpRight, MapPin } from "lucide-react";
 import "./ContactPage.css";
 
 const OFFICES = [
   {
     number: "01",
+    city: "Lahore",
     role: "MANUFACTURING",
-    city: "LAHORE",
-    address: "20 KM Ferozepur Road, Lahore, Pakistan",
+    address:
+      "33B PUNJAB SMALL INDUSTRIES CORPORATION, SUNDER II, LAHORE, PAKISTAN",
     phone: "+92 313 4710325",
     tel: "+923134710325",
   },
   {
     number: "02",
+    city: "Hong Kong",
     role: "GLOBAL OFFICE",
-    city: "HONG KONG",
     address:
-      "Rm 701-702, 7/F, Fu Fai Commercial Centre, 27 Hillier Street, Sheung Wan, Hong Kong",
+      "UNIT 2406B, 24/F, LOW BLOCK, GRAND MILLENNIUM PLAZA, 181 QUEEN'S ROAD CENTRAL, SHEUNG WAN, HONG KONG",
     phone: "+852 9850 9479",
     tel: "+85298509479",
   },
   {
     number: "03",
+    city: "Guangzhou",
     role: "GLOBAL OFFICE",
-    city: "GUANGZHOU",
     address:
-      "Rm C214-C215, Poly International Plaza, West Building, 686 Yuejiang Middle Road, Haizhu District, Guangzhou, China",
+      "RM 1101, 11/F, BLOCK A, GUANGZHOU INTERNATIONAL TRADE CENTER, 6 ZHONGXIN ROAD, HAIZHU DISTRICT, GUANGZHOU, CHINA",
     phone: "+86 20 8963 7634",
     tel: "+862089637634",
   },
@@ -45,445 +44,445 @@ const DIVISIONS = [
 
 export default function ContactPage() {
   const [status, setStatus] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
 
-    setStatus(
-      "Thank you. Your enquiry has been received — our team will contact you shortly."
-    );
+    if (isSubmitting) return;
 
-    event.currentTarget.reset();
+    const form = event.currentTarget;
+
+    setStatus("");
+    setIsSubmitting(true);
+
+    const formData = new FormData(form);
+
+    const payload = {
+      name: formData.get("name"),
+      company: formData.get("company"),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+      division: formData.get("division"),
+      message: formData.get("message"),
+    };
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(
+          result.error || "Unable to send your enquiry."
+        );
+      }
+
+      setStatus(
+        "Thank you. Your enquiry has been received — our team will contact you shortly."
+      );
+
+      form.reset();
+    } catch (error) {
+      console.error("Contact form error:", error);
+
+      setStatus(
+        error.message ||
+          "Something went wrong. Please try again."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
     <main className="contact-page">
-      {/* ==================================================
-          01 / HERO
-      ================================================== */}
-
-      <section
-        className="contact-hero af-hero"
-        style={{ "--hero-object-position": "center center", "--hero-mobile-object-position": "center center" }}
-      >
-        <div className="contact-hero__media af-hero__media" aria-hidden="true">
+      {/* =========================================================
+          HERO
+      ========================================================= */}
+      <section className="contact-hero af-hero">
+        <div className="contact-hero__media">
           <Image
             src="/home/26%20%E2%80%94%20Global%20Apparel.webp"
-            alt=""
+            alt="Apparel Fastener global apparel network"
             fill
             priority
-            quality={90}
             sizes="100vw"
+            className="contact-hero__image"
           />
+
+          <div className="contact-hero__overlay" />
+          <div className="contact-hero__vignette" />
         </div>
 
-        <div className="contact-hero__veil af-hero__overlay" />
+        <div className="contact-hero__grid" />
 
-        <div className="contact-hero__grid af-hero__grid" aria-hidden="true" />
+        <div className="contact-hero__content">
+          <div className="contact-hero__top">
+            <div className="contact-hero__eyebrow">
+              <span>06</span>
+              <span className="contact-hero__line" />
+              <span>CONTACT</span>
+            </div>
 
-        <div className="contact-hero__inner af-hero__content">
-          <div className="contact-hero__kicker af-hero__meta">
-            <span>APPAREL FASTENER</span>
-            <span>01 / CONTACT</span>
+            <span className="contact-hero__brand">
+              APPAREL FASTENER
+            </span>
           </div>
 
-          <div className="contact-hero__content af-hero__main">
-            <div className="af-hero__heading">
-              <p className="af-hero__eyebrow">GLOBAL APPAREL NETWORK</p>
-              <h1 className="contact-hero__title af-hero__title">
-                START A
-                <br />
-                <em>CONVERSATION.</em>
+          <div className="contact-hero__main">
+            <div className="contact-hero__heading">
+              <p className="contact-hero__kicker">
+                GLOBAL CONNECTIONS.
+              </p>
+
+              <h1 className="contact-hero__title">
+                <span>LET'S</span>
+                <span>BUILD</span>
+                <span>TOGETHER.</span>
               </h1>
             </div>
 
-            <div className="af-hero__info">
-              <span className="af-hero__info-line" />
-              <p className="contact-hero__lead">
-                Tell us what you are building. From garments and fabrics to
-                garment accessories, connect with the team closest to your
-                requirements.
+            <div className="contact-hero__copy">
+              <p>
+                From product development to production,
+                connect with our team to discuss your next
+                apparel requirement.
               </p>
 
               <a
                 href="#enquiry"
-                className="contact-hero__actions af-hero__button"
+                className="contact-hero__link"
               >
-                Send Enquiry
-
-                <span className="af-hero__button-icon">
-                  <ArrowUpRight
-                    size={17}
-                    strokeWidth={1.8}
-                  />
-                </span>
+                <span>Send Enquiry</span>
+                <ArrowUpRight
+                  size={18}
+                  strokeWidth={1.5}
+                />
               </a>
             </div>
           </div>
-        </div>
 
-        <div className="contact-hero__footer af-hero__bottom">
-          <span className="af-hero__categories">LAHORE · HONG KONG · GUANGZHOU</span>
-          <span className="af-hero__location">INTERNATIONAL APPAREL NETWORK</span>
-        </div>
-        <span className="af-hero__corner af-hero__corner--top" />
-        <span className="af-hero__corner af-hero__corner--bottom" />
-      </section>
-
-      {/* ==================================================
-          02 / GLOBAL OFFICES
-      ================================================== */}
-
-      <section className="contact-offices">
-        <div className="container">
-          <div className="contact-section-head">
-            <div>
-              <p className="contact-section-head__eyebrow">
-                <span>02</span>
-                GLOBAL OFFICES
-              </p>
-
-              <h2 className="contact-section-head__title">
-                REACH US
-                <br />
-                <em>DIRECTLY.</em>
-              </h2>
+          <div className="contact-hero__bottom">
+            <div className="contact-hero__locations">
+              <span>LAHORE</span>
+              <i />
+              <span>HONG KONG</span>
+              <i />
+              <span>CHINA</span>
             </div>
 
-            <p className="contact-section-head__description">
-              Our network connects manufacturing, development and
-              international operations across key apparel markets.
-            </p>
+            <span className="contact-hero__label">
+              GLOBAL APPAREL NETWORK
+            </span>
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================
+          OFFICES
+      ========================================================= */}
+      <section className="contact-offices">
+        <div className="contact-offices__intro">
+          <div className="contact-offices__eyebrow">
+            <span>01</span>
+            <span>OUR OFFICES</span>
           </div>
 
-          <div className="contact-offices__grid">
-            {OFFICES.map((office) => (
-              <article
-                className="contact-office"
-                key={office.number}
-              >
-                <div className="contact-office__top">
-                  <span className="contact-office__number">
-                    {office.number}
-                  </span>
+          <div className="contact-offices__heading">
+            <p>CONNECTED GLOBALLY.</p>
 
-                  <span className="contact-office__role">
-                    {office.role}
-                  </span>
-                </div>
+            <h2>
+              THREE LOCATIONS.
+              <br />
+              ONE NETWORK.
+            </h2>
+          </div>
 
-                <div className="contact-office__body">
-                  <h3 className="contact-office__city">
-                    {office.city}
-                  </h3>
+          <p className="contact-offices__description">
+            Our teams connect manufacturing, sourcing and
+            apparel development across key locations in
+            South Asia and East Asia.
+          </p>
+        </div>
 
-                  <div className="contact-office__address">
-                    <MapPin
-                      size={16}
-                      strokeWidth={1.5}
-                    />
+        <div className="contact-offices__grid">
+          {OFFICES.map((office) => (
+            <article
+              className="contact-office"
+              key={office.number}
+            >
+              <div className="contact-office__top">
+                <span>{office.number}</span>
+                <span>{office.role}</span>
+              </div>
 
-                    <p>{office.address}</p>
-                  </div>
+              <div className="contact-office__main">
+                <h3>{office.city}</h3>
+
+                <div className="contact-office__address">
+                  <MapPin
+                    size={16}
+                    strokeWidth={1.4}
+                  />
+
+                  <p>{office.address}</p>
                 </div>
 
                 <a
-                  className="contact-office__phone"
                   href={`tel:${office.tel}`}
-                  aria-label={`Call our ${office.city} office on ${office.phone}`}
+                  className="contact-office__phone"
                 >
-                  <span>Contact Office</span>
+                  {office.phone}
+                  <ArrowUpRight
+                    size={16}
+                    strokeWidth={1.4}
+                  />
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
 
-                  <strong>{office.phone}</strong>
+      {/* =========================================================
+          ENQUIRY
+      ========================================================= */}
+      <section
+        id="enquiry"
+        className="contact-enquiry"
+      >
+        <div className="contact-enquiry__intro">
+          <div className="contact-enquiry__eyebrow">
+            <span>02</span>
+            <span>START A CONVERSATION</span>
+          </div>
 
+          <div className="contact-enquiry__heading">
+            <p>TELL US WHAT YOU ARE BUILDING.</p>
+
+            <h2>
+              LET'S DISCUSS
+              <br />
+              YOUR NEXT PROJECT.
+            </h2>
+          </div>
+
+          <p className="contact-enquiry__description">
+            Share your requirements with our team. Whether
+            you are developing a new collection, sourcing
+            materials or looking for garment components,
+            we will connect you with the right division.
+          </p>
+        </div>
+
+        <div className="contact-enquiry__form-wrap">
+          <form
+            className="contact-form"
+            onSubmit={handleSubmit}
+          >
+            {/* NAME */}
+            <div className="contact-form__field">
+              <label htmlFor="name">
+                Name <span>*</span>
+              </label>
+
+              <input
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Your name"
+                autoComplete="name"
+                required
+              />
+            </div>
+
+            {/* COMPANY */}
+            <div className="contact-form__field">
+              <label htmlFor="company">
+                Company
+              </label>
+
+              <input
+                id="company"
+                name="company"
+                type="text"
+                placeholder="Company name"
+                autoComplete="organization"
+              />
+            </div>
+
+            {/* EMAIL */}
+            <div className="contact-form__field">
+              <label htmlFor="email">
+                Email <span>*</span>
+              </label>
+
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="you@company.com"
+                autoComplete="email"
+                required
+              />
+            </div>
+
+            {/* PHONE */}
+            <div className="contact-form__field">
+              <label htmlFor="phone">
+                Phone
+              </label>
+
+              <input
+                id="phone"
+                name="phone"
+                type="tel"
+                placeholder="+92"
+                autoComplete="tel"
+              />
+            </div>
+
+            {/* DIVISION */}
+            <div className="contact-form__field">
+              <label htmlFor="division">
+                Division <span>*</span>
+              </label>
+
+              <select
+                id="division"
+                name="division"
+                defaultValue=""
+                required
+              >
+                <option
+                  value=""
+                  disabled
+                >
+                  Select a division
+                </option>
+
+                {DIVISIONS.map((division) => (
+                  <option
+                    key={division}
+                    value={division}
+                  >
+                    {division}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            {/* MESSAGE */}
+            <div className="contact-form__field contact-form__field--message">
+              <label htmlFor="message">
+                Message <span>*</span>
+              </label>
+
+              <textarea
+                id="message"
+                name="message"
+                rows="6"
+                placeholder="Tell us about your project, requirements or enquiry."
+                required
+              />
+            </div>
+
+            {/* SUBMIT */}
+            <div className="contact-form__submit-wrap">
+              <button
+                type="submit"
+                className="contact-form__submit"
+                disabled={isSubmitting}
+              >
+                <span>
+                  {isSubmitting
+                    ? "Sending..."
+                    : "Send an Enquiry"}
+                </span>
+
+                {!isSubmitting && (
                   <ArrowUpRight
                     size={18}
                     strokeWidth={1.5}
                   />
-                </a>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ==================================================
-          03 / ENQUIRY
-      ================================================== */}
-
-      <section
-        className="contact-form-section"
-        id="enquiry"
-      >
-        <div className="container">
-          <div className="contact-form-section__top">
-            <p className="contact-section-head__eyebrow">
-              <span>03</span>
-              Send an Enquiry
-            </p>
-
-            <div className="contact-form-section__heading">
-              <h2 className="contact-form-section__title">
-                TELL US ABOUT
-                <br />
-                <em>YOUR PROJECT.</em>
-              </h2>
-
-              <p className="contact-form-section__intro">
-                Share your requirements, application and development
-                needs. We will connect your enquiry with the relevant
-                Apparel Fastener division.
-              </p>
-            </div>
-          </div>
-
-          <div className="contact-form-section__layout">
-            <aside className="contact-form-aside">
-              <div className="contact-form-aside__line" />
-
-              <p className="contact-form-aside__label">
-                What We Work With
-              </p>
-
-              <ul className="contact-form-aside__list">
-                <li>
-                  <span>01</span>
-                  Garments
-                </li>
-
-                <li>
-                  <span>02</span>
-                  Fabrics
-                </li>
-
-                <li>
-                  <span>03</span>
-                  Garment Accessories
-                </li>
-
-                <li>
-                  <span>04</span>
-                  Multiple Divisions
-                </li>
-              </ul>
-
-              <div className="contact-form-aside__contact">
-                <p>Direct Contact</p>
-
-                <a href="tel:+923134710325">
-                  +92 313 4710325
-                </a>
-              </div>
-            </aside>
-
-            <form
-              className="contact-form"
-              onSubmit={handleSubmit}
-            >
-              <div className="contact-form__row">
-                <div className="contact-form__field">
-                  <label
-                    className="contact-form__label"
-                    htmlFor="contact-name"
-                  >
-                    Name <span>*</span>
-                  </label>
-
-                  <input
-                    className="contact-form__input"
-                    id="contact-name"
-                    name="name"
-                    type="text"
-                    autoComplete="name"
-                    placeholder="Your name"
-                    required
-                  />
-                </div>
-
-                <div className="contact-form__field">
-                  <label
-                    className="contact-form__label"
-                    htmlFor="contact-company"
-                  >
-                    Company
-                  </label>
-
-                  <input
-                    className="contact-form__input"
-                    id="contact-company"
-                    name="company"
-                    type="text"
-                    autoComplete="organization"
-                    placeholder="Company name"
-                  />
-                </div>
-              </div>
-
-              <div className="contact-form__row">
-                <div className="contact-form__field">
-                  <label
-                    className="contact-form__label"
-                    htmlFor="contact-email"
-                  >
-                    Email <span>*</span>
-                  </label>
-
-                  <input
-                    className="contact-form__input"
-                    id="contact-email"
-                    name="email"
-                    type="email"
-                    autoComplete="email"
-                    placeholder="you@company.com"
-                    required
-                  />
-                </div>
-
-                <div className="contact-form__field">
-                  <label
-                    className="contact-form__label"
-                    htmlFor="contact-phone"
-                  >
-                    Phone
-                  </label>
-
-                  <input
-                    className="contact-form__input"
-                    id="contact-phone"
-                    name="phone"
-                    type="tel"
-                    autoComplete="tel"
-                    placeholder="+92"
-                  />
-                </div>
-              </div>
-
-              <div className="contact-form__field">
-                <label
-                  className="contact-form__label"
-                  htmlFor="contact-division"
-                >
-                  Division <span>*</span>
-                </label>
-
-                <select
-                  className="contact-form__select"
-                  id="contact-division"
-                  name="division"
-                  defaultValue=""
-                  required
-                >
-                  <option value="" disabled>
-                    Select a division
-                  </option>
-
-                  {DIVISIONS.map((division) => (
-                    <option
-                      key={division}
-                      value={division}
-                    >
-                      {division}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <div className="contact-form__field">
-                <label
-                  className="contact-form__label"
-                  htmlFor="contact-message"
-                >
-                  Message <span>*</span>
-                </label>
-
-                <textarea
-                  className="contact-form__textarea"
-                  id="contact-message"
-                  name="message"
-                  placeholder="Tell us about your project, requirements or development needs."
-                  required
-                />
-              </div>
-
-              <div className="contact-form__bottom">
-                <p className="contact-form__required">
-                  <span>*</span> Required fields
-                </p>
-
-                <button
-                  type="submit"
-                  className="af-button af-button--navy"
-                >
-                  Send an Enquiry
-
-                  <span className="af-button__icon">
-                    <ArrowUpRight
-                      size={17}
-                      strokeWidth={1.8}
-                    />
-                  </span>
-                </button>
-              </div>
+                )}
+              </button>
 
               {status && (
                 <p
                   className="contact-form__status"
-                  role="status"
+                  aria-live="polite"
                 >
                   {status}
                 </p>
               )}
-            </form>
-          </div>
+            </div>
+          </form>
         </div>
       </section>
 
-      {/* ==================================================
-          04 / FINAL CTA
-      ================================================== */}
-
-      <section className="contact-final">
-        <div className="contact-final__media" aria-hidden="true">
+      {/* =========================================================
+          FINAL CTA
+      ========================================================= */}
+      <section className="contact-final-cta">
+        <div className="contact-final-cta__media">
           <Image
-            src="/home/26%20%E2%80%94%20Global%20Apparel.webp"
-            alt=""
+            src="/home/22%20%E2%80%94%20Factory%20Architecture.webp"
+            alt="Apparel Fastener manufacturing facility"
             fill
-            quality={82}
             sizes="100vw"
+            className="contact-final-cta__image"
           />
+
+          <div className="contact-final-cta__overlay" />
+          <div className="contact-final-cta__grid" />
         </div>
 
-        <div className="contact-final__veil" />
+        <div className="contact-final-cta__content">
+          <div className="contact-final-cta__top">
+            <span>03 / CONNECT</span>
+            <span>APPAREL FASTENER</span>
+          </div>
 
-        <div className="contact-final__inner">
-          <p className="contact-final__eyebrow">
-            APPAREL FASTENER
-          </p>
+          <div className="contact-final-cta__main">
+            <p className="contact-final-cta__eyebrow">
+              GLOBAL APPAREL CONNECTIONS.
+            </p>
 
-          <h2 className="contact-final__title">
-            LET&apos;S BUILD
-            <br />
-            <em>WHAT&apos;S NEXT.</em>
-          </h2>
+            <h2>
+              <span>LET'S START</span>
+              <span>THE NEXT</span>
+              <span>PROJECT.</span>
+            </h2>
 
-          <p className="contact-final__copy">
-            From the first requirement to the finished product,
-            our teams are ready to support your next development.
-          </p>
-
-          <a
-            href="#enquiry"
-            className="af-button"
-          >
-            Start a Conversation
-
-            <span className="af-button__icon">
+            <a
+              href="#enquiry"
+              className="contact-final-cta__link"
+            >
+              <span>Send an Enquiry</span>
               <ArrowUpRight
-                size={17}
-                strokeWidth={1.8}
+                size={18}
+                strokeWidth={1.5}
               />
+            </a>
+          </div>
+
+          <div className="contact-final-cta__bottom">
+            <span>
+              LAHORE · HONG KONG · GUANGZHOU
             </span>
-          </a>
+
+            <span>
+              APPAREL / FABRICS / ACCESSORIES
+            </span>
+          </div>
         </div>
       </section>
     </main>
