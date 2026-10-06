@@ -1,68 +1,54 @@
-"use client";
-
-import { useEffect, useRef } from "react";
+import Image from "next/image";
 import Link from "next/link";
-import "./AboutHero.css";
 
 export default function AboutHero() {
-  const sectionRef = useRef(null);
-
-  useEffect(() => {
-    const section = sectionRef.current;
-
-    if (!section) return;
-
-    const timer = window.setTimeout(() => {
-      section.classList.add("about-hero--visible");
-    }, 80);
-
-    return () => window.clearTimeout(timer);
-  }, []);
-
   return (
     <section
-      ref={sectionRef}
-      className="about-hero"
+      className="about-hero af-hero"
+      style={{ "--hero-object-position": "center center", "--hero-mobile-object-position": "center center" }}
     >
-      <div className="about-hero__media">
-        <img
+      <div className="about-hero__media af-hero__media">
+        <Image
           src="/home/22%20%E2%80%94%20Factory%20Architecture.webp"
           alt="Apparel Fastener manufacturing facility"
-          className="about-hero__image"
+          fill
+          priority
+          sizes="100vw"
+          className="about-hero__image af-hero__image"
         />
 
-        <div className="about-hero__overlay" />
-        <div className="about-hero__vignette" />
+        <div className="about-hero__overlay af-hero__overlay" />
       </div>
 
-      <div className="about-hero__grid" />
+      <div className="about-hero__grid af-hero__grid" />
 
-      <div className="about-hero__container">
+      <div className="about-hero__container af-hero__content">
 
-        <div className="about-hero__top">
+        {/* TOP */}
 
-          <div className="about-hero__eyebrow">
-            <span className="about-hero__eyebrow-line" />
-            <span>ABOUT APPAREL FASTENER</span>
-          </div>
-
-          <span className="about-hero__index">
+        <div className="about-hero__top af-hero__meta">
+          <span>APPAREL FASTENER</span>
+          <span className="about-hero__brand">
             01 / ABOUT
           </span>
-
         </div>
 
-        <div className="about-hero__content">
+        {/* MAIN CONTENT */}
 
-          <h1 className="about-hero__title">
+        <div className="about-hero__content af-hero__main">
+
+          <div className="af-hero__heading">
+          <span className="af-hero__eyebrow">CONNECTED APPAREL</span>
+          <h1 className="about-hero__title af-hero__title">
             <span>ONE</span>
             <span>CONNECTED</span>
-            <span><em>APPAREL</em></span>
+            <span>APPAREL</span>
             <span>SYSTEM.</span>
           </h1>
+          </div>
 
-          <div className="about-hero__copy">
-
+          <div className="about-hero__copy af-hero__info">
+            <span className="af-hero__info-line" />
             <p>
               Apparel Fastener brings together garments,
               fabrics and garment accessories through one
@@ -71,19 +57,20 @@ export default function AboutHero() {
 
             <Link
               href="#story"
-              className="about-hero__link"
+              className="about-hero__link af-hero__button"
             >
-              <span>Discover Our Story</span>
-              <span>↓</span>
+              <span>Our Story</span>
+              <span className="about-hero__arrow af-hero__button-icon">↗</span>
             </Link>
-
           </div>
 
         </div>
 
-        <div className="about-hero__bottom">
+        {/* BOTTOM */}
 
-          <div className="about-hero__locations">
+        <div className="about-hero__bottom af-hero__bottom">
+
+          <div className="about-hero__locations af-hero__categories">
             <span>LAHORE</span>
             <i />
             <span>HONG KONG</span>
@@ -98,6 +85,9 @@ export default function AboutHero() {
         </div>
 
       </div>
+
+      <span className="af-hero__corner af-hero__corner--top" />
+      <span className="af-hero__corner af-hero__corner--bottom" />
     </section>
   );
 }

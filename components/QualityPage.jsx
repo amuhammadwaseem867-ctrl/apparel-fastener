@@ -48,8 +48,11 @@ export default function QualityPage() {
           01 / HERO
       ================================================== */}
 
-      <section className="quality-hero">
-        <div className="quality-hero__media" aria-hidden="true">
+      <section
+        className="quality-hero af-hero"
+        style={{ "--hero-object-position": "center center", "--hero-mobile-object-position": "center center" }}
+      >
+        <div className="quality-hero__media af-hero__media" aria-hidden="true">
           <Image
             src="/home/15%20%E2%80%94%20Quality%20Control.webp"
             alt=""
@@ -60,31 +63,46 @@ export default function QualityPage() {
           />
         </div>
 
-        <div className="quality-hero__veil" aria-hidden="true" />
+        <div className="quality-hero__veil af-hero__overlay" aria-hidden="true" />
+        <div className="af-hero__grid" aria-hidden="true" />
 
-        <div className="quality-hero__inner">
-          <p className="quality-hero__kicker">01 / QUALITY</p>
+        <div className="quality-hero__inner af-hero__content">
+          <div className="quality-hero__kicker af-hero__meta">
+            <span>APPAREL FASTENER</span>
+            <span>01 / QUALITY</span>
+          </div>
 
-          <h1 className="quality-hero__title">
-            BUILT INTO
-            <br />
-            THE <em>PROCESS.</em>
-          </h1>
+          <div className="quality-hero__main af-hero__main">
+            <div className="af-hero__heading">
+              <p className="af-hero__eyebrow">QUALITY CONTROL</p>
+              <h1 className="quality-hero__title af-hero__title">
+                BUILT INTO
+                <br />
+                THE <em>PROCESS.</em>
+              </h1>
+            </div>
 
-          <p className="quality-hero__lead">
-            Quality is not applied at the end of a process. It is built
-            into every stage — from the materials we receive to the
-            finished garment that leaves our floor.
-          </p>
+            <div className="af-hero__info">
+              <span className="af-hero__info-line" />
+              <p className="quality-hero__lead">
+                Quality is not applied at the end of a process. It is built
+                into every stage — from the materials we receive to the
+                finished garment that leaves our floor.
+              </p>
 
-          <QualityButton href="/contact">
-            Start a Conversation
-          </QualityButton>
+              <Link href="/contact" className="af-hero__button">
+                <span>Discuss Quality</span>
+                <span className="af-hero__button-icon" aria-hidden="true">
+                  <ArrowUpRight size={17} strokeWidth={1.8} />
+                </span>
+              </Link>
+            </div>
+          </div>
         </div>
 
-        <div className="quality-hero__footer">
-          <span>INSPECTION / MEASUREMENT / CONTROL</span>
-          <span>LAHORE · PAKISTAN</span>
+        <div className="quality-hero__footer af-hero__bottom">
+          <span className="af-hero__categories">INSPECTION / MEASUREMENT / CONTROL</span>
+          <span className="af-hero__location">LAHORE · PAKISTAN</span>
         </div>
       </section>
 

@@ -1,5 +1,6 @@
 import { Montserrat, Poppins } from "next/font/google";
 import "./globals.css";
+import "@/components/EditorialHero.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";

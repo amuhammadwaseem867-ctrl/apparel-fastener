@@ -1,111 +1,76 @@
-"use client";
-
-import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import "./Hero.css";
 
 export default function Hero() {
-  const heroRef = useRef(null);
-  const imageRef = useRef(null);
-  const contentRef = useRef(null);
-
-  useEffect(() => {
-    const hero = heroRef.current;
-    const image = imageRef.current;
-    const content = contentRef.current;
-
-    if (!hero || !image || !content) return;
-
-    if (window.matchMedia("(hover: none)").matches) return;
-
-    const handleMove = (event) => {
-      const rect = hero.getBoundingClientRect();
-
-      const x = (event.clientX - rect.left) / rect.width - 0.5;
-      const y = (event.clientY - rect.top) / rect.height - 0.5;
-
-      image.style.transform = `
-        scale(1.055)
-        translate3d(${x * -12}px, ${y * -8}px, 0)
-      `;
-
-      content.style.setProperty("--mx", `${x * 5}px`);
-      content.style.setProperty("--my", `${y * 3}px`);
-    };
-
-    const reset = () => {
-      image.style.transform =
-        "scale(1.055) translate3d(0, 0, 0)";
-
-      content.style.setProperty("--mx", "0px");
-      content.style.setProperty("--my", "0px");
-    };
-
-    hero.addEventListener("mousemove", handleMove);
-    hero.addEventListener("mouseleave", reset);
-
-    return () => {
-      hero.removeEventListener("mousemove", handleMove);
-      hero.removeEventListener("mouseleave", reset);
-    };
-  }, []);
-
   return (
-    <section ref={heroRef} className="hero">
+    <section className="hero af-hero" style={{ "--hero-object-position": "center center", "--hero-mobile-object-position": "center center" }}>
       {/* Background */}
-      <div className="hero__media">
+
+      <div className="hero__media af-hero__media">
         <Image
-          ref={imageRef}
           src="/home/01%20%E2%80%94%20Hero%20Factory.webp"
           alt="Apparel Fastener manufacturing facility"
           fill
           priority
           quality={92}
           sizes="100vw"
-          className="hero__image"
+          className="hero__image af-hero__image"
         />
 
-        <div className="hero__overlay" />
-        <div className="hero__vignette" />
+        <div className="hero__overlay af-hero__overlay" />
       </div>
 
-      {/* Minimal editorial lines */}
-      <div className="hero__line hero__line--left" />
-      <div className="hero__line hero__line--bottom" />
+      <div className="hero__grid af-hero__grid" />
 
       {/* Main Content */}
-      <div ref={contentRef} className="hero__content">
-        <div className="hero__eyebrow">
-          <span className="hero__eyebrow-line" />
+
+      <div className="hero__content af-hero__content">
+        <div className="hero__eyebrow af-hero__meta">
           <span>APPAREL FASTENER</span>
+          <span>01 / HOME</span>
         </div>
 
-        <h1 className="hero__title">
-          <span>ENGINEERED</span>
-          <span>FOR</span>
-          <span className="hero__title-accent">APPAREL.</span>
-        </h1>
+        <div className="hero__main af-hero__main">
+          <div className="hero__heading af-hero__heading">
+            <p className="hero__kicker af-hero__eyebrow">
+              ENGINEERED APPAREL COMPONENTS
+            </p>
 
-        <div className="hero__action">
-          <Link href="/about" className="hero__cta">
-            <span>Explore Our World</span>
-            <span className="hero__arrow">↗</span>
-          </Link>
+            <h1 className="hero__title af-hero__title">
+              <span>ENGINEERED</span>
+              <span>FOR</span>
+              <span className="hero__title-accent">
+                APPAREL.
+              </span>
+            </h1>
+          </div>
+
+          <div className="hero__side af-hero__info">
+            <div className="hero__side-line af-hero__info-line" />
+
+            <p>
+              Precision fasteners engineered for apparel
+              manufacturers, designers and global production
+              networks.
+            </p>
+
+            <Link href="/about" className="hero__cta af-hero__button">
+              <span>EXPLORE WORLD</span>
+
+              <span className="hero__arrow af-hero__button-icon">
+                ↗
+              </span>
+            </Link>
+          </div>
         </div>
       </div>
 
       {/* Bottom Information */}
-      <div className="hero__bottom">
-        <div className="hero__scroll">
-          <span className="hero__scroll-line">
-            <span />
-          </span>
 
-          <span>SCROLL TO EXPLORE</span>
-        </div>
+      <div className="hero__bottom af-hero__bottom">
+        <span>APPAREL / MATERIAL / COMPONENTS</span>
 
-        <div className="hero__locations">
+        <div className="hero__locations af-hero__categories">
           <span>LAHORE</span>
           <i />
           <span>HONG KONG</span>
@@ -113,6 +78,11 @@ export default function Hero() {
           <span>CHINA</span>
         </div>
       </div>
+
+      {/* Corners */}
+
+      <span className="af-hero__corner af-hero__corner--top" />
+      <span className="af-hero__corner af-hero__corner--bottom" />
     </section>
   );
 }

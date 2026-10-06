@@ -85,7 +85,7 @@
 @media (max-width: 900px) {
   .about-presence__visual {
     min-height: 0;
-    aspect-ratio: 1.05 / 1;
+    aspect-ratio: 16 / 9;
   }
 }
 
@@ -251,7 +251,7 @@
   }
 
   .about-presence__visual {
-    min-height: 520px;
+    min-height: 0;
   }
 
   .about-presence__locations {
@@ -317,7 +317,7 @@
   }
 
   .about-presence__visual {
-    min-height: 430px;
+    min-height: 0;
   }
 
   .about-presence__visual-overlay {
@@ -356,5 +356,4 @@
     transition: none;
   }
 }
-
 

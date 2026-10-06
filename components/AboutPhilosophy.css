@@ -80,7 +80,7 @@
 @media (max-width: 900px) {
   .about-philosophy__image-wrap {
     min-height: 0;
-    aspect-ratio: 1.05 / 1;
+    aspect-ratio: 16 / 9;
   }
 }
 
@@ -190,7 +190,7 @@
   }
 
   .about-philosophy__image-wrap {
-    min-height: 500px;
+    min-height: 0;
   }
 
   .about-philosophy__closing {
@@ -236,7 +236,7 @@
   }
 
   .about-philosophy__image-wrap {
-    min-height: 390px;
+    min-height: 0;
   }
 
   .about-philosophy__principle {
@@ -272,5 +272,4 @@
     transition: none;
   }
 }
-
 

@@ -62,8 +62,11 @@ export default function ContactPage() {
           01 / HERO
       ================================================== */}
 
-      <section className="contact-hero">
-        <div className="contact-hero__media" aria-hidden="true">
+      <section
+        className="contact-hero af-hero"
+        style={{ "--hero-object-position": "center center", "--hero-mobile-object-position": "center center" }}
+      >
+        <div className="contact-hero__media af-hero__media" aria-hidden="true">
           <Image
             src="/home/26%20%E2%80%94%20Global%20Apparel.webp"
             alt=""
@@ -74,37 +77,41 @@ export default function ContactPage() {
           />
         </div>
 
-        <div className="contact-hero__veil" />
+        <div className="contact-hero__veil af-hero__overlay" />
 
-        <div className="contact-hero__grid" aria-hidden="true" />
+        <div className="contact-hero__grid af-hero__grid" aria-hidden="true" />
 
-        <div className="contact-hero__inner">
-          <div className="contact-hero__content">
-            <p className="contact-hero__kicker">
-              <span>01</span>
-              CONTACT
-            </p>
+        <div className="contact-hero__inner af-hero__content">
+          <div className="contact-hero__kicker af-hero__meta">
+            <span>APPAREL FASTENER</span>
+            <span>01 / CONTACT</span>
+          </div>
 
-            <h1 className="contact-hero__title">
-              START A
-              <br />
-              <em>CONVERSATION.</em>
-            </h1>
+          <div className="contact-hero__content af-hero__main">
+            <div className="af-hero__heading">
+              <p className="af-hero__eyebrow">GLOBAL APPAREL NETWORK</p>
+              <h1 className="contact-hero__title af-hero__title">
+                START A
+                <br />
+                <em>CONVERSATION.</em>
+              </h1>
+            </div>
 
-            <p className="contact-hero__lead">
-              Tell us what you are building. From garments and fabrics to
-              garment accessories, connect with the team closest to your
-              requirements.
-            </p>
+            <div className="af-hero__info">
+              <span className="af-hero__info-line" />
+              <p className="contact-hero__lead">
+                Tell us what you are building. From garments and fabrics to
+                garment accessories, connect with the team closest to your
+                requirements.
+              </p>
 
-            <div className="contact-hero__actions">
               <a
                 href="#enquiry"
-                className="af-button"
+                className="contact-hero__actions af-hero__button"
               >
-                Send an Enquiry
+                Send Enquiry
 
-                <span className="af-button__icon">
+                <span className="af-hero__button-icon">
                   <ArrowUpRight
                     size={17}
                     strokeWidth={1.8}
@@ -115,10 +122,12 @@ export default function ContactPage() {
           </div>
         </div>
 
-        <div className="contact-hero__footer">
-          <span>LAHORE · HONG KONG · GUANGZHOU</span>
-          <span>INTERNATIONAL APPAREL NETWORK</span>
+        <div className="contact-hero__footer af-hero__bottom">
+          <span className="af-hero__categories">LAHORE · HONG KONG · GUANGZHOU</span>
+          <span className="af-hero__location">INTERNATIONAL APPAREL NETWORK</span>
         </div>
+        <span className="af-hero__corner af-hero__corner--top" />
+        <span className="af-hero__corner af-hero__corner--bottom" />
       </section>
 
       {/* ==================================================
