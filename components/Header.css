@@ -1,721 +1,638 @@
 /* =========================================================
-   APPAREL FASTENER
-   PREMIUM EDITORIAL HEADER
-========================================================= */
+   APPAREL FASTENER — HEADER
+   ========================================================= */
 
 .header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-
   z-index: 1000;
-
   width: 100%;
-
-  color: #ffffff;
-  background: transparent;
-
+  color: #243146;
+  background: #fff;
+  border-bottom: 1px solid transparent;
   transition:
-    background-color 0.35s ease,
-    color 0.35s ease,
-    box-shadow 0.35s ease;
+    background-color 0.4s ease,
+    color 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
 }
 
+/* =========================================================
+   HERO STATE
+   Header over homepage hero
+   ========================================================= */
+
+.header--hero {
+  color: #fff;
+  background: #243146;
+  border-bottom-color: rgba(255, 255, 255, 0.14);
+  box-shadow: none;
+}
+
+.header--hero .header__office-bar {
+  border-bottom-color: rgba(255, 255, 255, 0.14);
+}
+
+.header--hero .header__office {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.header--hero .header__office:hover {
+  color: #fff;
+}
+
+.header--hero .header__office-number {
+  color: rgba(255, 255, 255, 0.42);
+}
+
+.header--hero .header__office-city {
+  color: #fff;
+  font-weight: 700;
+}
+
+.header--hero .header__office-phone {
+  color: rgba(255, 255, 255, 0.58);
+}
+
+.header--hero .header__office-network {
+  color: rgba(255, 255, 255, 0.46);
+}
+
+.header--hero .header__nav-item {
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.header--hero .header__nav-item:hover,
+.header--hero .header__nav-item--active {
+  color: #fff;
+}
+
+.header--hero .header__nav-number {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.header--hero .header__nav-item:hover .header__nav-number,
+.header--hero .header__nav-item--active .header__nav-number {
+  color: #fff;
+}
+
+.header--hero .header__nav-item::after {
+  background: #fff;
+}
+
+.header--hero .header__cta {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.38);
+}
+
+.header--hero .header__cta:hover {
+  background: #fff;
+  color: #243146;
+  border-color: #fff;
+}
+
+.header--hero .header__cta-icon {
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
+.header--hero .header__menu-button {
+  color: #fff;
+}
 
 /* =========================================================
-   TOP OFFICE BAR
-========================================================= */
+   LIGHT STATE
+   Header after hero / internal pages
+   ========================================================= */
+
+.header--light {
+  color: #243146;
+  background: #fff;
+  border-bottom-color: rgba(36, 49, 70, 0.1);
+  box-shadow: 0 2px 14px rgba(36, 49, 70, 0.06);
+}
+
+.header--light .header__office-bar {
+  border-bottom-color: rgba(36, 49, 70, 0.1);
+}
+
+.header--light .header__office {
+  color: rgba(36, 49, 70, 0.7);
+}
+
+.header--light .header__office:hover {
+  color: #243146;
+}
+
+.header--light .header__office-number {
+  color: rgba(36, 49, 70, 0.38);
+}
+
+.header--light .header__office-city {
+  color: #243146;
+  font-weight: 700;
+}
+
+.header--light .header__office-phone {
+  color: rgba(36, 49, 70, 0.52);
+}
+
+.header--light .header__office-network {
+  color: rgba(36, 49, 70, 0.42);
+}
+
+.header--light .header__nav-item {
+  color: rgba(36, 49, 70, 0.78);
+}
+
+.header--light .header__nav-item:hover,
+.header--light .header__nav-item--active {
+  color: #243146;
+}
+
+.header--light .header__nav-number {
+  color: rgba(36, 49, 70, 0.38);
+}
+
+.header--light .header__nav-item:hover .header__nav-number,
+.header--light .header__nav-item--active .header__nav-number {
+  color: #243146;
+}
+
+.header--light .header__nav-item::after {
+  background: #243146;
+}
+
+.header--light .header__cta {
+  color: #243146;
+  border-color: rgba(36, 49, 70, 0.25);
+}
+
+.header--light .header__cta:hover {
+  background: #243146;
+  color: #fff;
+  border-color: #243146;
+}
+
+.header--light .header__cta-icon {
+  border-color: rgba(36, 49, 70, 0.3);
+}
+
+.header--light .header__menu-button {
+  color: #243146;
+}
+
+/* =========================================================
+   OFFICE BAR
+   ========================================================= */
 
 .header__office-bar {
   width: 100%;
-  min-height: 34px;
-
-  padding: 0 5vw;
-
+  min-height: 32px;
+  padding: 0 4vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
-
-  font-family: "Poppins", sans-serif;
+  gap: 30px;
+  border-bottom: 1px solid rgba(36, 49, 70, 0.1);
+  transition: border-color 0.4s ease;
 }
 
 .header__office-list {
   display: flex;
   align-items: center;
-
-  gap: clamp(22px, 2.8vw, 48px);
-
+  gap: 26px;
   min-width: 0;
 }
 
 .header__office {
   display: inline-flex;
   align-items: center;
-
-  gap: 8px;
-
-  color: rgba(255, 255, 255, 0.86);
-
-  text-decoration: none;
-
-  font-size: 12px;
-  font-weight: 500;
-
-  line-height: 1;
-
-  letter-spacing: 0.045em;
-
-  text-transform: uppercase;
-
+  gap: 7px;
   white-space: nowrap;
-
-  transition: color 0.25s ease;
-}
-
-.header__office:hover {
-  color: #ffffff;
+  text-decoration: none;
+  font-size: 11px;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  transition: color 0.3s ease;
 }
 
 .header__office-number {
-  color: rgba(255, 255, 255, 0.48);
-
-  font-size: 10px;
-
-  letter-spacing: 0.04em;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
 }
 
 .header__office-city {
-  font-weight: 600;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 .header__office-phone {
-  color: rgba(255, 255, 255, 0.58);
-
-  font-size: 12px;
-
-  letter-spacing: 0.015em;
+  font-size: 10px;
+  font-weight: 500;
 }
 
 .header__office-network {
-  flex: 0 0 auto;
-
-  color: rgba(255, 255, 255, 0.5);
-
-  font-size: 12px;
-  font-weight: 500;
-
-  letter-spacing: 0.12em;
-
-  white-space: nowrap;
+  flex-shrink: 0;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
-
 
 /* =========================================================
    MAIN HEADER
-========================================================= */
+   ========================================================= */
 
 .header__main {
-  width: 100%;
-
-  min-height: 78px;
-
-  padding: 0 5vw;
-
+  min-height: 82px;
+  padding: 0 4vw;
   display: flex;
   align-items: center;
-
-  gap: 38px;
+  gap: 40px;
 }
 
-
-/* =========================================================
-   LOGO
-========================================================= */
-
 .header__logo {
-  flex: 0 0 auto;
-
+  flex-shrink: 0;
+  width: 170px;
   display: flex;
   align-items: center;
-
-  width: 150px;
-
   text-decoration: none;
 }
 
 .header__logo img {
   display: block;
-
-  width: 100%;
+  width: 170px;
   height: auto;
-
   object-fit: contain;
 }
 
-
 /* =========================================================
-   DESKTOP NAVIGATION
-========================================================= */
+   NAVIGATION
+   ========================================================= */
 
 .header__nav {
+  margin-left: auto;
   display: flex;
   align-items: center;
-
-  gap: clamp(20px, 2.2vw, 40px);
-
-  margin-left: auto;
+  gap: 28px;
 }
 
 .header__nav-item {
   position: relative;
-
   display: inline-flex;
   align-items: center;
-
-  gap: 8px;
-
-  color: rgba(255, 255, 255, 0.84);
-
+  gap: 7px;
+  padding: 30px 0 28px;
+  color: inherit;
   text-decoration: none;
-
-  font-family: "Poppins", sans-serif;
-
-  font-size: 12px;
-  font-weight: 500;
-
-  line-height: 1;
-
-  letter-spacing: 0.075em;
-
-  text-transform: uppercase;
-
-  white-space: nowrap;
-
-  transition: color 0.25s ease;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  transition: color 0.3s ease;
 }
 
 .header__nav-number {
-  color: rgba(255, 255, 255, 0.48);
-
-  font-size: 10px;
-
-  line-height: 1;
-
-  letter-spacing: 0.03em;
-
-  transition: color 0.25s ease;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  transition: color 0.3s ease;
 }
 
-.header__nav-item:hover,
-.header__nav-item--active {
-  color: #ffffff;
+.header__nav-label {
+  text-transform: uppercase;
 }
 
-.header__nav-item:hover .header__nav-number,
-.header__nav-item--active .header__nav-number {
-  color: rgba(255, 255, 255, 0.95);
+.header__nav-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 20px;
+  height: 2px;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
 }
 
+.header__nav-item:hover::after,
+.header__nav-item--active::after {
+  transform: scaleX(1);
+}
 
 /* =========================================================
    CTA
-========================================================= */
+   ========================================================= */
 
 .header__cta {
+  flex-shrink: 0;
+  min-height: 44px;
+  padding: 0 8px 0 18px;
   display: inline-flex;
   align-items: center;
-
-  gap: 10px;
-
-  flex: 0 0 auto;
-
-  color: #ffffff;
-
+  gap: 13px;
+  border: 1px solid;
   text-decoration: none;
-
-  font-family: "Poppins", sans-serif;
-
-  font-size: 12px;
-  font-weight: 500;
-
-  line-height: 1;
-
-  letter-spacing: 0.075em;
-
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-
-  white-space: nowrap;
-
-  transition: opacity 0.25s ease;
-}
-
-.header__cta:hover {
-  opacity: 0.68;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .header__cta-icon {
   width: 28px;
   height: 28px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border: 1px solid rgba(255, 255, 255, 0.48);
-
+  display: grid;
+  place-items: center;
+  border: 1px solid;
   transition:
-    background-color 0.25s ease,
-    color 0.25s ease,
-    border-color 0.25s ease;
+    background-color 0.3s ease,
+    border-color 0.3s ease;
 }
-
-.header__cta:hover .header__cta-icon {
-  color: #243146;
-
-  background: #ffffff;
-
-  border-color: #ffffff;
-}
-
 
 /* =========================================================
-   SCROLLED HEADER
-========================================================= */
-
-.header--scrolled {
-  color: #243146;
-
-  background: #ffffff;
-
-  box-shadow:
-    0 1px 0 rgba(36, 49, 70, 0.1);
-}
-
-.header--scrolled .header__office-bar {
-  border-bottom-color: rgba(36, 49, 70, 0.11);
-}
-
-.header--scrolled .header__office {
-  color: rgba(36, 49, 70, 0.72);
-}
-
-.header--scrolled .header__office:hover {
-  color: #243146;
-}
-
-.header--scrolled .header__office-number {
-  color: rgba(36, 49, 70, 0.42);
-}
-
-.header--scrolled .header__office-phone {
-  color: rgba(36, 49, 70, 0.52);
-}
-
-.header--scrolled .header__office-network {
-  color: rgba(36, 49, 70, 0.46);
-}
-
-.header--scrolled .header__nav-item {
-  color: rgba(36, 49, 70, 0.74);
-}
-
-.header--scrolled .header__nav-number {
-  color: rgba(36, 49, 70, 0.42);
-}
-
-.header--scrolled .header__nav-item:hover,
-.header--scrolled .header__nav-item--active {
-  color: #243146;
-}
-
-.header--scrolled .header__nav-item:hover .header__nav-number,
-.header--scrolled .header__nav-item--active .header__nav-number {
-  color: #243146;
-}
-
-.header--scrolled .header__cta {
-  color: #243146;
-}
-
-.header--scrolled .header__cta-icon {
-  border-color: rgba(36, 49, 70, 0.35);
-}
-
-.header--scrolled .header__cta:hover .header__cta-icon {
-  color: #ffffff;
-
-  background: #243146;
-
-  border-color: #243146;
-}
-
-
-/* =========================================================
-   MOBILE MENU BUTTON
-========================================================= */
+   MOBILE BUTTON
+   ========================================================= */
 
 .header__menu-button {
   display: none;
-
-  width: 38px;
-  height: 38px;
-
+  width: 44px;
+  height: 44px;
   padding: 0;
-
+  border: 0;
+  background: transparent;
   align-items: center;
   justify-content: center;
-
-  border: 0;
-
-  background: transparent;
-
-  color: #ffffff;
-
   cursor: pointer;
-
-  transition: color 0.25s ease;
 }
-
-.header--scrolled .header__menu-button {
-  color: #243146;
-}
-
 
 /* =========================================================
    MOBILE MENU
-========================================================= */
+   ========================================================= */
 
 .mobile-menu {
   position: fixed;
-
   inset: 0;
-
-  z-index: 1100;
-
+  z-index: 990;
   visibility: hidden;
-
   opacity: 0;
-
-  pointer-events: none;
-
-  background: #ffffff;
-
+  background: #fff;
   color: #243146;
-
-  transform: translateY(-8px);
-
+  overflow-y: auto;
+  pointer-events: none;
+  transform: translateY(-12px);
   transition:
-    opacity 0.28s ease,
-    transform 0.28s ease,
-    visibility 0.28s ease;
+    opacity 0.35s ease,
+    transform 0.35s ease,
+    visibility 0.35s ease;
 }
 
 .mobile-menu--open {
   visibility: visible;
-
   opacity: 1;
-
   pointer-events: auto;
-
   transform: translateY(0);
 }
 
 .mobile-menu__inner {
-  width: 100%;
-  height: 100%;
-
-  overflow-y: auto;
-
-  padding: 94px 5vw 24px;
-
+  min-height: 100%;
+  padding: 145px 7vw 35px;
   display: flex;
   flex-direction: column;
-
-  box-sizing: border-box;
 }
-
-
-/* =========================================================
-   MOBILE INTRO
-========================================================= */
 
 .mobile-menu__intro {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  padding-bottom: 14px;
-
-  border-bottom: 1px solid rgba(36, 49, 70, 0.14);
-
-  color: rgba(36, 49, 70, 0.52);
-
-  font-family: "Poppins", sans-serif;
-
-  font-size: 9px;
-  font-weight: 500;
-
-  line-height: 1;
-
-  letter-spacing: 0.11em;
-
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(36, 49, 70, 0.12);
+  color: rgba(36, 49, 70, 0.48);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
   text-transform: uppercase;
 }
-
-.mobile-menu__intro span:last-child {
-  color: #243146;
-}
-
-
-/* =========================================================
-   MOBILE NAV
-========================================================= */
 
 .mobile-menu__nav {
   display: flex;
   flex-direction: column;
-
-  margin-top: 6px;
 }
 
 .mobile-menu__item {
+  position: relative;
+  min-height: 70px;
   display: grid;
-
-  grid-template-columns:
-    30px
-    minmax(0, 1fr)
-    22px;
-
+  grid-template-columns: 34px 1fr 28px;
   align-items: center;
-
-  min-height: 56px;
-
-  border-bottom: 1px solid rgba(36, 49, 70, 0.11);
-
+  gap: 15px;
+  border-bottom: 1px solid rgba(36, 49, 70, 0.12);
   color: #243146;
-
   text-decoration: none;
-
-  transition:
-    padding-left 0.25s ease,
-    opacity 0.25s ease;
-}
-
-.mobile-menu__item:hover {
-  padding-left: 4px;
 }
 
 .mobile-menu__number {
-  color: rgba(36, 49, 70, 0.4);
-
-  font-family: "Poppins", sans-serif;
-
-  font-size: 9px;
-
-  line-height: 1;
+  color: rgba(36, 49, 70, 0.38);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
 }
 
 .mobile-menu__label {
-  font-family: "Montserrat", sans-serif;
-
-  font-size: clamp(19px, 4.5vw, 28px);
-
-  font-weight: 500;
-
-  line-height: 1;
-
-  letter-spacing: -0.03em;
-
+  font-size: clamp(21px, 6vw, 30px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
   text-transform: uppercase;
 }
 
 .mobile-menu__arrow {
   justify-self: end;
-
-  width: 17px;
-  height: 17px;
-
-  color: rgba(36, 49, 70, 0.5);
+  transition: transform 0.3s ease;
 }
 
+.mobile-menu__item:hover .mobile-menu__arrow,
+.mobile-menu__item--active .mobile-menu__arrow {
+  transform: translate(3px, -3px);
+}
 
-/* =========================================================
-   MOBILE OFFICES
-========================================================= */
+.mobile-menu__item--active .mobile-menu__label {
+  font-weight: 800;
+}
 
 .mobile-menu__offices {
+  margin-top: 42px;
   display: grid;
-
-  grid-template-columns:
-    repeat(3, minmax(0, 1fr));
-
-  gap: 18px;
-
-  margin-top: auto;
-
-  padding-top: 24px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
 .mobile-menu__office {
-  min-width: 0;
+  padding-top: 16px;
+  border-top: 1px solid rgba(36, 49, 70, 0.18);
 }
 
 .mobile-menu__office-top {
   display: flex;
   justify-content: space-between;
-
-  margin-bottom: 6px;
-
-  color: rgba(36, 49, 70, 0.42);
-
-  font-family: "Poppins", sans-serif;
-
-  font-size: 8px;
-
-  line-height: 1;
-
-  letter-spacing: 0.08em;
-
+  margin-bottom: 12px;
+  color: rgba(36, 49, 70, 0.4);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
 .mobile-menu__office strong {
   display: block;
-
-  margin-bottom: 6px;
-
-  color: #243146;
-
-  font-family: "Montserrat", sans-serif;
-
-  font-size: 13px;
-
-  line-height: 1;
-
-  font-weight: 600;
-
-  text-transform: uppercase;
+  margin-bottom: 8px;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
 }
 
 .mobile-menu__office p {
-  margin: 0 0 8px;
-
+  margin: 0;
   color: rgba(36, 49, 70, 0.62);
-
-  font-family: "Poppins", sans-serif;
-
-  font-size: 8px;
-
-  line-height: 1.4;
+  font-size: 11px;
+  line-height: 1.6;
 }
 
 .mobile-menu__office a {
+  margin-top: 15px;
   display: flex;
   flex-direction: column;
-
-  gap: 3px;
-
+  gap: 4px;
   color: #243146;
-
   text-decoration: none;
-
-  font-family: "Poppins", sans-serif;
-
-  font-size: 8px;
-
-  font-weight: 600;
-
-  line-height: 1;
-
-  letter-spacing: 0.04em;
-
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 
 .mobile-menu__office a span {
-  font-weight: 400;
-
-  letter-spacing: 0;
+  color: rgba(36, 49, 70, 0.55);
+  font-weight: 500;
+  text-transform: none;
 }
-
-
-/* =========================================================
-   MOBILE BOTTOM
-========================================================= */
 
 .mobile-menu__bottom {
+  margin-top: auto;
+  padding-top: 35px;
   display: flex;
   justify-content: space-between;
-
-  margin-top: 18px;
-
-  padding-top: 12px;
-
-  border-top: 1px solid rgba(36, 49, 70, 0.12);
-
-  color: rgba(36, 49, 70, 0.48);
-
-  font-family: "Poppins", sans-serif;
-
-  font-size: 8px;
-
-  line-height: 1;
-
-  letter-spacing: 0.08em;
-
-  text-transform: uppercase;
+  gap: 20px;
+  color: rgba(36, 49, 70, 0.4);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
 }
 
+/* =========================================================
+   SCROLL LOCK
+   ========================================================= */
+
+html.menu-open,
+body.menu-is-open {
+  overflow: hidden;
+}
 
 /* =========================================================
-   TABLET
-========================================================= */
+   LARGE DESKTOP
+   ========================================================= */
 
-@media (max-width: 1200px) {
-
-  .header__office-list {
-    gap: 18px;
-  }
-
-  .header__office-phone {
-    display: none;
+@media (min-width: 1500px) {
+  .header__office-bar,
+  .header__main {
+    padding-left: 5vw;
+    padding-right: 5vw;
   }
 
   .header__nav {
-    gap: 16px;
+    gap: 34px;
+  }
+
+  .header__nav-item {
+    font-size: 14px;
+  }
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1180px) {
+  .header__main {
+    gap: 25px;
+  }
+
+  .header__nav {
+    gap: 18px;
   }
 
   .header__nav-item {
     font-size: 12px;
   }
+
+  .header__cta {
+    padding-left: 13px;
+    gap: 9px;
+    font-size: 10px;
+  }
+
+  .header__office-list {
+    gap: 16px;
+  }
+
+  .header__office-phone {
+    display: none;
+  }
 }
 
-
 /* =========================================================
-   MOBILE
-========================================================= */
+   MOBILE / TABLET NAV
+   ========================================================= */
 
 @media (max-width: 900px) {
-
   .header__office-bar {
+    min-height: 30px;
+    padding: 0 5vw;
+  }
+
+  .header__office-list {
+    width: 100%;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .header__office {
+    gap: 5px;
+  }
+
+  .header__office-number {
+    display: none;
+  }
+
+  .header__office-network {
     display: none;
   }
 
   .header__main {
-    min-height: 68px;
-
-    padding: 0 14px;
-
+    min-height: 72px;
+    padding: 0 5vw;
     justify-content: space-between;
-
-    gap: 0;
   }
 
-  .header__logo {
-    width: 118px;
+  .header__logo,
+  .header__logo img {
+    width: 150px;
   }
 
   .header__nav,
@@ -728,147 +645,122 @@
   }
 
   .mobile-menu__inner {
-    padding:
-      82px
-      14px
-      20px;
+    padding-top: 125px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .header__office-bar {
+    padding: 0 4.5vw;
+  }
+
+  .header__office-list {
+    justify-content: flex-start;
+    gap: 16px;
+  }
+
+  .header__office-city {
+    font-size: 9px;
+  }
+
+  .header__office-phone {
+    display: inline;
+    font-size: 9px;
+  }
+
+  .header__office:nth-child(3) {
+    display: none;
+  }
+
+  .header__main {
+    min-height: 68px;
+    padding: 0 4.5vw;
+  }
+
+  .header__logo,
+  .header__logo img {
+    width: 138px;
+  }
+
+  .header__menu-button {
+    width: 42px;
+    height: 42px;
+  }
+
+  .mobile-menu__inner {
+    padding: 112px 6vw 28px;
+  }
+
+  .mobile-menu__intro {
+    padding-bottom: 15px;
+    font-size: 9px;
+  }
+
+  .mobile-menu__item {
+    min-height: 64px;
+    grid-template-columns: 28px 1fr 24px;
+    gap: 10px;
+  }
+
+  .mobile-menu__label {
+    font-size: 21px;
   }
 
   .mobile-menu__offices {
     grid-template-columns: 1fr;
-
-    gap: 12px;
-
-    margin-top: 18px;
+    gap: 24px;
+    margin-top: 35px;
   }
 
   .mobile-menu__office {
-    padding-bottom: 12px;
-
-    border-bottom:
-      1px solid rgba(36, 49, 70, 0.1);
-  }
-
-  .mobile-menu__office:last-child {
-    border-bottom: 0;
-  }
-
-  .mobile-menu__office p {
-    max-width: 620px;
-  }
-}
-
-
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
-
-@media (max-width: 480px) {
-
-  .header__main {
-    min-height: 64px;
-
-    padding: 0 12px;
-  }
-
-  .header__logo {
-    width: 104px;
-  }
-
-  .header__menu-button {
-    width: 36px;
-    height: 36px;
-  }
-
-  .mobile-menu__inner {
-    padding:
-      76px
-      12px
-      16px;
-  }
-
-  .mobile-menu__item {
-    min-height: 51px;
-
-    grid-template-columns:
-      25px
-      minmax(0, 1fr)
-      19px;
-  }
-
-  .mobile-menu__label {
-    font-size: 18px;
-  }
-
-  .mobile-menu__number {
-    font-size: 8px;
-  }
-
-  .mobile-menu__arrow {
-    width: 16px;
-    height: 16px;
-  }
-
-  .mobile-menu__offices {
-    margin-top: 14px;
-
-    gap: 10px;
-  }
-
-  .mobile-menu__office {
-    padding-bottom: 10px;
-  }
-
-  .mobile-menu__office strong {
-    font-size: 12px;
-  }
-
-  .mobile-menu__office p {
-    font-size: 7px;
-
-    line-height: 1.35;
-  }
-
-  .mobile-menu__office a {
-    font-size: 7px;
+    padding-top: 14px;
   }
 
   .mobile-menu__bottom {
     flex-direction: column;
-
-    gap: 5px;
-
-    margin-top: 14px;
-
-    padding-top: 10px;
-
-    font-size: 7px;
+    gap: 7px;
+    font-size: 8px;
   }
 }
 
-
 /* =========================================================
-   BODY LOCK
-========================================================= */
+   VERY SMALL MOBILE
+   ========================================================= */
 
-html.menu-open,
-body.menu-is-open {
-  overflow: hidden;
+@media (max-width: 380px) {
+  .header__office-phone {
+    display: none;
+  }
+
+  .header__office-city {
+    font-size: 8px;
+  }
+
+  .header__logo,
+  .header__logo img {
+    width: 128px;
+  }
+
+  .mobile-menu__label {
+    font-size: 19px;
+  }
 }
-
 
 /* =========================================================
    REDUCED MOTION
-========================================================= */
+   ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
-
   .header,
   .header__nav-item,
   .header__cta,
   .header__cta-icon,
   .mobile-menu,
-  .mobile-menu__item {
+  .mobile-menu__arrow {
     transition: none;
   }
 }

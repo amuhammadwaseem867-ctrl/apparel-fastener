@@ -8,36 +8,12 @@ import { ArrowUpRight, Menu, X } from "lucide-react";
 import "./Header.css";
 
 const NAV_ITEMS = [
-  {
-    number: "01",
-    label: "About",
-    href: "/about",
-  },
-  {
-    number: "02",
-    label: "Garments",
-    href: "/garments",
-  },
-  {
-    number: "03",
-    label: "Fabrics",
-    href: "/fabrics",
-  },
-  {
-    number: "04",
-    label: "Accessories",
-    href: "/garment-accessories",
-  },
-  {
-    number: "05",
-    label: "Quality",
-    href: "/quality",
-  },
-  {
-    number: "06",
-    label: "Contact",
-    href: "/contact",
-  },
+  { number: "01", label: "About", href: "/about" },
+  { number: "02", label: "Garments", href: "/garments" },
+  { number: "03", label: "Fabrics", href: "/fabrics" },
+  { number: "04", label: "Accessories", href: "/garment-accessories" },
+  { number: "05", label: "Quality", href: "/quality" },
+  { number: "06", label: "Contact", href: "/contact" },
 ];
 
 const OFFICES = [
@@ -72,24 +48,43 @@ const OFFICES = [
 export default function Header() {
   const pathname = usePathname();
 
-  const [scrolled, setScrolled] = useState(false);
+  const [heroVisible, setHeroVisible] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 40);
-    };
+    /*
+      HOME PAGE:
+      Detect whether the hero is still underneath the header.
+    */
 
-    handleScroll();
+    if (pathname !== "/") {
+      setHeroVisible(false);
+      return;
+    }
 
-    window.addEventListener("scroll", handleScroll, {
-      passive: true,
-    });
+    const hero = document.querySelector(".hero");
+
+    if (!hero) {
+      setHeroVisible(false);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setHeroVisible(entry.isIntersecting);
+      },
+      {
+        threshold: 0,
+        rootMargin: "-1px 0px 0px 0px",
+      }
+    );
+
+    observer.observe(hero);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      observer.disconnect();
     };
-  }, []);
+  }, [pathname]);
 
   useEffect(() => {
     setMenuOpen(false);
@@ -124,9 +119,15 @@ export default function Header() {
     };
   }, []);
 
+  /*
+    Navy while hero is visible.
+    White everywhere else.
+  */
+  const isDarkHeader = pathname === "/" && heroVisible;
+
   const headerClassName = [
     "header",
-    scrolled ? "header--scrolled" : "",
+    isDarkHeader ? "header--hero" : "header--light",
     menuOpen ? "header--menu-open" : "",
   ]
     .filter(Boolean)
@@ -135,10 +136,6 @@ export default function Header() {
   return (
     <>
       <header className={headerClassName}>
-        {/* =====================================================
-            TOP OFFICE BAR
-            ===================================================== */}
-
         <div className="header__office-bar">
           <div className="header__office-list">
             {OFFICES.map((office) => (
@@ -167,10 +164,6 @@ export default function Header() {
           </span>
         </div>
 
-        {/* =====================================================
-            MAIN HEADER
-            ===================================================== */}
-
         <div className="header__main">
           <Link
             href="/"
@@ -179,45 +172,48 @@ export default function Header() {
           >
             <Image
               src={
-                scrolled || menuOpen
-                  ? "/logos/logo in navy.png"
-                  : "/logos/logo in white.png"
+                isDarkHeader && !menuOpen
+                  ? "/logos/logo in white.png"
+                  : "/logos/logo in navy.png"
               }
               alt="Apparel Fastener"
-              width={160}
-              height={45}
+              width={170}
+              height={48}
               priority
             />
           </Link>
-
-          {/* Desktop Navigation */}
 
           <nav
             className="header__nav"
             aria-label="Main navigation"
           >
-            {NAV_ITEMS.map((item) => (
-              <Link
-                key={item.number}
-                href={item.href}
-                className={`header__nav-item ${
-                  pathname === item.href
-                    ? "header__nav-item--active"
-                    : ""
-                }`}
-              >
-                <span className="header__nav-number">
-                  {item.number}
-                </span>
+            {NAV_ITEMS.map((item) => {
+              const isActive =
+                pathname === item.href ||
+                (item.href !== "/" &&
+                  pathname.startsWith(`${item.href}/`));
 
-                <span className="header__nav-label">
-                  {item.label}
-                </span>
-              </Link>
-            ))}
+              return (
+                <Link
+                  key={item.number}
+                  href={item.href}
+                  className={`header__nav-item ${
+                    isActive
+                      ? "header__nav-item--active"
+                      : ""
+                  }`}
+                >
+                  <span className="header__nav-number">
+                    {item.number}
+                  </span>
+
+                  <span className="header__nav-label">
+                    {item.label}
+                  </span>
+                </Link>
+              );
+            })}
           </nav>
-
-          {/* Desktop CTA */}
 
           <Link
             href="/contact"
@@ -227,13 +223,11 @@ export default function Header() {
 
             <span className="header__cta-icon">
               <ArrowUpRight
-                size={14}
-                strokeWidth={1.6}
+                size={15}
+                strokeWidth={1.8}
               />
             </span>
           </Link>
-
-          {/* Mobile Button */}
 
           <button
             type="button"
@@ -247,23 +241,13 @@ export default function Header() {
             aria-expanded={menuOpen}
           >
             {menuOpen ? (
-              <X
-                size={22}
-                strokeWidth={1.5}
-              />
+              <X size={23} strokeWidth={1.8} />
             ) : (
-              <Menu
-                size={22}
-                strokeWidth={1.5}
-              />
+              <Menu size={23} strokeWidth={1.8} />
             )}
           </button>
         </div>
       </header>
-
-      {/* =======================================================
-          MOBILE MENU
-          ======================================================= */}
 
       <aside
         className={`mobile-menu ${
@@ -272,10 +256,8 @@ export default function Header() {
         aria-hidden={!menuOpen}
       >
         <div className="mobile-menu__inner">
-
           <div className="mobile-menu__intro">
             <span>Navigation</span>
-
             <span>APPAREL FASTENER</span>
           </div>
 
@@ -283,35 +265,40 @@ export default function Header() {
             className="mobile-menu__nav"
             aria-label="Mobile navigation"
           >
-            {NAV_ITEMS.map((item) => (
-              <Link
-                key={item.number}
-                href={item.href}
-                onClick={() => setMenuOpen(false)}
-                className={`mobile-menu__item ${
-                  pathname === item.href
-                    ? "mobile-menu__item--active"
-                    : ""
-                }`}
-              >
-                <span className="mobile-menu__number">
-                  {item.number}
-                </span>
+            {NAV_ITEMS.map((item) => {
+              const isActive =
+                pathname === item.href ||
+                (item.href !== "/" &&
+                  pathname.startsWith(`${item.href}/`));
 
-                <span className="mobile-menu__label">
-                  {item.label}
-                </span>
+              return (
+                <Link
+                  key={item.number}
+                  href={item.href}
+                  onClick={() => setMenuOpen(false)}
+                  className={`mobile-menu__item ${
+                    isActive
+                      ? "mobile-menu__item--active"
+                      : ""
+                  }`}
+                >
+                  <span className="mobile-menu__number">
+                    {item.number}
+                  </span>
 
-                <ArrowUpRight
-                  className="mobile-menu__arrow"
-                  size={18}
-                  strokeWidth={1.4}
-                />
-              </Link>
-            ))}
+                  <span className="mobile-menu__label">
+                    {item.label}
+                  </span>
+
+                  <ArrowUpRight
+                    className="mobile-menu__arrow"
+                    size={19}
+                    strokeWidth={1.7}
+                  />
+                </Link>
+              );
+            })}
           </nav>
-
-          {/* Mobile Offices */}
 
           <div className="mobile-menu__offices">
             {OFFICES.map((office) => (
@@ -320,22 +307,13 @@ export default function Header() {
                 className="mobile-menu__office"
               >
                 <div className="mobile-menu__office-top">
-                  <span>
-                    {office.number}
-                  </span>
-
-                  <span>
-                    {office.type}
-                  </span>
+                  <span>{office.number}</span>
+                  <span>{office.type}</span>
                 </div>
 
-                <strong>
-                  {office.city}
-                </strong>
+                <strong>{office.city}</strong>
 
-                <p>
-                  {office.address}
-                </p>
+                <p>{office.address}</p>
 
                 <a href={office.href}>
                   Contact Office
@@ -346,9 +324,7 @@ export default function Header() {
           </div>
 
           <div className="mobile-menu__bottom">
-            <span>
-              GLOBAL APPAREL NETWORK
-            </span>
+            <span>GLOBAL APPAREL NETWORK</span>
 
             <span>
               LAHORE · HONG KONG · GUANGZHOU

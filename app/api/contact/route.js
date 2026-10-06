@@ -11,7 +11,6 @@ export async function POST(request) {
     const division = String(body.division || "").trim();
     const message = String(body.message || "").trim();
 
-    // Required fields
     if (!name || !email || !division || !message) {
       return Response.json(
         { error: "Please complete all required fields." },
@@ -19,7 +18,6 @@ export async function POST(request) {
       );
     }
 
-    // Email validation
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       return Response.json(
         { error: "Please enter a valid email address." },
@@ -27,8 +25,11 @@ export async function POST(request) {
       );
     }
 
-    // Environment variables
-    if (!process.env.RESEND_API_KEY) {
+    const apiKey = process.env.RESEND_API_KEY;
+    const receivingEmail = process.env.CONTACT_TO_EMAIL;
+    const fromEmail = process.env.CONTACT_FROM_EMAIL;
+
+    if (!apiKey) {
       console.error("RESEND_API_KEY is missing.");
 
       return Response.json(
@@ -37,8 +38,8 @@ export async function POST(request) {
       );
     }
 
-    if (!process.env.CONTACT_EMAIL) {
-      console.error("CONTACT_EMAIL is missing.");
+    if (!receivingEmail) {
+      console.error("CONTACT_TO_EMAIL is missing.");
 
       return Response.json(
         { error: "Receiving email is not configured." },
@@ -46,7 +47,7 @@ export async function POST(request) {
       );
     }
 
-    if (!process.env.CONTACT_FROM_EMAIL) {
+    if (!fromEmail) {
       console.error("CONTACT_FROM_EMAIL is missing.");
 
       return Response.json(
@@ -55,13 +56,11 @@ export async function POST(request) {
       );
     }
 
-    // Initialize Resend
-    const resend = new Resend(process.env.RESEND_API_KEY);
+    const resend = new Resend(apiKey);
 
-    // Send email
     const { error } = await resend.emails.send({
-      from: process.env.CONTACT_FROM_EMAIL,
-      to: [process.env.CONTACT_EMAIL],
+      from: fromEmail,
+      to: [receivingEmail],
       replyTo: email,
       subject: `New Website Enquiry — ${division}`,
       text: [
@@ -80,7 +79,6 @@ export async function POST(request) {
       ].join("\n"),
     });
 
-    // Resend error
     if (error) {
       console.error("Resend error:", error);
 
@@ -90,7 +88,6 @@ export async function POST(request) {
       );
     }
 
-    // Success
     return Response.json({
       success: true,
       message: "Your enquiry has been sent successfully.",
