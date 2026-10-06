@@ -44,7 +44,7 @@
   margin-bottom: 35px;
 
   font-family: var(--font-body);
-  font-size: max(12px, 10px);
+  font-size: 12px;
   line-height: 1;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -294,7 +294,7 @@
   justify-content: space-between;
 
   font-family: var(--font-body);
-  font-size: max(12px, 9px);
+  font-size: 12px;
   line-height: 1;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -361,7 +361,7 @@
   margin: 18px 0 0;
 
   font-family: var(--font-body);
-  font-size: max(12px, 11px);
+  font-size: 12px;
   line-height: 1.7;
   font-weight: 500;
 
@@ -392,7 +392,7 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.45);
 
   font-family: var(--font-body);
-  font-size: max(12px, 9px);
+  font-size: 12px;
   line-height: 1;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -467,7 +467,7 @@
   }
 
   .three-divisions__container {
-    width: calc(100% - 40px);
+    width: calc(100% - 48px);
   }
 
   .three-divisions__header {
@@ -478,7 +478,7 @@
   .three-divisions__eyebrow {
     margin-bottom: 0;
 
-    font-size: max(12px, 8px);
+    font-size: 12px;
     letter-spacing: 0.08em;
   }
 
@@ -503,7 +503,7 @@
   }
 
   .division-card {
-    min-height: 500px;
+    min-height: 520px;
   }
 
   .division-card__content {
@@ -511,7 +511,7 @@
   }
 
   .division-card__top {
-    font-size: max(12px, 8px);
+    font-size: 12px;
   }
 
   .division-card__plus {
@@ -528,14 +528,14 @@
   .division-card__bottom p {
     margin-top: 14px;
 
-    font-size: max(12px, 10px);
+    font-size: 12px;
     line-height: 1.7;
   }
 
   .division-card__link {
     margin-top: 20px;
 
-    font-size: max(12px, 8px);
+    font-size: 12px;
   }
 }
 
@@ -561,3 +561,5 @@
     transition: none;
   }
 }
+
+

@@ -18,7 +18,7 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 
   font-family: var(--font-body);
-  font-size: max(12px, 11px);
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -170,7 +170,7 @@
   align-self: start;
 
   font-family: var(--font-body);
-  font-size: max(12px, 10px);
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.08em;
   color: rgba(255, 255, 255, 0.48);
@@ -284,3 +284,5 @@
     font-size: 13px;
   }
 }
+
+

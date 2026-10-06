@@ -64,7 +64,7 @@
   justify-content: space-between;
 
   font-family: var(--font-body);
-  font-size: max(12px, 10px);
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.08em;
 }
@@ -79,7 +79,7 @@
   border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 50%;
 
-  font-size: max(12px, 9px);
+  font-size: 12px;
 }
 
 /* --------------------------------------------------
@@ -105,7 +105,7 @@
   margin: 0 0 22px;
 
   font-family: var(--font-body);
-  font-size: max(12px, 11px);
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.08em;
 
@@ -177,7 +177,7 @@
   gap: 13px;
 
   font-family: var(--font-body);
-  font-size: max(12px, 9px);
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.08em;
 
@@ -211,7 +211,7 @@
   margin: 0 0 22px;
 
   font-family: var(--font-body);
-  font-size: max(12px, 10px);
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.08em;
 
@@ -264,7 +264,7 @@
 
 .garments-development__step-top span {
   font-family: var(--font-body);
-  font-size: max(12px, 9px);
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.08em;
 }
@@ -345,7 +345,7 @@
     left: 22px;
     right: 22px;
 
-    font-size: max(12px, 8px);
+    font-size: 12px;
   }
 
   .garments-development__hero-content {
@@ -358,12 +358,12 @@
 
     gap: 40px;
 
-    padding: 100px 22px 110px;
+    padding: 100px 24px 110px;
   }
 
   .garments-development__hero-content > div:first-child p {
     margin-bottom: 17px;
-    font-size: max(12px, 9px);
+    font-size: 12px;
   }
 
   .garments-development__hero-content h2 {
@@ -389,11 +389,11 @@
     flex-wrap: wrap;
     gap: 9px;
 
-    font-size: max(12px, 7px);
+    font-size: 12px;
   }
 
   .garments-development__process {
-    padding: 95px 22px 110px;
+    padding: 95px 24px 110px;
 
     display: block;
   }
@@ -404,7 +404,7 @@
 
   .garments-development__process-intro > p {
     margin-bottom: 17px;
-    font-size: max(12px, 9px);
+    font-size: 12px;
   }
 
   .garments-development__process-intro h3 {
@@ -426,7 +426,7 @@
   }
 
   .garments-development__step-content p {
-    font-size: max(12px, 11px);
+    font-size: 12px;
     line-height: 1.75;
   }
 }
@@ -440,3 +440,5 @@
     transform: none;
   }
 }
+
+

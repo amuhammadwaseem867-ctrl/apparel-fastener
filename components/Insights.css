@@ -32,7 +32,7 @@
   margin-bottom: clamp(45px, 6vw, 72px);
 
   font-family: var(--font-body);
-  font-size: max(12px, 10px);
+  font-size: 12px;
   line-height: 1;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -175,7 +175,7 @@
   border-bottom: 1px solid rgba(36, 49, 70, 0.45);
 
   font-family: var(--font-body);
-  font-size: max(12px, 10px);
+  font-size: 12px;
   line-height: 1;
   font-weight: 600;
 
@@ -271,7 +271,7 @@
   left: 20px;
 
   font-family: var(--font-body);
-  font-size: max(12px, 8px);
+  font-size: 12px;
   line-height: 1;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -317,7 +317,7 @@
   bottom: 20px;
 
   font-family: var(--font-body);
-  font-size: max(12px, 8px);
+  font-size: 12px;
   line-height: 1;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -343,7 +343,7 @@
   margin-bottom: 22px;
 
   font-family: var(--font-body);
-  font-size: max(12px, 8px);
+  font-size: 12px;
   line-height: 1;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -367,7 +367,7 @@
   margin: 25px 0 28px;
 
   font-family: var(--font-body);
-  font-size: max(12px, 10px);
+  font-size: 12px;
   line-height: 1.8;
   font-weight: 500;
 
@@ -386,7 +386,7 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.35);
 
   font-family: var(--font-body);
-  font-size: max(12px, 9px);
+  font-size: 12px;
   line-height: 1;
   font-weight: 600;
 
@@ -499,7 +499,7 @@
   left: 18px;
 
   font-family: var(--font-body);
-  font-size: max(12px, 8px);
+  font-size: 12px;
   line-height: 1;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -543,7 +543,7 @@
 ========================================================= */
 
 .insight-story__content {
-  padding: 25px 22px 30px;
+  padding: 25px 24px 30px;
 }
 
 .insight-story__meta {
@@ -553,7 +553,7 @@
   margin-bottom: 19px;
 
   font-family: var(--font-body);
-  font-size: max(12px, 8px);
+  font-size: 12px;
   line-height: 1;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -577,7 +577,7 @@
   margin: 17px 0 22px;
 
   font-family: var(--font-body);
-  font-size: max(12px, 9px);
+  font-size: 12px;
   line-height: 1.75;
   font-weight: 500;
 
@@ -594,7 +594,7 @@
   border-bottom: 1px solid rgba(36, 49, 70, 0.22);
 
   font-family: var(--font-body);
-  font-size: max(12px, 8px);
+  font-size: 12px;
   line-height: 1;
   font-weight: 600;
 
@@ -640,7 +640,7 @@
 
 .insights__bottom-label {
   font-family: var(--font-body);
-  font-size: max(12px, 8px);
+  font-size: 12px;
   line-height: 1;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -659,7 +659,7 @@
   margin: 0;
 
   font-family: var(--font-body);
-  font-size: max(12px, 8px);
+  font-size: 12px;
   line-height: 1.5;
   font-weight: 600;
   letter-spacing: .08em;
@@ -727,13 +727,17 @@
   }
 
   .insights__container {
-    width: calc(100% - 40px);
+    width: calc(100% - 48px);
+  }
+
+  .insights__featured-media {
+    aspect-ratio: 1.15 / 1;
   }
 
   .insights__eyebrow {
     margin-bottom: 45px;
 
-    font-size: max(12px, 8px);
+    font-size: 12px;
     letter-spacing: 0.08em;
   }
 
@@ -758,13 +762,13 @@
   }
 
   .insights__featured-media {
-    aspect-ratio: 1 / 0.82;
+    aspect-ratio: 1.15 / 1;
   }
 
   .insights__featured-content {
     min-height: auto;
 
-    padding: 30px 22px 35px;
+    padding: 30px 24px 35px;
   }
 
   .insights__featured-content h3 {
@@ -772,12 +776,12 @@
   }
 
   .insights__featured-content p {
-    font-size: max(12px, 10px);
+    font-size: 12px;
     line-height: 1.75;
   }
 
   .insight-story__media {
-    aspect-ratio: 1.3 / 1;
+    aspect-ratio: 1.1 / 1;
   }
 
   .insight-story__content {
@@ -789,7 +793,7 @@
   }
 
   .insight-story__content p {
-    font-size: max(12px, 9px);
+    font-size: 12px;
   }
 
   .insights__bottom {
@@ -806,7 +810,7 @@
   }
 
   .insights__bottom p {
-    font-size: max(12px, 8px);
+    font-size: 12px;
     line-height: 1.7;
   }
 }
@@ -837,3 +841,5 @@
     transition: none;
   }
 }
+
+

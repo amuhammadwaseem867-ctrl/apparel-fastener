@@ -14,12 +14,14 @@ export default function GarmentsCTA() {
           alt="Apparel Fastener garment collection"
           fill
           sizes="100vw"
+          quality={95}
         />
 
         <div className="garments-cta__overlay" />
       </div>
 
       <div className="garments-cta__content">
+        {/* TOP */}
         <div className="garments-cta__top">
           <div className="garments-cta__section">
             <span>08</span>
@@ -31,6 +33,7 @@ export default function GarmentsCTA() {
           </span>
         </div>
 
+        {/* MAIN */}
         <div className="garments-cta__main">
           <div className="garments-cta__heading">
             <p>START THE NEXT FORM</p>
@@ -60,15 +63,16 @@ export default function GarmentsCTA() {
               href="/contact"
               className="garments-cta__button"
             >
-              <span>Start a Conversation</span>
+              <span>START A CONVERSATION</span>
 
               <span className="garments-cta__button-icon">
-                <ArrowUpRight size={20} strokeWidth={1.8} />
+                <ArrowUpRight size={15} strokeWidth={1.8} />
               </span>
             </Link>
           </div>
         </div>
 
+        {/* BOTTOM */}
         <div className="garments-cta__bottom">
           <div className="garments-cta__categories">
             <span>JACKETS</span>
@@ -79,13 +83,13 @@ export default function GarmentsCTA() {
           </div>
 
           <div className="garments-cta__plus">
-            <Plus size={16} strokeWidth={1.5} />
+            <Plus size={15} strokeWidth={1.5} />
           </div>
 
           <div className="garments-cta__location">
-            <span>LAHORE</span>
+            <span>CHINA</span>
             <i />
-            <span>PAKISTAN</span>
+            <span>HONGKONG</span>
           </div>
         </div>
       </div>

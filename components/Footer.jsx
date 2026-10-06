@@ -58,7 +58,7 @@ export default function Footer() {
                 alt="APPAREL FASTENER"
                 width={3956}
                 height={1242}
-                sizes="200px"
+                sizes="250px"
                 className="footer-brand__logo-img"
               />
             </Link>

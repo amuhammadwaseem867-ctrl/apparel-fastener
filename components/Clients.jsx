@@ -21,9 +21,9 @@ function ClientLogo({ client }) {
       <Image
         src={client.src}
         alt={`Apparel Fastener client ${client.id}`}
-        width={190}
-        height={70}
-        sizes="190px"
+        width={200}
+        height={75}
+        sizes="200px"
       />
     </div>
   );

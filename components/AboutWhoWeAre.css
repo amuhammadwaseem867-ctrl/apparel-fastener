@@ -103,7 +103,7 @@
   display: block;
   margin-bottom: 24px;
   font-family: var(--font-body);
-  font-size: max(12px, 11px);
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.08em;
   color: #243146;
@@ -156,7 +156,7 @@
   }
 
   .about-who__inner {
-    width: calc(100% - 36px);
+    width: calc(100% - 48px);
   }
 
   .about-who__top {
@@ -165,7 +165,7 @@
 
   .about-who__eyebrow,
   .about-who__index {
-    font-size: max(12px, 10px);
+    font-size: 12px;
   }
 
   .about-who__heading {
@@ -212,3 +212,5 @@
     transition: none;
   }
 }
+
+

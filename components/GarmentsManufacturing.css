@@ -1,31 +1,48 @@
+/* =========================================================
+   GARMENTS MANUFACTURING
+   ========================================================= */
+
 .garments-manufacturing {
-  position: relative;
-  overflow: hidden;
+  width: 100%;
   background: #ffffff;
   color: #243146;
+  overflow: hidden;
 }
 
-/* --------------------------------------------------
+.garments-manufacturing *,
+.garments-manufacturing *::before,
+.garments-manufacturing *::after {
+  box-sizing: border-box;
+}
+
+/* =========================================================
    HERO
--------------------------------------------------- */
+   ========================================================= */
 
 .garments-manufacturing__hero {
   position: relative;
-  min-height: 88vh;
+  width: 100%;
+  min-height: 100vh;
   overflow: hidden;
 
   background: #243146;
   color: #ffffff;
 }
 
+/* IMAGE */
+
 .garments-manufacturing__media {
   position: absolute;
   inset: 0;
+  z-index: 0;
 }
 
 .garments-manufacturing__media img {
+  width: 100% !important;
+  height: 100% !important;
+
   object-fit: cover;
-  object-position: center;
+  object-position: center center;
 }
 
 .garments-manufacturing__overlay {
@@ -35,268 +52,326 @@
   background:
     linear-gradient(
       90deg,
-      rgba(36, 49, 70, 0.94) 0%,
-      rgba(36, 49, 70, 0.70) 38%,
-      rgba(36, 49, 70, 0.24) 78%,
-      rgba(36, 49, 70, 0.48) 100%
-    ),
-    linear-gradient(
-      180deg,
-      rgba(36, 49, 70, 0.38) 0%,
-      rgba(36, 49, 70, 0.04) 45%,
-      rgba(36, 49, 70, 0.78) 100%
+      rgba(36, 49, 70, 0.84) 0%,
+      rgba(36, 49, 70, 0.48) 45%,
+      rgba(36, 49, 70, 0.18) 100%
     );
 }
 
-/* --------------------------------------------------
-   TOP
--------------------------------------------------- */
+/* =========================================================
+   TOP META
+   ========================================================= */
 
 .garments-manufacturing__top {
   position: absolute;
-  z-index: 2;
+  top: 0;
+  left: 5vw;
+  right: 5vw;
+  z-index: 5;
 
-  top: 38px;
-  left: 6vw;
-  right: 6vw;
+  height: 72px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  font-family: var(--font-body);
-  font-size: max(12px, 10px);
-  font-weight: 600;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.28);
+
+  font-family: "Poppins", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
   letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .garments-manufacturing__number {
-  width: 31px;
-  height: 31px;
-
-  display: grid;
-  place-items: center;
-
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 50%;
-
-  font-size: max(12px, 9px);
+  opacity: 0.7;
 }
 
-/* --------------------------------------------------
-   HERO CONTENT
--------------------------------------------------- */
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
 
 .garments-manufacturing__content {
   position: relative;
-  z-index: 2;
+  z-index: 4;
 
-  min-height: 88vh;
+  min-height: 100vh;
 
   display: grid;
-  grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.7fr);
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 390px);
 
   align-items: center;
-  gap: 8vw;
 
-  padding: 120px 6vw 120px;
+  gap: clamp(40px, 7vw, 120px);
+
+  padding: 140px 5vw 150px;
 }
 
-.garments-manufacturing__title p {
-  margin: 0 0 22px;
+.garments-manufacturing__title {
+  min-width: 0;
+}
 
-  font-family: var(--font-body);
-  font-size: max(12px, 11px);
-  font-weight: 600;
+.garments-manufacturing__title > p {
+  margin: 0 0 24px;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.2;
   letter-spacing: 0.08em;
+  text-transform: uppercase;
 
-  color: rgba(255, 255, 255, 0.64);
+  opacity: 0.82;
 }
 
 .garments-manufacturing__title h2 {
   margin: 0;
 
-  font-family: var(--font-heading);
-  font-size: clamp(58px, 7vw, 112px);
-  font-weight: 600;
-  line-height: 0.9;
-  letter-spacing: -0.02em;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(64px, 7.2vw, 118px);
+  font-weight: 500;
+  line-height: 0.87;
+  letter-spacing: -0.045em;
+
   text-transform: uppercase;
 }
 
 .garments-manufacturing__title h2 em {
   font-style: normal;
-  color: #ffffff;
 }
 
-/* --------------------------------------------------
-   SIDE
--------------------------------------------------- */
+/* =========================================================
+   SIDE CONTENT
+   ========================================================= */
 
 .garments-manufacturing__side {
-  max-width: 410px;
-  align-self: center;
-  padding-top: 75px;
+  width: 100%;
+  max-width: 390px;
+  min-width: 0;
 }
 
 .garments-manufacturing__line {
-  width: 52px;
-  height: 2px;
-  margin-bottom: 28px;
+  width: 46px;
+  height: 1px;
 
-  background: #ffffff;
+  margin-bottom: 22px;
+
+  background: rgba(255, 255, 255, 0.65);
 }
 
 .garments-manufacturing__side > p {
   margin: 0;
 
-  font-family: var(--font-body);
+  font-family: "Poppins", sans-serif;
   font-size: 14px;
-  line-height: 1.85;
+  line-height: 1.7;
 
-  color: rgba(255, 255, 255, 0.76);
+  color: rgba(255, 255, 255, 0.88);
 }
 
 .garments-manufacturing__location {
   display: flex;
   align-items: center;
-  gap: 11px;
+  flex-wrap: wrap;
 
-  margin-top: 38px;
+  gap: 8px;
 
-  font-family: var(--font-body);
-  font-size: max(12px, 9px);
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  margin-top: 26px;
 
-  color: rgba(255, 255, 255, 0.62);
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.07em;
+
+  text-transform: uppercase;
 }
 
-.garments-manufacturing__location i {
-  width: 3px;
-  height: 3px;
-
-  background: #ffffff;
-}
-
-/* --------------------------------------------------
-   HERO BOTTOM
--------------------------------------------------- */
-
-.garments-manufacturing__bottom {
-  position: absolute;
-  z-index: 3;
-
-  left: 6vw;
-  right: 6vw;
-  bottom: 34px;
-
-  display: flex;
-  align-items: center;
-  gap: 13px;
-
-  font-family: var(--font-body);
-  font-size: max(12px, 9px);
-  font-weight: 600;
-  letter-spacing: 0.08em;
-
-  color: rgba(255, 255, 255, 0.68);
-}
-
+.garments-manufacturing__location i,
 .garments-manufacturing__bottom i {
   width: 3px;
   height: 3px;
 
-  background: rgba(255, 255, 255, 0.5);
+  flex: 0 0 3px;
+
+  border-radius: 50%;
+  background: currentColor;
+
+  opacity: 0.65;
 }
 
-/* --------------------------------------------------
+/* =========================================================
+   BOTTOM
+   ========================================================= */
+
+.garments-manufacturing__bottom {
+  position: absolute;
+  left: 5vw;
+  right: 5vw;
+  bottom: 0;
+
+  z-index: 6;
+
+  min-height: 64px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.28);
+
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.07em;
+
+  text-transform: uppercase;
+}
+
+.garments-manufacturing__bottom-left,
+.garments-manufacturing__bottom-right {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 9px;
+}
+
+.garments-manufacturing__bottom-right {
+  justify-content: flex-end;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   CORNERS
+   ========================================================= */
+
+.garments-manufacturing__corner {
+  position: absolute;
+  z-index: 7;
+
+  width: 22px;
+  height: 22px;
+
+  pointer-events: none;
+}
+
+.garments-manufacturing__corner--top {
+  top: 18px;
+  right: 18px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.55);
+  border-right: 1px solid rgba(255, 255, 255, 0.55);
+}
+
+.garments-manufacturing__corner--bottom {
+  bottom: 18px;
+  left: 18px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.55);
+  border-left: 1px solid rgba(255, 255, 255, 0.55);
+}
+
+/* =========================================================
    PROCESS
--------------------------------------------------- */
+   ========================================================= */
 
 .garments-manufacturing__process {
-  max-width: 1500px;
-  margin: 0 auto;
+  width: 100%;
 
-  padding: 145px 6vw 155px;
+  padding: clamp(80px, 9vw, 150px) 5vw;
+
+  background: #ffffff;
+  color: #243146;
 }
 
 .garments-manufacturing__process-header {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
-  gap: 8vw;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(280px, 420px);
+
+  gap: clamp(40px, 8vw, 140px);
 
   align-items: end;
 
-  padding-bottom: 75px;
+  margin-bottom: 80px;
 }
 
 .garments-manufacturing__process-header > div > p {
-  margin: 0 0 21px;
+  margin: 0 0 20px;
 
-  font-family: var(--font-body);
-  font-size: max(12px, 10px);
-  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
   letter-spacing: 0.08em;
 
-  color: #6b7075;
+  text-transform: uppercase;
 }
 
 .garments-manufacturing__process-header h3 {
   margin: 0;
 
-  font-family: var(--font-heading);
-  font-size: clamp(42px, 5vw, 76px);
-  font-weight: 600;
-  line-height: 0.9;
-  letter-spacing: -0.02em;
+  max-width: 800px;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(42px, 5.4vw, 82px);
+  font-weight: 500;
+  line-height: 0.92;
+  letter-spacing: -0.045em;
+
   text-transform: uppercase;
 }
 
 .garments-manufacturing__process-header h3 em {
   font-style: normal;
-  color: #243146;
+  opacity: 0.55;
 }
 
 .garments-manufacturing__process-intro {
-  max-width: 430px;
   margin: 0;
 
-  font-family: var(--font-body);
+  font-family: "Poppins", sans-serif;
   font-size: 13px;
-  line-height: 1.85;
+  line-height: 1.75;
 
-  color: #6b7075;
+  color: rgba(36, 49, 70, 0.72);
 }
 
-/* --------------------------------------------------
+/* =========================================================
    STAGES
--------------------------------------------------- */
+   ========================================================= */
 
 .garments-manufacturing__stages {
-  border-top: 1px solid #d8dadc;
+  border-top: 1px solid rgba(36, 49, 70, 0.18);
 }
 
 .garments-manufacturing__stage {
   display: grid;
-  grid-template-columns: 80px minmax(0, 1fr);
 
-  padding: 31px 0 35px;
+  grid-template-columns: 100px minmax(0, 1fr);
 
-  border-bottom: 1px solid #d8dadc;
+  gap: 30px;
+
+  padding: 28px 0;
+
+  border-bottom: 1px solid rgba(36, 49, 70, 0.18);
 }
 
 .garments-manufacturing__stage-number {
-  font-family: var(--font-body);
-  font-size: max(12px, 9px);
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-family: "Poppins", sans-serif;
+  font-size: 11px;
 
-  color: #8a8f94;
+  opacity: 0.5;
 }
 
 .garments-manufacturing__stage-main {
-  max-width: 850px;
+  min-width: 0;
 }
 
 .garments-manufacturing__stage-heading {
@@ -304,44 +379,47 @@
   align-items: center;
   justify-content: space-between;
 
-  margin-bottom: 14px;
+  gap: 20px;
 }
 
 .garments-manufacturing__stage-heading h4 {
   margin: 0;
 
-  font-family: var(--font-heading);
-  font-size: 24px;
-  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(22px, 2.2vw, 34px);
+  font-weight: 500;
   line-height: 1;
-
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
 }
 
 .garments-manufacturing__stage-heading svg {
-  color: #8a8f94;
+  flex: 0 0 auto;
 }
 
-.garments-manufacturing__stage-main p {
-  max-width: 590px;
-  margin: 0;
+.garments-manufacturing__stage-main > p {
+  max-width: 600px;
 
-  font-family: var(--font-body);
+  margin: 15px 0 0;
+
+  font-family: "Poppins", sans-serif;
   font-size: 12px;
-  line-height: 1.8;
+  line-height: 1.7;
 
-  color: #6b7075;
+  color: rgba(36, 49, 70, 0.68);
 }
 
-/* --------------------------------------------------
-   DETAIL BLOCK
--------------------------------------------------- */
+/* =========================================================
+   DETAIL
+   ========================================================= */
 
 .garments-manufacturing__detail {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 
-  min-height: 680px;
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+
+  min-height: 650px;
 
   background: #243146;
   color: #ffffff;
@@ -349,11 +427,18 @@
 
 .garments-manufacturing__detail-image {
   position: relative;
-  min-height: 600px;
+
+  min-height: 500px;
+
+  overflow: hidden;
 }
 
 .garments-manufacturing__detail-image img {
+  width: 100% !important;
+  height: 100% !important;
+
   object-fit: cover;
+  object-position: center;
 }
 
 .garments-manufacturing__detail-content {
@@ -361,236 +446,602 @@
   flex-direction: column;
   justify-content: center;
 
-  padding: 100px 8vw;
+  min-width: 0;
+
+  padding: 80px 8vw;
 }
 
 .garments-manufacturing__detail-content > span {
-  margin-bottom: 24px;
+  margin-bottom: 25px;
 
-  font-family: var(--font-body);
-  font-size: max(12px, 9px);
-  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
   letter-spacing: 0.08em;
 
-  color: rgba(255, 255, 255, 0.55);
+  text-transform: uppercase;
+
+  opacity: 0.7;
 }
 
 .garments-manufacturing__detail-content h3 {
-  margin: 0 0 38px;
+  margin: 0;
 
-  font-family: var(--font-heading);
-  font-size: clamp(42px, 5vw, 76px);
-  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(48px, 5.8vw, 90px);
+  font-weight: 500;
   line-height: 0.9;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.045em;
+
   text-transform: uppercase;
 }
 
 .garments-manufacturing__detail-content h3 em {
   font-style: normal;
+  opacity: 0.55;
 }
 
 .garments-manufacturing__detail-content > p {
-  max-width: 480px;
-  margin: 0;
+  max-width: 440px;
 
-  font-family: var(--font-body);
+  margin: 35px 0 0;
+
+  font-family: "Poppins", sans-serif;
   font-size: 13px;
-  line-height: 1.9;
+  line-height: 1.75;
 
-  color: rgba(255, 255, 255, 0.68);
+  color: rgba(255, 255, 255, 0.76);
 }
 
 .garments-manufacturing__detail-meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px 24px;
 
-  margin-top: 45px;
-  padding-top: 19px;
+  gap: 8px;
 
-  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  margin-top: 35px;
 
-  font-family: var(--font-body);
-  font-size: max(12px, 8px);
-  font-weight: 600;
-  letter-spacing: 0.08em;
-
-  color: rgba(255, 255, 255, 0.62);
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.07em;
 }
 
-/* --------------------------------------------------
+.garments-manufacturing__detail-meta span {
+  padding-right: 10px;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.garments-manufacturing__detail-meta span:last-child {
+  padding-right: 0;
+  border-right: 0;
+}
+
+/* =========================================================
    TABLET
--------------------------------------------------- */
+   ========================================================= */
 
-@media (max-width: 1050px) {
+@media (max-width: 900px) and (min-width: 769px) {
   .garments-manufacturing__content {
-    grid-template-columns: 1fr;
-    gap: 45px;
+    grid-template-columns: minmax(0, 1fr) 280px;
+    gap: 40px;
   }
 
-  .garments-manufacturing__side {
-    padding-top: 0;
+  .garments-manufacturing__title h2 {
+    font-size: clamp(52px, 7vw, 78px);
   }
 
-  .garments-manufacturing__process-header {
-    grid-template-columns: 1fr;
-    gap: 45px;
-  }
-
-  .garments-manufacturing__detail-content {
-    padding: 80px 6vw;
+  .garments-manufacturing__side > p {
+    font-size: 12px;
   }
 }
 
-/* --------------------------------------------------
+/* =========================================================
    MOBILE
--------------------------------------------------- */
+   ========================================================= */
 
-@media (max-width: 760px) {
+@media (max-width: 768px) {
+
+  /* HERO */
+
   .garments-manufacturing__hero {
-    min-height: 760px;
+    width: 100%;
+
+    height: auto;
+    min-height: 0;
+
+    aspect-ratio: 16 / 9;
+
+    margin-top: 82px;
+
+    overflow: hidden;
+  }
+
+  .garments-manufacturing__media {
+    position: absolute;
+    inset: 0;
   }
 
   .garments-manufacturing__media img {
-    object-position: 60% center;
+    width: 100% !important;
+    height: 100% !important;
+
+    object-fit: cover;
+    object-position: center center;
   }
 
   .garments-manufacturing__overlay {
     background:
       linear-gradient(
         90deg,
-        rgba(36, 49, 70, 0.94) 0%,
-        rgba(36, 49, 70, 0.55) 100%
-      ),
-      linear-gradient(
-        180deg,
-        rgba(36, 49, 70, 0.35) 0%,
-        rgba(36, 49, 70, 0.08) 42%,
-        rgba(36, 49, 70, 0.86) 100%
+        rgba(36, 49, 70, 0.82) 0%,
+        rgba(36, 49, 70, 0.45) 55%,
+        rgba(36, 49, 70, 0.2) 100%
       );
   }
 
-  .garments-manufacturing__top {
-    top: 25px;
-    left: 22px;
-    right: 22px;
+  /* TOP */
 
-    font-size: max(12px, 8px);
+  .garments-manufacturing__top {
+    top: 0;
+    left: 12px;
+    right: 12px;
+
+    height: 24px;
+
+    font-size: 6px;
+    letter-spacing: 0.05em;
   }
+
+  .garments-manufacturing__number {
+    font-size: 6px;
+  }
+
+  /* MAIN HERO CONTENT */
 
   .garments-manufacturing__content {
-    min-height: 760px;
+    position: absolute;
 
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
+    top: 24px;
+    right: 0;
+    bottom: 24px;
+    left: 0;
 
-    gap: 42px;
+    min-height: 0;
+    height: auto;
 
-    padding: 100px 22px 110px;
+    display: grid;
+
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(70px, 25%);
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 6px 12px;
+
+    overflow: hidden;
   }
 
-  .garments-manufacturing__title p {
-    margin-bottom: 17px;
-    font-size: max(12px, 9px);
+  .garments-manufacturing__title {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .garments-manufacturing__title > p {
+    margin: 0 0 5px;
+
+    font-size: 6px;
+    line-height: 1.1;
+    letter-spacing: 0.05em;
   }
 
   .garments-manufacturing__title h2 {
-    font-size: clamp(35px, 12.5vw, 48px);
+    margin: 0;
+
+    font-size: clamp(15px, 3.5vw, 23px);
     line-height: 0.9;
+    letter-spacing: -0.025em;
+    font-weight: 500;
   }
+
+  /* SIDE */
 
   .garments-manufacturing__side {
     width: 100%;
-    max-width: 430px;
+    min-width: 0;
+    max-width: none;
+  }
+
+  .garments-manufacturing__line {
+    width: 18px;
+    height: 1px;
+
+    margin-bottom: 5px;
   }
 
   .garments-manufacturing__side > p {
-    font-size: 12px;
-    line-height: 1.8;
+    margin: 0;
+
+    font-size: 6px;
+    line-height: 1.25;
   }
 
   .garments-manufacturing__location {
-    margin-top: 28px;
-    font-size: max(12px, 8px);
+    gap: 2px;
+
+    margin-top: 5px;
+
+    font-size: 5px;
+    line-height: 1.1;
+    letter-spacing: 0.03em;
   }
+
+  .garments-manufacturing__location i,
+  .garments-manufacturing__bottom i {
+    width: 2px;
+    height: 2px;
+    flex-basis: 2px;
+  }
+
+  /* BOTTOM */
 
   .garments-manufacturing__bottom {
-    left: 22px;
-    right: 22px;
-    bottom: 25px;
+    position: absolute;
 
-    flex-wrap: wrap;
+    left: 12px;
+    right: 12px;
+    bottom: 0;
 
-    font-size: max(12px, 7px);
+    height: 24px;
+    min-height: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 6px;
+
+    padding-top: 3px;
+
+    font-size: 5px;
+    line-height: 1;
+    letter-spacing: 0.03em;
+
+    overflow: hidden;
   }
 
+  .garments-manufacturing__bottom-left,
+  .garments-manufacturing__bottom-right {
+    display: flex;
+    align-items: center;
+
+    gap: 3px;
+
+    min-width: 0;
+  }
+
+  .garments-manufacturing__bottom-left {
+    overflow: hidden;
+  }
+
+  .garments-manufacturing__bottom-left span,
+  .garments-manufacturing__bottom-right span {
+    white-space: nowrap;
+  }
+
+  .garments-manufacturing__bottom-right {
+    flex-shrink: 0;
+  }
+
+  /* CORNERS */
+
+  .garments-manufacturing__corner {
+    width: 9px;
+    height: 9px;
+  }
+
+  .garments-manufacturing__corner--top {
+    top: 7px;
+    right: 7px;
+  }
+
+  .garments-manufacturing__corner--bottom {
+    bottom: 7px;
+    left: 7px;
+  }
+
+  /* PROCESS */
+
   .garments-manufacturing__process {
-    padding: 95px 22px 110px;
+    padding: 60px 14px;
   }
 
   .garments-manufacturing__process-header {
     display: block;
 
-    padding-bottom: 60px;
-  }
-
-  .garments-manufacturing__process-header > div {
-    margin-bottom: 35px;
+    margin-bottom: 45px;
   }
 
   .garments-manufacturing__process-header > div > p {
-    margin-bottom: 17px;
-    font-size: max(12px, 9px);
+    margin-bottom: 14px;
+
+    font-size: 8px;
   }
+
+  /*
+    IMPORTANT:
+    Short heading prevents mobile clipping.
+  */
 
   .garments-manufacturing__process-header h3 {
     max-width: 100%;
-    font-size: clamp(28px, 9vw, 36px);
+
+    font-size: clamp(30px, 9vw, 46px);
+    line-height: 0.92;
+    letter-spacing: -0.04em;
+
+    overflow-wrap: normal;
+    word-break: normal;
   }
 
   .garments-manufacturing__process-intro {
-    font-size: 12px;
-    line-height: 1.8;
+    margin-top: 24px;
+
+    max-width: 100%;
+
+    font-size: 10px;
+    line-height: 1.6;
   }
 
-  .garments-manufacturing__stage {
-    grid-template-columns: 45px minmax(0, 1fr);
+  /* STAGES */
 
-    padding: 25px 0 29px;
+  .garments-manufacturing__stage {
+    grid-template-columns: 32px minmax(0, 1fr);
+
+    gap: 12px;
+
+    padding: 20px 0;
+  }
+
+  .garments-manufacturing__stage-number {
+    font-size: 8px;
   }
 
   .garments-manufacturing__stage-heading h4 {
-    font-size: 19px;
+    font-size: 17px;
   }
 
-  .garments-manufacturing__stage-main p {
-    font-size: max(12px, 11px);
-    line-height: 1.75;
+  .garments-manufacturing__stage-heading svg {
+    width: 14px;
+    height: 14px;
   }
+
+  .garments-manufacturing__stage-main > p {
+    margin-top: 10px;
+
+    font-size: 9px;
+    line-height: 1.55;
+  }
+
+  /* DETAIL */
 
   .garments-manufacturing__detail {
-    grid-template-columns: 1fr;
-    min-height: auto;
+    display: block;
+    min-height: 0;
   }
 
   .garments-manufacturing__detail-image {
-    min-height: 430px;
+    width: 100%;
+
+    min-height: 0;
+
+    aspect-ratio: 4 / 3;
   }
 
   .garments-manufacturing__detail-content {
-    padding: 80px 22px 90px;
+    padding: 55px 14px 65px;
+  }
+
+  .garments-manufacturing__detail-content > span {
+    margin-bottom: 18px;
+
+    font-size: 8px;
   }
 
   .garments-manufacturing__detail-content h3 {
-    font-size: clamp(43px, 12vw, 62px);
-    margin-bottom: 30px;
+    font-size: clamp(38px, 12vw, 58px);
   }
 
   .garments-manufacturing__detail-content > p {
+    margin-top: 25px;
+
+    font-size: 10px;
+    line-height: 1.65;
+  }
+
+  .garments-manufacturing__detail-meta {
+    margin-top: 25px;
+
+    font-size: 8px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 500px) {
+
+  .garments-manufacturing__hero {
+    margin-top: 74px;
+  }
+
+  .garments-manufacturing__top {
+    left: 10px;
+    right: 10px;
+
+    height: 22px;
+
+    font-size: 5.5px;
+  }
+
+  .garments-manufacturing__content {
+    top: 22px;
+    bottom: 22px;
+
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(60px, 26%);
+
+    gap: 6px;
+
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .garments-manufacturing__title > p {
+    font-size: 5.5px;
+  }
+
+  .garments-manufacturing__title h2 {
+    font-size: clamp(14px, 4vw, 19px);
+  }
+
+  .garments-manufacturing__side > p {
+    font-size: 5.5px;
+    line-height: 1.22;
+  }
+
+  .garments-manufacturing__location {
+    font-size: 4.7px;
+  }
+
+  .garments-manufacturing__bottom {
+    left: 10px;
+    right: 10px;
+
+    height: 22px;
+    min-height: 22px;
+
+    font-size: 4.8px;
+  }
+
+  .garments-manufacturing__process {
+    padding: 55px 12px;
+  }
+
+  .garments-manufacturing__process-header h3 {
+    font-size: clamp(28px, 9vw, 42px);
+  }
+}
+
+/* =========================================================
+   375PX
+   ========================================================= */
+
+@media (max-width: 375px) {
+
+  .garments-manufacturing__content {
+    grid-template-columns:
+      minmax(0, 1fr)
+      55px;
+
+    gap: 5px;
+
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .garments-manufacturing__title > p {
+    font-size: 5px;
+  }
+
+  .garments-manufacturing__title h2 {
+    font-size: 13px;
+  }
+
+  .garments-manufacturing__side > p {
+    font-size: 5px;
+  }
+
+  .garments-manufacturing__location {
+    font-size: 4.3px;
+  }
+
+  .garments-manufacturing__bottom {
+    left: 8px;
+    right: 8px;
+
+    font-size: 4.3px;
+  }
+
+  .garments-manufacturing__process-header h3 {
+    font-size: 30px;
+    line-height: 0.9;
+  }
+}
+
+/* =========================================================
+   320PX
+   ========================================================= */
+
+@media (max-width: 320px) {
+
+  .garments-manufacturing__top {
+    height: 20px;
+
+    font-size: 4.5px;
+  }
+
+  .garments-manufacturing__content {
+    top: 20px;
+    bottom: 20px;
+
+    grid-template-columns:
+      minmax(0, 1fr)
+      50px;
+
+    gap: 4px;
+
+    padding-left: 7px;
+    padding-right: 7px;
+  }
+
+  .garments-manufacturing__title > p {
+    font-size: 4.3px;
+  }
+
+  .garments-manufacturing__title h2 {
     font-size: 12px;
-    line-height: 1.8;
+  }
+
+  .garments-manufacturing__side > p {
+    font-size: 4.6px;
+  }
+
+  .garments-manufacturing__location {
+    font-size: 4px;
+  }
+
+  .garments-manufacturing__bottom {
+    left: 7px;
+    right: 7px;
+
+    height: 20px;
+    min-height: 20px;
+
+    font-size: 4px;
+  }
+
+  .garments-manufacturing__process {
+    padding: 45px 10px;
+  }
+
+  .garments-manufacturing__process-header h3 {
+    font-size: 27px;
+    line-height: 0.9;
   }
 }

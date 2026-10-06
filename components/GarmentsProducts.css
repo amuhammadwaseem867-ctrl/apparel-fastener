@@ -23,7 +23,7 @@
   margin-bottom: 72px;
 
   font-family: var(--font-body);
-  font-size: max(12px, 10px);
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.08em;
 
@@ -41,7 +41,7 @@
   border-radius: 50%;
 
   color: #243146;
-  font-size: max(12px, 9px);
+  font-size: 12px;
 }
 
 .garments-products__header-grid {
@@ -55,7 +55,7 @@
   margin: 0 0 22px;
 
   font-family: var(--font-body);
-  font-size: max(12px, 11px);
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.08em;
 
@@ -100,7 +100,7 @@
   border-top: 1px solid #dcdcd8;
 
   font-family: var(--font-body);
-  font-size: max(12px, 9px);
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.08em;
 
@@ -144,7 +144,7 @@
 
 .garments-products__group-title > span {
   font-family: var(--font-body);
-  font-size: max(12px, 10px);
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.08em;
 
@@ -155,7 +155,7 @@
   margin: 0 0 9px;
 
   font-family: var(--font-body);
-  font-size: max(12px, 9px);
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.08em;
 
@@ -247,7 +247,7 @@
   left: 20px;
 
   font-family: var(--font-body);
-  font-size: max(12px, 9px);
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.08em;
 
@@ -300,7 +300,7 @@
 
 .garments-products__card-info span {
   font-family: var(--font-body);
-  font-size: max(12px, 8px);
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.08em;
 
@@ -354,7 +354,7 @@
 
 @media (max-width: 760px) {
   .garments-products {
-    padding: 95px 22px 110px;
+    padding: 95px 24px 110px;
   }
 
   .garments-products__header {
@@ -363,12 +363,12 @@
 
   .garments-products__eyebrow {
     margin-bottom: 45px;
-    font-size: max(12px, 9px);
+    font-size: 12px;
   }
 
   .garments-products__kicker {
     margin-bottom: 16px;
-    font-size: max(12px, 9px);
+    font-size: 12px;
   }
 
   .garments-products__header h2 {
@@ -400,7 +400,7 @@
   }
 
   .garments-products__group-description {
-    font-size: max(12px, 11px);
+    font-size: 12px;
     line-height: 1.75;
   }
 
@@ -411,6 +411,10 @@
 
   .garments-products__image {
     aspect-ratio: 0.82;
+  }
+
+  .garments-products__image img {
+    padding: 5% 5% 7%;
   }
 
   .garments-products__arrow {
@@ -443,3 +447,5 @@
     transform: none;
   }
 }
+
+

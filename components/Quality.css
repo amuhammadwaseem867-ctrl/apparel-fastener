@@ -32,7 +32,7 @@
   margin-bottom: clamp(45px, 6vw, 72px);
 
   font-family: var(--font-body);
-  font-size: max(12px, 10px);
+  font-size: 12px;
   line-height: 1;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -175,7 +175,7 @@
   border-bottom: 1px solid rgba(36, 49, 70, 0.45);
 
   font-family: var(--font-body);
-  font-size: max(12px, 10px);
+  font-size: 12px;
   line-height: 1;
   font-weight: 600;
 
@@ -279,7 +279,7 @@
   justify-content: space-between;
 
   font-family: var(--font-body);
-  font-size: max(12px, 8px);
+  font-size: 12px;
   line-height: 1;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -294,7 +294,7 @@
   bottom: 20px;
 
   font-family: var(--font-body);
-  font-size: max(12px, 8px);
+  font-size: 12px;
   line-height: 1;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -320,7 +320,7 @@
   margin-bottom: 22px;
 
   font-family: var(--font-body);
-  font-size: max(12px, 8px);
+  font-size: 12px;
   line-height: 1;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -349,7 +349,7 @@
   margin: 25px 0 0;
 
   font-family: var(--font-body);
-  font-size: max(12px, 10px);
+  font-size: 12px;
   line-height: 1.8;
   font-weight: 500;
 
@@ -371,7 +371,7 @@
 .quality-point {
   min-height: 215px;
 
-  padding: 23px 22px 30px;
+  padding: 23px 24px 30px;
 
   border-right: 1px solid rgba(36, 49, 70, 0.13);
   border-bottom: 1px solid rgba(36, 49, 70, 0.13);
@@ -394,7 +394,7 @@
 
 .quality-point__top > span:first-child {
   font-family: var(--font-body);
-  font-size: max(12px, 8px);
+  font-size: 12px;
   line-height: 1;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -448,7 +448,7 @@
   margin: 15px 0 0;
 
   font-family: var(--font-body);
-  font-size: max(12px, 9px);
+  font-size: 12px;
   line-height: 1.75;
   font-weight: 500;
 
@@ -487,7 +487,7 @@
 
 .quality__bottom-label {
   font-family: var(--font-body);
-  font-size: max(12px, 8px);
+  font-size: 12px;
   line-height: 1;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -506,7 +506,7 @@
   margin: 0;
 
   font-family: var(--font-body);
-  font-size: max(12px, 8px);
+  font-size: 12px;
   line-height: 1.5;
   font-weight: 600;
   letter-spacing: .08em;
@@ -568,13 +568,13 @@
   }
 
   .quality__container {
-    width: calc(100% - 40px);
+    width: calc(100% - 48px);
   }
 
   .quality__eyebrow {
     margin-bottom: 45px;
 
-    font-size: max(12px, 8px);
+    font-size: 12px;
     letter-spacing: 0.08em;
   }
 
@@ -614,7 +614,7 @@
   }
 
   .quality__feature-copy {
-    padding: 28px 22px 32px;
+    padding: 28px 24px 32px;
   }
 
   .quality__feature-copy h3 {
@@ -622,7 +622,7 @@
   }
 
   .quality__feature-copy p {
-    font-size: max(12px, 10px);
+    font-size: 12px;
     line-height: 1.75;
   }
 
@@ -649,7 +649,7 @@
   }
 
   .quality-point__body p {
-    font-size: max(12px, 9px);
+    font-size: 12px;
     line-height: 1.75;
   }
 
@@ -667,7 +667,7 @@
   }
 
   .quality__bottom p {
-    font-size: max(12px, 8px);
+    font-size: 12px;
     line-height: 1.7;
   }
 }
@@ -694,3 +694,5 @@
     transition: none;
   }
 }
+
+

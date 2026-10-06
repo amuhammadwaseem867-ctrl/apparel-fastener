@@ -82,6 +82,13 @@
   background: rgba(255, 255, 255, 0.045);
 }
 
+@media (max-width: 900px) {
+  .about-presence__visual {
+    min-height: 0;
+    aspect-ratio: 1.05 / 1;
+  }
+}
+
 .about-presence__image {
   object-fit: cover;
   transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
@@ -111,7 +118,7 @@
   display: block;
   margin-bottom: 22px;
   font-family: var(--font-body);
-  font-size: max(12px, 11px);
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.08em;
   color: #d8e0e4;
@@ -143,7 +150,7 @@
 .about-presence__location-number {
   padding-top: 5px;
   font-family: var(--font-body);
-  font-size: max(12px, 11px);
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.08em;
   color: #243146;
@@ -168,7 +175,7 @@
 .about-presence__location-heading span,
 .about-presence__location-role {
   font-family: var(--font-body);
-  font-size: max(12px, 10px);
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: .08em;
   color: #7d8991;
@@ -201,7 +208,7 @@
 
 .about-presence__closing span {
   font-family: var(--font-body);
-  font-size: max(12px, 11px);
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.08em;
   color: #243146;
@@ -278,7 +285,7 @@
   }
 
   .about-presence__inner {
-    width: calc(100% - 36px);
+    width: calc(100% - 48px);
   }
 
   .about-presence__top {
@@ -287,7 +294,7 @@
 
   .about-presence__eyebrow,
   .about-presence__index {
-    font-size: max(12px, 10px);
+    font-size: 12px;
   }
 
   .about-presence__intro {
@@ -349,3 +356,5 @@
     transition: none;
   }
 }
+
+

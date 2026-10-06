@@ -13,10 +13,7 @@ const jackets = [
     name: "Long Bomber Jacket",
     image: "/garments/long bomber jacket.webp",
   },
-  {
-    name: "Denim Jacket",
-    image: "/garments/denim-jacket.webp",
-  },
+ 
   {
     name: "Hooded Jacket",
     image: "/garments/hooded jacket .webp",

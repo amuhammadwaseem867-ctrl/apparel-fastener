@@ -37,17 +37,25 @@ export default function GarmentsManufacturing() {
       className="garments-manufacturing"
       id="garment-manufacturing"
     >
+      {/* =====================================================
+          HERO
+      ===================================================== */}
+
       <div className="garments-manufacturing__hero">
         <div className="garments-manufacturing__media">
           <Image
             src="/garments/manufacturing.webp"
             alt="Apparel Fastener garment manufacturing"
             fill
+            priority
+            quality={95}
             sizes="100vw"
           />
 
           <div className="garments-manufacturing__overlay" />
         </div>
+
+        {/* TOP META */}
 
         <div className="garments-manufacturing__top">
           <span className="garments-manufacturing__number">
@@ -56,6 +64,8 @@ export default function GarmentsManufacturing() {
 
           <span>GARMENT MANUFACTURING</span>
         </div>
+
+        {/* MAIN HERO CONTENT */}
 
         <div className="garments-manufacturing__content">
           <div className="garments-manufacturing__title">
@@ -76,36 +86,67 @@ export default function GarmentsManufacturing() {
             <p>
               From the first cut to the final finish, production is
               built around consistency, controlled construction and
-              attention to the details that define the finished garment.
+              attention to detail.
             </p>
 
             <div className="garments-manufacturing__location">
               <span>PRODUCTION</span>
               <i />
-              <span>LAHORE, PAKISTAN</span>
+              <span>CHINA</span>
+              <i />
+              <span>HONGKONG</span>
             </div>
           </div>
         </div>
 
+        {/* BOTTOM META */}
+
         <div className="garments-manufacturing__bottom">
-          <span>PROCESS</span>
-          <i />
-          <span>PRECISION</span>
-          <i />
-          <span>CONSISTENCY</span>
+          <div className="garments-manufacturing__bottom-left">
+            <span>PROCESS</span>
+            <i />
+            <span>PRECISION</span>
+            <i />
+            <span>CONSISTENCY</span>
+          </div>
+
+          <div className="garments-manufacturing__bottom-right">
+            <span>CHINA</span>
+            <i />
+            <span>HONGKONG</span>
+          </div>
         </div>
+
+        {/* CORNER DETAILS */}
+
+        <span
+          className="
+            garments-manufacturing__corner
+            garments-manufacturing__corner--top
+          "
+        />
+
+        <span
+          className="
+            garments-manufacturing__corner
+            garments-manufacturing__corner--bottom
+          "
+        />
       </div>
 
-      <div className="garments-manufacturing__process">
+      {/* =====================================================
+          PRODUCTION PROCESS
+      ===================================================== */}
+
+      <section className="garments-manufacturing__process">
         <div className="garments-manufacturing__process-header">
           <div>
             <p>PRODUCTION SYSTEM</p>
 
             <h3>
-              MADE THROUGH
+              CONTROLLED
               <br />
-              <em>CONTROLLED</em>
-              PROCESS.
+              <em>PRODUCTION.</em>
             </h3>
           </div>
 
@@ -141,15 +182,19 @@ export default function GarmentsManufacturing() {
             </article>
           ))}
         </div>
-      </div>
+      </section>
 
-      <div className="garments-manufacturing__detail">
+      {/* =====================================================
+          PRODUCTION DETAIL
+      ===================================================== */}
+
+      <section className="garments-manufacturing__detail">
         <div className="garments-manufacturing__detail-image">
           <Image
             src="/garments/factory.webp"
             alt="Garment production facility"
             fill
-            sizes="(max-width: 760px) 100vw, 50vw"
+            sizes="(max-width: 768px) 100vw, 50vw"
           />
         </div>
 
@@ -177,7 +222,7 @@ export default function GarmentsManufacturing() {
             <span>SWEATERS</span>
           </div>
         </div>
-      </div>
+      </section>
     </section>
   );
 }

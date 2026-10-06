@@ -308,7 +308,8 @@
   }
 
   .fabrics-development__visual {
-    height: 58vh;
+    height: auto;
+    aspect-ratio: 1 / 1;
   }
 
   .fabrics-development__visual-label {
@@ -353,3 +354,5 @@
     font-size: clamp(2.5rem, 11vw, 4rem);
   }
 }
+
+

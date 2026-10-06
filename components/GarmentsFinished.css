@@ -1,89 +1,115 @@
+/* =========================================================
+   GARMENTS FINISHED
+   Premium Editorial Hero Treatment
+   ========================================================= */
+
 .garments-finished {
   position: relative;
-  min-height: 92vh;
-  height: 92vh;
+
+  width: 100%;
+  min-height: 100vh;
+
   overflow: hidden;
 
   background: #243146;
   color: #ffffff;
+
   isolation: isolate;
 }
 
-/* --------------------------------------------------
+.garments-finished *,
+.garments-finished *::before,
+.garments-finished *::after {
+  box-sizing: border-box;
+}
+
+/* =========================================================
    MEDIA
--------------------------------------------------- */
+   ========================================================= */
 
 .garments-finished__media {
   position: absolute;
   inset: 0;
-  z-index: -4;
+
+  z-index: -2;
+
+  overflow: hidden;
 }
 
 .garments-finished__media img {
+  width: 100% !important;
+  height: 100% !important;
+
   object-fit: cover;
-  object-position: center;
-  transform: scale(1.015);
+  object-position: center center;
 }
 
-/* --------------------------------------------------
+/* =========================================================
    OVERLAY
--------------------------------------------------- */
+   ========================================================= */
 
 .garments-finished__overlay {
   position: absolute;
   inset: 0;
-  z-index: -3;
+
+  z-index: 1;
 
   background:
     linear-gradient(
       90deg,
-      rgba(36, 49, 70, 0.92) 0%,
-      rgba(36, 49, 70, 0.64) 36%,
-      rgba(36, 49, 70, 0.22) 75%,
-      rgba(36, 49, 70, 0.48) 100%
+      rgba(36, 49, 70, 0.90) 0%,
+      rgba(36, 49, 70, 0.58) 42%,
+      rgba(36, 49, 70, 0.22) 100%
     ),
     linear-gradient(
       180deg,
-      rgba(36, 49, 70, 0.40) 0%,
-      rgba(36, 49, 70, 0.02) 42%,
+      rgba(36, 49, 70, 0.38) 0%,
+      rgba(36, 49, 70, 0.04) 48%,
       rgba(36, 49, 70, 0.78) 100%
     );
 }
 
-/* --------------------------------------------------
+/* =========================================================
    CONTENT
--------------------------------------------------- */
+   ========================================================= */
 
 .garments-finished__content {
   position: relative;
   z-index: 2;
 
-  height: 100%;
+  min-height: 100vh;
+  height: 100vh;
 
   display: flex;
   flex-direction: column;
 
-  padding: 38px 6vw 34px;
+  padding: 38px 5vw 34px;
 }
 
-/* --------------------------------------------------
+/* =========================================================
    TOP
--------------------------------------------------- */
+   ========================================================= */
 
 .garments-finished__top {
   display: flex;
   align-items: center;
   justify-content: space-between;
 
+  height: 34px;
+
   font-family: var(--font-body);
-  font-size: max(12px, 10px);
-  font-weight: 600;
+  font-size: 11px;
+  font-weight: 500;
+
+  line-height: 1;
   letter-spacing: 0.08em;
+
+  text-transform: uppercase;
 }
 
 .garments-finished__number {
-  width: 31px;
-  height: 31px;
+  width: 30px;
+  height: 30px;
 
   display: grid;
   place-items: center;
@@ -91,113 +117,136 @@
   border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 50%;
 
-  font-size: max(12px, 9px);
+  font-size: 10px;
 }
 
-/* --------------------------------------------------
+/* =========================================================
    MAIN
--------------------------------------------------- */
+   ========================================================= */
 
 .garments-finished__main {
   flex: 1;
 
+  min-height: 0;
+
   display: grid;
+
   grid-template-columns:
     minmax(0, 1.35fr)
     minmax(280px, 0.65fr);
 
   align-items: center;
 
-  gap: 8vw;
+  gap: clamp(40px, 7vw, 110px);
+}
+
+.garments-finished__title {
+  min-width: 0;
 }
 
 .garments-finished__title p {
   margin: 0 0 22px;
 
   font-family: var(--font-body);
-  font-size: max(12px, 11px);
-  font-weight: 600;
+  font-size: 11px;
+  font-weight: 500;
+
+  line-height: 1.2;
   letter-spacing: 0.08em;
 
-  color: rgba(255, 255, 255, 0.65);
+  color: rgba(255, 255, 255, 0.68);
+
+  text-transform: uppercase;
 }
 
 .garments-finished__title h2 {
   margin: 0;
 
   font-family: var(--font-heading);
-  font-size: clamp(62px, 8vw, 135px);
-  font-weight: 600;
-  line-height: 0.9;
-  letter-spacing: -0.02em;
+
+  font-size: clamp(64px, 7.2vw, 118px);
+
+  font-weight: 500;
+
+  line-height: 0.87;
+  letter-spacing: -0.045em;
+
   text-transform: uppercase;
 }
 
 .garments-finished__title h2 em {
   font-style: normal;
-  color: #ffffff;
 }
 
-/* --------------------------------------------------
+/* =========================================================
    SIDE
--------------------------------------------------- */
+   ========================================================= */
 
 .garments-finished__side {
-  max-width: 410px;
-  align-self: center;
+  width: 100%;
+  max-width: 390px;
 
-  padding-top: 75px;
+  min-width: 0;
+
+  align-self: center;
 }
 
 .garments-finished__line {
-  width: 52px;
-  height: 2px;
+  width: 46px;
+  height: 1px;
 
-  margin-bottom: 28px;
+  margin-bottom: 22px;
 
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.7);
 }
 
 .garments-finished__side p {
   margin: 0;
 
   font-family: var(--font-body);
-  font-size: 14px;
-  line-height: 1.85;
+  font-size: 13px;
 
-  color: rgba(255, 255, 255, 0.76);
+  line-height: 1.7;
+
+  color: rgba(255, 255, 255, 0.82);
 }
 
-/* --------------------------------------------------
+/* =========================================================
    LINK
--------------------------------------------------- */
+   ========================================================= */
 
 .garments-finished__link {
   display: inline-flex;
   align-items: center;
-  gap: 14px;
+
+  gap: 10px;
 
   width: fit-content;
 
-  margin-top: 34px;
-  padding-bottom: 11px;
+  margin-top: 24px;
+  padding-bottom: 9px;
 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.42);
 
   color: #ffffff;
+
   text-decoration: none;
 
   font-family: var(--font-body);
-  font-size: max(12px, 9px);
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-size: 10px;
+  font-weight: 500;
 
-  transition: border-color 250ms ease;
+  line-height: 1;
+  letter-spacing: 0.07em;
+
+  transition:
+    border-color 250ms ease,
+    opacity 250ms ease;
 }
 
 .garments-finished__link-icon {
-  width: 34px;
-  height: 34px;
+  width: 28px;
+  height: 28px;
 
   display: grid;
   place-items: center;
@@ -214,38 +263,94 @@
 }
 
 .garments-finished__link:hover
-  .garments-finished__link-icon {
+.garments-finished__link-icon {
   transform: translate(3px, -3px);
+
   background: #31435d;
 }
 
-/* --------------------------------------------------
+/* =========================================================
    BOTTOM
--------------------------------------------------- */
+   ========================================================= */
 
 .garments-finished__bottom {
+  min-height: 48px;
+
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    auto
+    minmax(0, 1fr);
+
   align-items: center;
 
+  gap: 20px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+
+  padding-top: 10px;
+
   font-family: var(--font-body);
-  font-size: max(12px, 9px);
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-size: 9px;
+  font-weight: 500;
+
+  line-height: 1;
+
+  letter-spacing: 0.07em;
+
+  text-transform: uppercase;
 }
 
 .garments-finished__system,
 .garments-finished__location {
   display: flex;
   align-items: center;
-  gap: 11px;
+
+  gap: 8px;
+
+  min-width: 0;
+}
+
+.garments-finished__system {
+  overflow: hidden;
+}
+
+.garments-finished__system span,
+.garments-finished__location span {
+  white-space: nowrap;
 }
 
 .garments-finished__system i {
   width: 3px;
   height: 3px;
 
+  flex: 0 0 3px;
+
   background: rgba(255, 255, 255, 0.6);
+}
+
+.garments-finished__scroll {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  white-space: nowrap;
+
+  color: rgba(255, 255, 255, 0.58);
+}
+
+.garments-finished__scroll-icon {
+  width: 24px;
+  height: 24px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.28);
+
+  border-radius: 50%;
 }
 
 .garments-finished__location {
@@ -254,60 +359,45 @@
   color: rgba(255, 255, 255, 0.58);
 }
 
-.garments-finished__scroll {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-
-  color: rgba(255, 255, 255, 0.58);
-}
-
-.garments-finished__scroll-icon {
-  width: 27px;
-  height: 27px;
-
-  display: grid;
-  place-items: center;
-
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  border-radius: 50%;
-}
-
-/* --------------------------------------------------
+/* =========================================================
    CORNERS
--------------------------------------------------- */
+   ========================================================= */
 
 .garments-finished__corner {
   position: absolute;
 
-  width: 34px;
-  height: 34px;
+  z-index: 5;
 
-  opacity: 0.7;
+  width: 24px;
+  height: 24px;
+
+  opacity: 0.65;
+
   pointer-events: none;
 }
 
 .garments-finished__corner--tl {
-  top: 78px;
-  left: 4vw;
+  top: 22px;
+  left: 22px;
 
-  border-top: 1px solid rgba(255, 255, 255, 0.32);
-  border-left: 1px solid rgba(255, 255, 255, 0.32);
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
+  border-left: 1px solid rgba(255, 255, 255, 0.35);
 }
 
 .garments-finished__corner--br {
-  right: 4vw;
-  bottom: 82px;
+  right: 22px;
+  bottom: 22px;
 
-  border-right: 1px solid rgba(255, 255, 255, 0.32);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.32);
+  border-right: 1px solid rgba(255, 255, 255, 0.35);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
 }
 
-/* --------------------------------------------------
+/* =========================================================
    TABLET
--------------------------------------------------- */
+   ========================================================= */
 
-@media (max-width: 1050px) {
+@media (max-width: 1050px) and (min-width: 769px) {
+
   .garments-finished__main {
     grid-template-columns:
       minmax(0, 1.2fr)
@@ -317,121 +407,457 @@
   }
 
   .garments-finished__title h2 {
-    font-size: clamp(56px, 9vw, 105px);
+    font-size: clamp(56px, 7vw, 88px);
+  }
+
+  .garments-finished__side p {
+    font-size: 12px;
   }
 }
 
-/* --------------------------------------------------
+/* =========================================================
    MOBILE
--------------------------------------------------- */
+   SAME TREATMENT AS GARMENTS HERO
+   ========================================================= */
 
-@media (max-width: 760px) {
+@media (max-width: 768px) {
+
   .garments-finished {
-    min-height: 760px;
-    height: 100svh;
+    width: 100%;
+
+    height: auto;
+    min-height: 0;
+
+    aspect-ratio: 16 / 9;
+
+    margin-top: 82px;
+
+    overflow: hidden;
+  }
+
+  .garments-finished__media {
+    position: absolute;
+    inset: 0;
   }
 
   .garments-finished__media img {
-    object-position: 62% center;
+    width: 100% !important;
+    height: 100% !important;
+
+    object-fit: cover;
+    object-position: center center;
   }
 
   .garments-finished__overlay {
     background:
       linear-gradient(
         90deg,
-        rgba(36, 49, 70, 0.95) 0%,
-        rgba(36, 49, 70, 0.56) 100%
+        rgba(36, 49, 70, 0.82) 0%,
+        rgba(36, 49, 70, 0.45) 55%,
+        rgba(36, 49, 70, 0.20) 100%
       ),
       linear-gradient(
         180deg,
-        rgba(36, 49, 70, 0.38) 0%,
-        rgba(36, 49, 70, 0.08) 42%,
-        rgba(36, 49, 70, 0.86) 100%
+        rgba(36, 49, 70, 0.35) 0%,
+        rgba(36, 49, 70, 0.04) 48%,
+        rgba(36, 49, 70, 0.78) 100%
       );
   }
 
+  /* =====================================================
+     CONTENT SAFE AREA
+     ===================================================== */
+
   .garments-finished__content {
-    padding: 25px 22px 25px;
-  }
+    position: absolute;
 
-  .garments-finished__top {
-    font-size: max(12px, 8px);
-  }
+    inset: 0;
 
-  .garments-finished__main {
+    min-height: 0;
+    height: 100%;
+
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
 
-    gap: 42px;
+    padding:
+      5px
+      14px
+      5px;
+  }
+
+  /* =====================================================
+     TOP
+     ===================================================== */
+
+  .garments-finished__top {
+    flex: 0 0 25px;
+
+    height: 25px;
+
+    font-size: 6px;
+
+    letter-spacing: 0.055em;
+  }
+
+  .garments-finished__number {
+    width: 18px;
+    height: 18px;
+
+    font-size: 6px;
+  }
+
+  /* =====================================================
+     MAIN
+     ===================================================== */
+
+  .garments-finished__main {
+    flex: 1;
+
+    min-height: 0;
+
+    display: grid;
+
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(72px, 25%);
+
+    align-items: center;
+
+    gap: 8px;
+
+    overflow: hidden;
+  }
+
+  .garments-finished__title {
+    min-width: 0;
+    max-width: 100%;
   }
 
   .garments-finished__title p {
-    margin-bottom: 17px;
-    font-size: max(12px, 9px);
+    margin: 0 0 5px;
+
+    font-size: 6px;
+
+    line-height: 1.1;
+    letter-spacing: 0.05em;
   }
 
   .garments-finished__title h2 {
-    font-size: clamp(54px, 15vw, 80px);
+    margin: 0;
+
+    font-size: clamp(15px, 3.5vw, 23px);
+
+    font-weight: 500;
+
     line-height: 0.9;
+
+    letter-spacing: -0.025em;
   }
+
+  /* =====================================================
+     SIDE
+     ===================================================== */
 
   .garments-finished__side {
     width: 100%;
-    max-width: 430px;
 
-    padding-top: 0;
+    max-width: none;
+    min-width: 0;
+
+    align-self: center;
+  }
+
+  .garments-finished__line {
+    width: 18px;
+    height: 1px;
+
+    margin-bottom: 5px;
   }
 
   .garments-finished__side p {
-    font-size: 12px;
-    line-height: 1.8;
+    margin: 0;
+
+    font-size: 6px;
+
+    line-height: 1.25;
   }
+
+  /* =====================================================
+     LINK
+     ===================================================== */
 
   .garments-finished__link {
-    margin-top: 26px;
-    font-size: max(12px, 8px);
+    gap: 4px;
+
+    margin-top: 6px;
+
+    padding-bottom: 3px;
+
+    font-size: 5px;
+
+    line-height: 1;
+
+    letter-spacing: 0.035em;
   }
+
+  .garments-finished__link-icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .garments-finished__link-icon svg {
+    width: 8px;
+    height: 8px;
+  }
+
+  /* =====================================================
+     BOTTOM
+     ===================================================== */
 
   .garments-finished__bottom {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
+    flex: 0 0 25px;
 
-    font-size: max(12px, 7px);
+    height: 25px;
+    min-height: 25px;
+
+    display: grid;
+
+    grid-template-columns:
+      minmax(0, 1fr)
+      auto
+      minmax(0, 1fr);
+
+    align-items: center;
+
+    gap: 5px;
+
+    padding-top: 4px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+
+    font-size: 5px;
+
+    line-height: 1;
+
+    letter-spacing: 0.03em;
+
+    overflow: hidden;
   }
 
-  .garments-finished__scroll {
-    order: -1;
-  }
-
+  .garments-finished__system,
   .garments-finished__location {
+    min-width: 0;
+
+    gap: 3px;
+
+    overflow: hidden;
+  }
+
+  .garments-finished__system span,
+  .garments-finished__location span {
+    white-space: nowrap;
+  }
+
+  .garments-finished__system {
     justify-content: flex-start;
   }
 
+  .garments-finished__location {
+    justify-content: flex-end;
+  }
+
+  .garments-finished__scroll {
+    gap: 3px;
+
+    font-size: 5px;
+  }
+
+  .garments-finished__scroll-icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .garments-finished__scroll-icon svg {
+    width: 7px;
+    height: 7px;
+  }
+
+  /* =====================================================
+     CORNERS
+     ===================================================== */
+
   .garments-finished__corner {
-    width: 24px;
-    height: 24px;
+    width: 10px;
+    height: 10px;
   }
 
   .garments-finished__corner--tl {
-    top: 72px;
-    left: 18px;
+    top: 8px;
+    left: 8px;
   }
 
   .garments-finished__corner--br {
-    right: 18px;
-    bottom: 78px;
+    right: 8px;
+    bottom: 8px;
   }
 }
 
-/* --------------------------------------------------
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 500px) {
+
+  .garments-finished {
+    margin-top: 74px;
+  }
+
+  .garments-finished__content {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .garments-finished__top {
+    flex-basis: 22px;
+    height: 22px;
+
+    font-size: 5.5px;
+  }
+
+  .garments-finished__number {
+    width: 16px;
+    height: 16px;
+
+    font-size: 5.5px;
+  }
+
+  .garments-finished__main {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(62px, 26%);
+
+    gap: 6px;
+  }
+
+  .garments-finished__title p {
+    font-size: 5.5px;
+  }
+
+  .garments-finished__title h2 {
+    font-size: clamp(14px, 4vw, 19px);
+  }
+
+  .garments-finished__side p {
+    font-size: 5.5px;
+    line-height: 1.22;
+  }
+
+  .garments-finished__link {
+    margin-top: 5px;
+    font-size: 4.7px;
+  }
+
+  .garments-finished__bottom {
+    flex-basis: 22px;
+    height: 22px;
+    min-height: 22px;
+
+    font-size: 4.8px;
+  }
+}
+
+/* =========================================================
+   375PX
+   ========================================================= */
+
+@media (max-width: 375px) {
+
+  .garments-finished__content {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .garments-finished__main {
+    grid-template-columns:
+      minmax(0, 1fr)
+      55px;
+
+    gap: 5px;
+  }
+
+  .garments-finished__title p {
+    font-size: 5px;
+  }
+
+  .garments-finished__title h2 {
+    font-size: 13px;
+  }
+
+  .garments-finished__side p {
+    font-size: 5px;
+  }
+
+  .garments-finished__link {
+    font-size: 4.4px;
+  }
+
+  .garments-finished__bottom {
+    font-size: 4.3px;
+  }
+}
+
+/* =========================================================
+   320PX
+   ========================================================= */
+
+@media (max-width: 320px) {
+
+  .garments-finished__top {
+    flex-basis: 20px;
+    height: 20px;
+
+    font-size: 4.5px;
+  }
+
+  .garments-finished__main {
+    grid-template-columns:
+      minmax(0, 1fr)
+      50px;
+
+    gap: 4px;
+  }
+
+  .garments-finished__title p {
+    font-size: 4.3px;
+  }
+
+  .garments-finished__title h2 {
+    font-size: 12px;
+  }
+
+  .garments-finished__side p {
+    font-size: 4.6px;
+  }
+
+  .garments-finished__link {
+    font-size: 4px;
+  }
+
+  .garments-finished__bottom {
+    flex-basis: 20px;
+    height: 20px;
+    min-height: 20px;
+
+    font-size: 4px;
+  }
+}
+
+/* =========================================================
    REDUCED MOTION
--------------------------------------------------- */
+   ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
+
   .garments-finished__media img,
   .garments-finished__link,
   .garments-finished__link-icon {

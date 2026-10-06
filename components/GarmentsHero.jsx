@@ -2,12 +2,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowDown, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import "./GarmentsHero.css";
 
 export default function GarmentsHero() {
   return (
     <section className="garments-hero">
+      {/* Background Image */}
       <div className="garments-hero__media">
         <Image
           src="/garments/herogarment.webp"
@@ -19,20 +20,27 @@ export default function GarmentsHero() {
         />
       </div>
 
-      <div className="garments-hero__veil" />
+      {/* Image Overlay */}
+      <div className="garments-hero__overlay" />
+
+      {/* Editorial Grid */}
       <div className="garments-hero__grid" />
 
+      {/* Main Content */}
       <div className="garments-hero__content">
-        <div className="garments-hero__top">
+        {/* Top Meta */}
+        <div className="garments-hero__meta">
           <span>APPAREL FASTENER</span>
           <span>01 / GARMENTS</span>
         </div>
 
-        <div className="garments-hero__body">
-          <div className="garments-hero__title-wrap">
-            <p className="garments-hero__kicker">
+        {/* Main Area */}
+        <div className="garments-hero__main">
+          {/* Heading */}
+          <div className="garments-hero__heading">
+            <span className="garments-hero__eyebrow">
               GARMENT COLLECTION
-            </p>
+            </span>
 
             <h1>
               BUILT
@@ -45,10 +53,11 @@ export default function GarmentsHero() {
             </h1>
           </div>
 
-          <div className="garments-hero__side">
-            <div className="garments-hero__line" />
+          {/* Description */}
+          <div className="garments-hero__info">
+            <span className="garments-hero__info-line" />
 
-            <p className="garments-hero__description">
+            <p>
               From structured jackets to refined sweaters, we develop
               garments where material, construction, precision and
               finishing come together as one complete product.
@@ -56,20 +65,21 @@ export default function GarmentsHero() {
 
             <Link
               href="#garment-collections"
-              className="garments-hero__cta"
+              className="garments-hero__button"
             >
               <span>Explore Garments</span>
 
-              <span className="garments-hero__cta-icon">
-                <ArrowUpRight size={19} strokeWidth={2} />
+              <span className="garments-hero__button-icon">
+                <ArrowUpRight size={16} strokeWidth={1.8} />
               </span>
             </Link>
           </div>
         </div>
       </div>
 
+      {/* Bottom Information */}
       <div className="garments-hero__bottom">
-        <div className="garments-hero__system">
+        <div className="garments-hero__categories">
           <span>JACKETS</span>
           <i />
           <span>SWEATERS</span>
@@ -77,23 +87,16 @@ export default function GarmentsHero() {
           <span>DEVELOPMENT</span>
         </div>
 
-        <div className="garments-hero__scroll">
-          <span className="garments-hero__scroll-icon">
-            <ArrowDown size={15} strokeWidth={1.8} />
-          </span>
-
-          <span>SCROLL TO EXPLORE</span>
-        </div>
-
         <div className="garments-hero__location">
-          <span>LAHORE</span>
+          <span>CHINA</span>
           <i />
-          <span>PAKISTAN</span>
+          <span>HONGKONG</span>
         </div>
       </div>
 
-      <div className="garments-hero__corner garments-hero__corner--tl" />
-      <div className="garments-hero__corner garments-hero__corner--br" />
+      {/* Corner Details */}
+      <span className="garments-hero__corner garments-hero__corner--top" />
+      <span className="garments-hero__corner garments-hero__corner--bottom" />
     </section>
   );
 }

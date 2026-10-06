@@ -32,7 +32,7 @@
   margin-bottom: clamp(45px, 6vw, 75px);
 
   font-family: var(--font-body);
-  font-size: max(12px, 10px);
+  font-size: 12px;
   line-height: 1;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -293,7 +293,7 @@
   left: 16px;
 
   font-family: var(--font-body);
-  font-size: max(12px, 9px);
+  font-size: 12px;
   line-height: 1;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -325,7 +325,7 @@
   margin: 14px 0 0;
 
   font-family: var(--font-body);
-  font-size: max(12px, 10px);
+  font-size: 12px;
   line-height: 1.7;
   font-weight: 500;
 
@@ -398,7 +398,7 @@
   margin: 0;
 
   font-family: var(--font-body);
-  font-size: max(12px, 9px);
+  font-size: 12px;
   line-height: 1;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -417,7 +417,7 @@
   border-bottom: 1px solid rgba(36, 49, 70, 0.45);
 
   font-family: var(--font-body);
-  font-size: max(12px, 9px);
+  font-size: 12px;
   line-height: 1;
   font-weight: 600;
 
@@ -500,13 +500,13 @@
   }
 
   .ecosystem__container {
-    width: calc(100% - 40px);
+    width: calc(100% - 48px);
   }
 
   .ecosystem__eyebrow {
     margin-bottom: 45px;
 
-    font-size: max(12px, 8px);
+    font-size: 12px;
     letter-spacing: 0.08em;
   }
 
@@ -552,7 +552,7 @@
   }
 
   .ecosystem-stage__media {
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 1.1 / 1;
   }
 
   .ecosystem-stage__content {
@@ -566,7 +566,7 @@
   .ecosystem-stage__content p {
     max-width: 500px;
 
-    font-size: max(12px, 10px);
+    font-size: 12px;
     line-height: 1.75;
   }
 
@@ -587,12 +587,12 @@
   .ecosystem__statement p {
     white-space: normal;
 
-    font-size: max(12px, 8px);
+    font-size: 12px;
     line-height: 1.5;
   }
 
   .ecosystem__statement-link {
-    font-size: max(12px, 9px);
+    font-size: 12px;
   }
 }
 
@@ -615,3 +615,5 @@
     transition: none;
   }
 }
+
+

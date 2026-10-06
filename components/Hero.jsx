@@ -17,6 +17,8 @@ export default function Hero() {
 
     if (!hero || !image || !content) return;
 
+    if (window.matchMedia("(hover: none)").matches) return;
+
     const handleMove = (event) => {
       const rect = hero.getBoundingClientRect();
 

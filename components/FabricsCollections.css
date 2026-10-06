@@ -19,7 +19,7 @@
   margin-bottom: 70px;
 
   font-family: var(--font-body);
-  font-size: max(12px, 9px);
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.08em;
 
@@ -37,7 +37,7 @@
   border-radius: 50%;
 
   color: #243146;
-  font-size: max(12px, 8px);
+  font-size: 12px;
 }
 
 .fabrics-collections__intro-grid {
@@ -52,7 +52,7 @@
   margin: 0 0 22px;
 
   font-family: var(--font-body);
-  font-size: max(12px, 10px);
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.08em;
 
@@ -121,7 +121,7 @@
   margin-top: 5px;
 
   font-family: var(--font-body);
-  font-size: max(12px, 7px);
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.08em;
 
@@ -167,7 +167,7 @@
   border-radius: 50%;
 
   font-family: var(--font-body);
-  font-size: max(12px, 8px);
+  font-size: 12px;
   font-weight: 600;
 }
 
@@ -175,7 +175,7 @@
   margin: 0 0 10px;
 
   font-family: var(--font-body);
-  font-size: max(12px, 8px);
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.08em;
 
@@ -226,7 +226,7 @@
 
   gap: 14px;
 
-  padding: 20px 22px;
+  padding: 20px 24px;
 
   border-right: 1px solid #dcdcd8;
   border-bottom: 1px solid #dcdcd8;
@@ -243,7 +243,7 @@
 
 .fabrics-collections__item-number {
   font-family: var(--font-body);
-  font-size: max(12px, 8px);
+  font-size: 12px;
   font-weight: 600;
 
   color: #9a9ea2;
@@ -329,12 +329,12 @@
 
 @media (max-width: 760px) {
   .fabrics-collections__intro {
-    padding: 75px 22px 60px;
+    padding: 75px 24px 60px;
   }
 
   .fabrics-collections__eyebrow {
     margin-bottom: 48px;
-    font-size: max(12px, 8px);
+    font-size: 12px;
   }
 
   .fabrics-collections__intro-grid {
@@ -363,7 +363,7 @@
   }
 
   .fabrics-collections__stats span {
-    font-size: max(12px, 6px);
+    font-size: 12px;
   }
 
   .fabrics-collections__group {
@@ -392,7 +392,7 @@
 
   .fabrics-collections__group-description {
     margin: 25px 0 0;
-    font-size: max(12px, 11px);
+    font-size: 12px;
     line-height: 1.8;
   }
 
@@ -428,3 +428,5 @@
     transition: none;
   }
 }
+
+

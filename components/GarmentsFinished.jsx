@@ -6,26 +6,47 @@ import "./GarmentsFinished.css";
 
 export default function GarmentsFinished() {
   return (
-    <section className="garments-finished" id="garment-finished">
+    <section
+      className="garments-finished"
+      id="garment-finished"
+    >
+      {/* =====================================================
+          HERO MEDIA
+      ===================================================== */}
+
       <div className="garments-finished__media">
         <Image
           src="/garments/herogarment.webp"
           alt="Finished garment collection"
           fill
+          priority
+          quality={95}
           sizes="100vw"
         />
 
         <div className="garments-finished__overlay" />
       </div>
 
+      {/* =====================================================
+          CONTENT
+      ===================================================== */}
+
       <div className="garments-finished__content">
+
+        {/* TOP */}
+
         <div className="garments-finished__top">
-          <span className="garments-finished__number">07</span>
+          <span className="garments-finished__number">
+            07
+          </span>
 
           <span>THE FINISHED FORM</span>
         </div>
 
+        {/* MAIN */}
+
         <div className="garments-finished__main">
+
           <div className="garments-finished__title">
             <p>THE RESULT</p>
 
@@ -42,9 +63,9 @@ export default function GarmentsFinished() {
             <div className="garments-finished__line" />
 
             <p>
-              A finished garment brings every decision together —
-              material, silhouette, construction, fastening, detail and
-              final presentation.
+              A finished garment brings material, silhouette,
+              construction, fastening and detail together into
+              one complete product.
             </p>
 
             <a
@@ -54,13 +75,19 @@ export default function GarmentsFinished() {
               <span>EXPLORE THE COLLECTION</span>
 
               <span className="garments-finished__link-icon">
-                <ArrowUpRight size={18} strokeWidth={1.8} />
+                <ArrowUpRight
+                  size={15}
+                  strokeWidth={1.8}
+                />
               </span>
             </a>
           </div>
         </div>
 
+        {/* BOTTOM */}
+
         <div className="garments-finished__bottom">
+
           <div className="garments-finished__system">
             <span>JACKETS</span>
             <i />
@@ -71,7 +98,10 @@ export default function GarmentsFinished() {
 
           <div className="garments-finished__scroll">
             <span className="garments-finished__scroll-icon">
-              <ArrowDown size={14} strokeWidth={1.8} />
+              <ArrowDown
+                size={11}
+                strokeWidth={1.8}
+              />
             </span>
 
             <span>CONTINUE</span>
@@ -80,11 +110,25 @@ export default function GarmentsFinished() {
           <div className="garments-finished__location">
             <span>APPAREL FASTENER</span>
           </div>
+
         </div>
       </div>
 
-      <div className="garments-finished__corner garments-finished__corner--tl" />
-      <div className="garments-finished__corner garments-finished__corner--br" />
+      {/* CORNERS */}
+
+      <div
+        className="
+          garments-finished__corner
+          garments-finished__corner--tl
+        "
+      />
+
+      <div
+        className="
+          garments-finished__corner
+          garments-finished__corner--br
+        "
+      />
     </section>
   );
 }

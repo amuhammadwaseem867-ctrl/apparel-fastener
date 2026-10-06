@@ -115,7 +115,7 @@ export default function ContactPage() {
           </div>
         </div>
 
-        <div className="        Contact-hero__footer">
+        <div className="contact-hero__footer">
           <span>LAHORE · HONG KONG · GUANGZHOU</span>
           <span>INTERNATIONAL APPAREL NETWORK</span>
         </div>

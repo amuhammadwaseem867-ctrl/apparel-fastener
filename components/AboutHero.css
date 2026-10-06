@@ -143,7 +143,7 @@
   gap: 13px;
 
   font-family: var(--font-body);
-  font-size: max(12px, 9px);
+  font-size: 12px;
   line-height: 1;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -158,7 +158,7 @@
 
 .about-hero__index {
   font-family: var(--font-body);
-  font-size: max(12px, 8px);
+  font-size: 12px;
   line-height: 1;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -285,7 +285,7 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.42);
 
   font-family: var(--font-body);
-  font-size: max(12px, 9px);
+  font-size: 12px;
   line-height: 1;
   font-weight: 600;
   letter-spacing: 0.02em;
@@ -335,7 +335,7 @@
   gap: 12px;
 
   font-family: var(--font-body);
-  font-size: max(12px, 8px);
+  font-size: 12px;
   line-height: 1;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -354,7 +354,7 @@
 
 .about-hero__label {
   font-family: var(--font-body);
-  font-size: max(12px, 8px);
+  font-size: 12px;
   line-height: 1;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -392,7 +392,7 @@
   }
 
   .about-hero__container {
-    width: calc(100% - 40px);
+    width: calc(100% - 48px);
     min-height: 700px;
 
     padding: 28px 0 25px;
@@ -412,7 +412,7 @@
   }
 
   .about-hero__eyebrow {
-    font-size: max(12px, 7px);
+    font-size: 12px;
     letter-spacing: 0.08em;
   }
 
@@ -421,7 +421,7 @@
   }
 
   .about-hero__index {
-    font-size: max(12px, 7px);
+    font-size: 12px;
   }
 
   .about-hero__content {
@@ -434,23 +434,23 @@
   }
 
   .about-hero__copy p {
-    font-size: max(12px, 10px);
+    font-size: 12px;
     line-height: 1.8;
   }
 
   .about-hero__link {
-    font-size: max(12px, 8px);
+    font-size: 12px;
   }
 
   .about-hero__locations {
     gap: 8px;
 
-    font-size: max(12px, 6px);
+    font-size: 12px;
     letter-spacing: .08em;
   }
 
   .about-hero__label {
-    font-size: max(12px, 6px);
+    font-size: 12px;
     letter-spacing: 0.08em;
   }
 }
@@ -474,3 +474,5 @@
     transition: none;
   }
 }
+
+

@@ -279,6 +279,9 @@ export default function Header() {
   }, [menuOpen]);
 
   useEffect(() => {
+    if (!menuOpen) return;
+
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMenuOpen(false);
   }, [pathname]);
 
@@ -342,8 +345,8 @@ export default function Header() {
                 <Image
                   src="/logos/logo in white.png"
                   alt="APPAREL FASTENER"
-                  width={240}
-                  height={65}
+                  width={250}
+                  height={68}
                   priority
                   className="header__logo header__logo--white"
                 />
@@ -351,8 +354,8 @@ export default function Header() {
                 <Image
                   src="/logos/logo in navy.png"
                   alt=""
-                  width={240}
-                  height={65}
+                  width={250}
+                  height={68}
                   priority
                   aria-hidden="true"
                   className="header__logo header__logo--navy"

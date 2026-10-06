@@ -69,7 +69,7 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 
   font-family: var(--font-body);
-  font-size: max(12px, 10px);
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -91,7 +91,7 @@
   margin: 0 0 28px;
 
   font-family: var(--font-body);
-  font-size: max(12px, 11px);
+  font-size: 12px;
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.08em;
@@ -162,7 +162,7 @@
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 
   font-family: var(--font-body);
-  font-size: max(12px, 10px);
+  font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.08em;
   color: rgba(255, 255, 255, 0.52);
@@ -190,7 +190,7 @@
 
   .accessories-cta__top {
     padding-bottom: 18px;
-    font-size: max(12px, 9px);
+    font-size: 12px;
   }
 
   .accessories-cta__top span:last-child {
@@ -203,7 +203,7 @@
 
   .accessories-cta__eyebrow {
     margin-bottom: 22px;
-    font-size: max(12px, 9px);
+    font-size: 12px;
   }
 
   .accessories-cta__main h1 {
@@ -218,15 +218,17 @@
   }
 
   .accessories-cta__button {
-    font-size: max(12px, 9px);
+    font-size: 12px;
   }
 
   .accessories-cta__bottom {
     padding-top: 18px;
-    font-size: max(12px, 8px);
+    font-size: 12px;
   }
 
   .accessories-cta__bottom span:first-child {
-    max-width: 120px;
+    max-width: 160px;
   }
 }
+
+
