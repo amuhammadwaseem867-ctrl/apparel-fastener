@@ -1,179 +1,136 @@
-"use client";
-
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowUpRight, Mail, MessageCircle } from "lucide-react";
+import { company, divisions, navigation, offices } from "@/lib/site";
 import "./Footer.css";
 
-const OFFICES = [
-  { city: "Pakistan", tel: "+923134710325" },
-  { city: "Hong Kong", tel: "+85298509479" },
-  { city: "China", tel: "+862089637634" },
-];
+const companyLinks = navigation.filter(
+  (item) => !divisions.some((division) => division.href === item.href)
+);
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
+  const year = new Date().getFullYear();
 
   return (
     <footer className="site-footer">
-      {/* =====================================================
-          MAIN CTA
-      ====================================================== */}
+      <section className="footer-cta" aria-labelledby="footer-cta-title">
+        <div className="container footer-cta__inner">
+          <div data-reveal>
+            <span className="eyebrow">
+              <span className="eyebrow__line" />
+              Start a conversation
+            </span>
 
-      <section className="footer-cta">
-        <div className="footer-cta__inner">
-          <div className="footer-cta__eyebrow">
-            <span className="footer-cta__line" />
-            <span>Start a Conversation</span>
+            <h2 id="footer-cta-title" className="title footer-cta__title">
+              Let&apos;s create <em>unmatched value</em> together.
+            </h2>
           </div>
 
-          <h2 className="footer-cta__title">
-            <span>LET&apos;S BUILD</span>
-            <span>SOMETHING</span>
-            <span className="footer-cta__accent">BETTER.</span>
-          </h2>
+          <div className="footer-cta__side" data-reveal style={{ "--reveal-delay": 2 }}>
+            <p>
+              We bring the comfort of expertise and reliability to your business with more than{" "}
+              {company.experienceYears} years in the textile and apparel industry.
+            </p>
 
-          <Link href="/contact" className="footer-cta__button">
-            <span>Make an Inquiry</span>
-            <span className="footer-cta__arrow">↗</span>
-          </Link>
+            <div className="btn-row">
+              <Link href="/contact#enquiry" className="btn btn--light">
+                Make an enquiry
+                <ArrowUpRight size={16} strokeWidth={1.8} />
+              </Link>
+              <a href={`mailto:${company.email}`} className="btn btn--ghost">
+                Email us
+                <Mail size={16} strokeWidth={1.6} />
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* =====================================================
-          FOOTER MAIN
-      ====================================================== */}
-
       <div className="footer-main">
-        <div className="footer-main__top">
-
-          {/* Brand */}
-          <div className="footer-brand">
-            <Link
-              href="/"
-              className="footer-brand__logo"
-              aria-label="Apparel Fastener — home"
-            >
-              <Image
-                src="/logos/logo in white.png"
-                alt="APPAREL FASTENER"
-                width={3956}
-                height={1242}
-                sizes="250px"
-                className="footer-brand__logo-img"
-              />
-            </Link>
-
-            <p className="footer-brand__description">
-              An integrated apparel company connecting garments,
-              fabrics and garment accessories through quality,
-              precision and manufacturing expertise.
-            </p>
-          </div>
-
-          {/* Navigation */}
-          <div className="footer-nav">
-            <div className="footer-column">
-              <span className="footer-column__title">
-                Explore
-              </span>
-
-              <Link href="/about">About</Link>
-              <Link href="/garments">Garments</Link>
-              <Link href="/fabrics">Fabrics</Link>
-              <Link href="/garment-accessories">
-                Accessories
+        <div className="container">
+          <div className="footer-main__top">
+            <div className="footer-brand">
+              <Link href="/" className="footer-brand__logo" aria-label={`${company.name} — home`}>
+                <Image src="/logos/logo in white.png" alt="" width={200} height={63} />
               </Link>
+
+              <p>{company.tagline}</p>
+
+              <p className="footer-brand__group">
+                <span className="kicker">{company.groupName}</span>
+                {company.companies.join(" · ")}
+              </p>
             </div>
 
-            <div className="footer-column">
-              <span className="footer-column__title">
-                Company
-              </span>
+            <nav className="footer-links" aria-label="Footer">
+              <div>
+                <span className="kicker">Divisions</span>
+                <ul>
+                  {divisions.map((division) => (
+                    <li key={division.id}>
+                      <Link href={division.href}>{division.title}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-              <Link href="/quality">Quality</Link>
-              <Link href="/contact">Contact</Link>
-            </div>
+              <div>
+                <span className="kicker">Company</span>
+                <ul>
+                  {companyLinks.map((item) => (
+                    <li key={item.href}>
+                      <Link href={item.href}>{item.label}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-            <div className="footer-column">
-              <span className="footer-column__title">
-                Offices
-              </span>
-
-              {OFFICES.map((office) => (
-                <a
-                  key={office.city}
-                  href={`tel:${office.tel}`}
-                >
-                  {office.city}
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Locations */}
-        <div className="footer-locations">
-
-          <div className="footer-location">
-            <div className="footer-location__header">
-              <span>Hong Kong</span>
-              <span>01</span>
-            </div>
-
-            <p>
-              UNIT 2406B, 24/F, LOW BLOCK,
-              GRAND MILLENNIUM PLAZA, 181 QUEEN'S ROAD CENTRAL,
-              SHEUNG WAN, HONG KONG
-            </p>
-
-            <a href="tel:+85298509479">
-              +852 9850 9479
-            </a>
-          </div>
-
-          <div className="footer-location">
-            <div className="footer-location__header">
-              <span>China</span>
-              <span>02</span>
-            </div>
-
-            <p>
-              RM 1101, 11/F, BLOCK A,
-              GUANGZHOU INTERNATIONAL TRADE CENTER, 6 ZHONGXIN ROAD,
-              HAIZHU DISTRICT, GUANGZHOU, CHINA
-            </p>
-
-            <a href="tel:+862089637634">
-              +86 20 8963 7634
-            </a>
+              <div>
+                <span className="kicker">Contact</span>
+                <ul>
+                  <li>
+                    <a href={`mailto:${company.email}`} className="footer-links__icon">
+                      <Mail size={15} strokeWidth={1.6} />
+                      {company.email}
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href={company.messaging.whatsapp}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="footer-links__icon"
+                    >
+                      <MessageCircle size={15} strokeWidth={1.6} />
+                      {company.messaging.display}
+                    </a>
+                    <span className="footer-links__note">{company.messaging.label}</span>
+                  </li>
+                </ul>
+              </div>
+            </nav>
           </div>
 
-          <div className="footer-location">
-            <div className="footer-location__header">
-              <span>Pakistan</span>
-              <span>03</span>
-            </div>
+          <ul className="footer-offices">
+            {offices.map((office) => (
+              <li key={office.id}>
+                <span className="kicker">{office.label}</span>
+                <address>
+                  {office.address.map((line) => (
+                    <span key={line}>{line}</span>
+                  ))}
+                </address>
+                <a href={`tel:${office.tel}`}>{office.phone}</a>
+              </li>
+            ))}
+          </ul>
 
-            <p>
-              33B PUNJAB SMALL INDUSTRIES CORPORATION,
-              SUNDER II, LAHORE, PAKISTAN
-            </p>
-
-            <a href="tel:+923134710325">
-              +92 313 4710325
-            </a>
+          <div className="footer-bottom">
+            <span>
+              © {year} {company.name}. All rights reserved.
+            </span>
+            <span>{company.regions.join(" · ")}</span>
           </div>
-        </div>
-
-        {/* Bottom */}
-        <div className="footer-bottom">
-          <span>
-            © {currentYear} APPAREL FASTENER. All Rights Reserved.
-          </span>
-
-          <span>
-            Lahore · Hong Kong · China
-          </span>
         </div>
       </div>
     </footer>

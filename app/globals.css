@@ -1,21 +1,24 @@
 /* =========================================================
-   APPAREL FASTENER — GLOBAL DESIGN SYSTEM
+   APPAREL FASTENER GROUP — DESIGN SYSTEM
    ========================================================= */
 
 :root {
-  /* Core palette */
+  /* Palette */
   --navy: #243146;
+  --navy-deep: #18212f;
+  --navy-soft: #2e3d55;
+  --brand: #144467;
+  --accent: #6d9ab7;
+  --accent-light: #a8c5d9;
   --white: #ffffff;
-  --grey: #f3f3f1;
-  --text-grey: #6b7075;
+  --paper: #f3f3f1;
+  --paper-deep: #e8e8e4;
+  --muted: #5f656c;
 
-  /* Derived */
-  --navy-08: rgba(36, 49, 70, 0.08);
-  --navy-14: rgba(36, 49, 70, 0.14);
-  --navy-40: rgba(36, 49, 70, 0.4);
-  --white-60: rgba(255, 255, 255, 0.6);
   --line: rgba(36, 49, 70, 0.14);
-  --line-invert: rgba(255, 255, 255, 0.18);
+  --line-strong: rgba(36, 49, 70, 0.28);
+  --line-invert: rgba(255, 255, 255, 0.16);
+  --text-invert: rgba(255, 255, 255, 0.74);
 
   /* Typography (bound to next/font in app/layout.js) */
   --font-heading: "Montserrat", system-ui, sans-serif;
@@ -24,12 +27,12 @@
   /* Layout */
   --container: 1360px;
   --pad-x: clamp(20px, 5vw, 72px);
+  --header-h: 84px;
+  --section-y: clamp(88px, 10vw, 160px);
 
   /* Motion */
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-inout: cubic-bezier(0.65, 0, 0.35, 1);
-  --dur-fast: 0.3s;
-  --dur-base: 0.5s;
 }
 
 *,
@@ -42,16 +45,16 @@
 
 html {
   -webkit-text-size-adjust: 100%;
+  scroll-padding-top: calc(var(--header-h) + 24px);
 }
 
 body {
-  background: var(--navy);
-  color: var(--white);
+  background: var(--white);
+  color: var(--navy);
   font-family: var(--font-body);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 300;
-  line-height: 1.6;
-  letter-spacing: 0.005em;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: clip;
@@ -61,13 +64,16 @@ body {
 h1,
 h2,
 h3,
-h4,
-h5,
-h6 {
+h4 {
   font-family: var(--font-heading);
   font-weight: 600;
-  line-height: 1.08;
+  line-height: 1.06;
   letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
 }
 
 a {
@@ -75,23 +81,24 @@ a {
   text-decoration: none;
 }
 
-button {
+button,
+input,
+select,
+textarea {
   font: inherit;
   color: inherit;
+}
+
+button {
   background: none;
   border: 0;
   cursor: pointer;
 }
 
 img,
-svg,
-video {
+svg {
   display: block;
   max-width: 100%;
-}
-
-img {
-  height: auto;
 }
 
 ul,
@@ -99,18 +106,22 @@ ol {
   list-style: none;
 }
 
+strong {
+  font-weight: 600;
+}
+
 ::selection {
   background: var(--navy);
-  color: #ffffff;
+  color: var(--white);
 }
 
 :focus-visible {
-  outline: 2px solid currentColor;
+  outline: 2px solid var(--accent);
   outline-offset: 3px;
 }
 
 /* =========================================================
-   LAYOUT PRIMITIVES
+   LAYOUT
    ========================================================= */
 
 .container {
@@ -118,93 +129,253 @@ ol {
   margin-inline: auto;
 }
 
-/* Shared section rhythm */
 .section {
-  padding-block: clamp(88px, 11vw, 170px);
+  padding-block: var(--section-y);
+}
+
+.section--paper {
+  background: var(--paper);
+}
+
+.section--navy {
+  background: var(--navy);
+  color: var(--white);
+}
+
+.section--deep {
+  background: var(--navy-deep);
+  color: var(--white);
+}
+
+.section--tight-top {
+  padding-top: clamp(48px, 5vw, 80px);
 }
 
 /* =========================================================
-   BUTTON SYSTEM
-   One height, one padding rhythm, one border treatment,
-   one arrow behaviour across every CTA on the site.
+   TYPOGRAPHY
    ========================================================= */
 
-.af-button {
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+
+  font-family: var(--font-heading);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.eyebrow__index {
+  color: var(--accent);
+}
+
+.eyebrow__line {
+  width: 40px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.4;
+}
+
+.display {
+  font-size: clamp(44px, 7vw, 100px);
+  font-weight: 600;
+  line-height: 0.96;
+  letter-spacing: -0.035em;
+  text-transform: uppercase;
+}
+
+.display span {
+  display: block;
+}
+
+.title {
+  font-size: clamp(34px, 4.6vw, 68px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+.title em,
+.display em {
+  font-style: normal;
+  color: var(--accent);
+}
+
+.subtitle {
+  font-size: clamp(22px, 2.2vw, 30px);
+  line-height: 1.15;
+}
+
+.lead {
+  font-size: clamp(18px, 1.5vw, 21px);
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+.body-copy {
+  color: var(--muted);
+}
+
+.body-copy + .body-copy {
+  margin-top: 1.1em;
+}
+
+.section--navy .body-copy,
+.section--deep .body-copy {
+  color: var(--text-invert);
+}
+
+.kicker {
+  font-family: var(--font-heading);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.section--navy .kicker,
+.section--deep .kicker {
+  color: var(--text-invert);
+}
+
+/* =========================================================
+   BUTTONS & LINKS
+   ========================================================= */
+
+.btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 14px;
 
   min-height: 54px;
-  padding: 0 28px;
+  padding: 0 26px;
 
-  border: 1px solid rgba(255, 255, 255, 0.45);
+  border: 1px solid currentColor;
 
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   font-size: 12px;
   font-weight: 600;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.12em;
   line-height: 1.2;
-  text-align: center;
+  text-transform: uppercase;
   white-space: nowrap;
 
   transition:
-    background-color var(--dur-fast) ease,
-    border-color var(--dur-fast) ease,
-    color var(--dur-fast) ease;
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease;
 }
 
-.af-button__icon {
-  display: inline-flex;
+.btn svg {
   flex: 0 0 auto;
-
   transition: transform 0.35s var(--ease-out);
 }
 
-/* Inverted — default, for CTAs sitting on navy */
-.af-button:hover {
-  background: var(--white);
-  border-color: var(--white);
-  color: var(--navy);
-}
-
-.af-button:hover .af-button__icon {
+.btn:hover svg {
   transform: translate(3px, -3px);
 }
 
-/* Solid navy — for CTAs sitting on light surfaces */
-.af-button--navy {
-  border-color: var(--navy);
-  color: var(--navy);
-}
-
-.af-button--navy:hover {
+.btn--solid {
   background: var(--navy);
   border-color: var(--navy);
   color: var(--white);
 }
 
-@media (max-width: 760px) {
-  :root {
-    --pad-x: 20px;
-  }
-
-  .af-button {
-    min-height: 48px;
-    padding: 0 20px;
-    font-size: 12px;
-    letter-spacing: 0.03em;
-  }
+.btn--solid:hover {
+  background: var(--brand);
+  border-color: var(--brand);
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .af-button,
-  .af-button__icon {
-    transition: none;
-  }
+.btn--outline {
+  color: var(--navy);
+  border-color: var(--line-strong);
 }
 
-/* Accessibility: keyboard skip link */
+.btn--outline:hover {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: var(--white);
+}
+
+.btn--light {
+  background: var(--white);
+  border-color: var(--white);
+  color: var(--navy);
+}
+
+.btn--light:hover {
+  background: transparent;
+  color: var(--white);
+}
+
+.btn--ghost {
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
+.btn--ghost:hover {
+  background: var(--white);
+  border-color: var(--white);
+  color: var(--navy);
+}
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding-bottom: 6px;
+  border-bottom: 1px solid currentColor;
+
+  font-family: var(--font-heading);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.text-link svg {
+  transition: transform 0.35s var(--ease-out);
+}
+
+.text-link:hover svg {
+  transform: translate(3px, -3px);
+}
+
+/* =========================================================
+   REVEAL ON SCROLL
+   Elements are hidden only once the inline script in the
+   root layout has marked the document with `.js`.
+   ========================================================= */
+
+.js [data-reveal] {
+  opacity: 0;
+  transform: translate3d(0, 28px, 0);
+  transition:
+    opacity 0.9s var(--ease-out),
+    transform 0.9s var(--ease-out);
+  transition-delay: calc(var(--reveal-delay, 0) * 90ms);
+}
+
+.js [data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* =========================================================
+   ACCESSIBILITY & UTILITIES
+   ========================================================= */
+
 .skip-link {
   position: fixed;
   top: 12px;
@@ -216,10 +387,8 @@ ol {
   background: var(--white);
   color: var(--navy);
 
-  font-family: var(--font-body);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
+  font-size: 13px;
+  font-weight: 500;
 
   transform: translateY(-160%);
   transition: transform 0.25s var(--ease-out);
@@ -227,6 +396,15 @@ ol {
 
 .skip-link:focus-visible {
   transform: translateY(0);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
 }
 
 /* =========================================================
@@ -246,9 +424,7 @@ html.lenis body {
   overflow: hidden;
 }
 
-/* Scroll lock while the mobile menu is open */
-html.menu-open,
-body.menu-is-open {
+html.menu-open {
   overflow: hidden;
 }
 
@@ -263,6 +439,27 @@ body.menu-is-open {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
     scroll-behavior: auto !important;
+  }
+
+  .js [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 760px) {
+  :root {
+    --header-h: 68px;
+  }
+
+  body {
+    font-size: 15px;
+  }
+
+  .btn {
+    min-height: 50px;
+    padding: 0 20px;
   }
 }

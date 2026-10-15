@@ -1,13 +1,16 @@
 import { Montserrat, Poppins } from "next/font/google";
 import "./globals.css";
-import "@/components/EditorialHero.css";
+import "@/components/ui.css";
 import SmoothScroll from "@/components/SmoothScroll";
+import RevealObserver from "@/components/RevealObserver";
+import InlineScript from "@/components/InlineScript";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { company, siteUrl } from "@/lib/site";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-heading",
   display: "swap",
 });
@@ -19,36 +22,45 @@ const poppins = Poppins({
   display: "swap",
 });
 
+const description =
+  "Apparel Fastener Group manufactures garments, fabrics and garment accessories — one integrated group across Hong Kong, China and Pakistan with more than 15 years in textiles and apparel.";
+
 export const metadata = {
-  metadataBase: new URL("https://apparelfastener.com"),
+  metadataBase: new URL(siteUrl),
   title: {
-    default: "APPAREL FASTENER — Garments, Fabrics & Garment Accessories",
-    template: "%s — APPAREL FASTENER",
+    default: `${company.name} — Garments, Fabrics & Garment Accessories`,
+    template: `%s — ${company.name}`,
   },
-  description:
-    "Apparel Fastener is an international apparel company across three divisions: Garments, Fabrics and Garment Accessories.",
+  description,
   keywords: [
     "apparel manufacturer",
-    "garments",
-    "fabrics",
+    "garment manufacturer China",
+    "fabric manufacturer",
     "garment accessories",
+    "sustainable fabrics",
     "jackets",
     "sweaters",
+    "denim",
+    "AF Group",
   ],
   openGraph: {
     type: "website",
-    siteName: "Apparel Fastener",
-    title:
-      "APPAREL FASTENER — Garments, Fabrics & Garment Accessories",
-    description:
-      "An integrated apparel company connecting garments, fabrics and garment accessories.",
+    siteName: company.name,
+    title: `${company.name} — Garments, Fabrics & Garment Accessories`,
+    description,
   },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${montserrat.variable} ${poppins.variable}`}>
+    <html
+      lang="en"
+      className={`${montserrat.variable} ${poppins.variable}`}
+      suppressHydrationWarning
+    >
       <body>
+        <InlineScript html="document.documentElement.classList.add('js')" />
+
         <SmoothScroll>
           <a className="skip-link" href="#main-content">
             Skip to content
@@ -60,6 +72,8 @@ export default function RootLayout({ children }) {
 
           <Footer />
         </SmoothScroll>
+
+        <RevealObserver />
       </body>
     </html>
   );
