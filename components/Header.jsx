@@ -177,7 +177,9 @@ export default function Header() {
           <ul className="mobile-menu__offices">
             {offices.map((office) => (
               <li key={office.id}>
-                <span className="kicker">{office.label}</span>
+                <span className="kicker">
+                  {office.city} · {office.label}
+                </span>
                 <p>{office.address.join(", ")}</p>
                 <a href={`tel:${office.tel}`}>{office.phone}</a>
               </li>

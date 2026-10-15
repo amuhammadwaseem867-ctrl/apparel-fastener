@@ -114,7 +114,9 @@ export default function Footer() {
           <ul className="footer-offices">
             {offices.map((office) => (
               <li key={office.id}>
-                <span className="kicker">{office.label}</span>
+                <span className="kicker">
+                  {office.city} · {office.label}
+                </span>
                 <address>
                   {office.address.map((line) => (
                     <span key={line}>{line}</span>

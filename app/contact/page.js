@@ -84,7 +84,7 @@ export default function ContactPage() {
             label="Our offices"
             title={
               <>
-                Hong Kong. China. <em>Pakistan.</em>
+                Pakistan. Hong Kong. <em>China.</em>
               </>
             }
             intro="Visit or call any of our three offices."
