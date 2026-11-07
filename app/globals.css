@@ -1,6 +1,4 @@
-/* =========================================================
-   APPAREL FASTENER GROUP — DESIGN SYSTEM
-   ========================================================= */
+/* Apparel fastener group, design system */
 
 :root {
   /* Palette */
@@ -120,9 +118,7 @@ strong {
   outline-offset: 3px;
 }
 
-/* =========================================================
-   LAYOUT
-   ========================================================= */
+/* Layout */
 
 .container {
   width: min(var(--container), calc(100% - var(--pad-x) * 2));
@@ -151,9 +147,7 @@ strong {
   padding-top: clamp(48px, 5vw, 80px);
 }
 
-/* =========================================================
-   TYPOGRAPHY
-   ========================================================= */
+/* Typography */
 
 .eyebrow {
   display: inline-flex;
@@ -241,9 +235,7 @@ strong {
   color: var(--text-invert);
 }
 
-/* =========================================================
-   BUTTONS & LINKS
-   ========================================================= */
+/* Buttons & links */
 
 .btn {
   display: inline-flex;
@@ -352,11 +344,9 @@ strong {
   transform: translate(3px, -3px);
 }
 
-/* =========================================================
-   REVEAL ON SCROLL
+/* Reveal on scroll
    Elements are hidden only once the inline script in the
-   root layout has marked the document with `.js`.
-   ========================================================= */
+   root layout has marked the document with `.js`. */
 
 .js [data-reveal] {
   opacity: 0;
@@ -372,9 +362,7 @@ strong {
   transform: none;
 }
 
-/* =========================================================
-   ACCESSIBILITY & UTILITIES
-   ========================================================= */
+/* Accessibility & utilities */
 
 .skip-link {
   position: fixed;
@@ -407,9 +395,7 @@ strong {
   white-space: nowrap;
 }
 
-/* =========================================================
-   LENIS SMOOTH SCROLL
-   ========================================================= */
+/* Lenis smooth scroll */
 
 html.lenis,
 html.lenis body {
@@ -428,9 +414,7 @@ html.menu-open {
   overflow: hidden;
 }
 
-/* =========================================================
-   REDUCED MOTION
-   ========================================================= */
+/* Reduced motion */
 
 @media (prefers-reduced-motion: reduce) {
   *,

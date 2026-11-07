@@ -1,7 +1,5 @@
-/* =========================================================
-   SITE HEADER
-   Transparent over page heroes, solid white once scrolled.
-   ========================================================= */
+/* Site header
+   Transparent over page heroes, solid white once scrolled. */
 
 .site-header {
   --bar-h: 38px;
@@ -27,7 +25,7 @@
   backdrop-filter: saturate(1.4) blur(10px);
 }
 
-/* ---------- Office bar ---------- */
+/* Office bar */
 
 .site-header__bar {
   height: var(--bar-h);
@@ -76,7 +74,7 @@
   text-transform: uppercase;
 }
 
-/* ---------- Main row ---------- */
+/* Main row */
 
 .site-header__main {
   display: flex;
@@ -197,9 +195,7 @@
   margin-right: -10px;
 }
 
-/* =========================================================
-   MOBILE MENU
-   ========================================================= */
+/* Mobile menu */
 
 .mobile-menu {
   --bar-h: 38px;
@@ -311,9 +307,7 @@
   font-weight: 500;
 }
 
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
+/* Responsive */
 
 @media (max-width: 1180px) {
   .site-header__nav,

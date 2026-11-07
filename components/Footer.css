@@ -1,13 +1,11 @@
-/* =========================================================
-   SITE FOOTER
-   ========================================================= */
+/* Site footer */
 
 .site-footer {
   background: var(--navy-deep);
   color: var(--white);
 }
 
-/* ---------- CTA ---------- */
+/* CTA */
 
 .footer-cta {
   background: var(--navy);
@@ -32,7 +30,7 @@
   color: var(--text-invert);
 }
 
-/* ---------- Main ---------- */
+/* Main */
 
 .footer-main {
   padding-top: clamp(64px, 7vw, 104px);
@@ -103,7 +101,7 @@
   color: rgba(255, 255, 255, 0.5);
 }
 
-/* ---------- Offices ---------- */
+/* Offices */
 
 .footer-offices {
   display: grid;
@@ -137,7 +135,7 @@
   color: var(--accent-light);
 }
 
-/* ---------- Bottom ---------- */
+/* Bottom */
 
 .footer-bottom {
   display: flex;
@@ -152,9 +150,7 @@
   color: rgba(255, 255, 255, 0.55);
 }
 
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
+/* Responsive */
 
 @media (max-width: 1024px) {
   .footer-cta__inner,
