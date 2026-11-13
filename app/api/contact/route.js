@@ -62,7 +62,7 @@ export async function POST(request) {
       from: fromEmail,
       to: [receivingEmail],
       replyTo: email,
-      subject: `New Website Enquiry — ${division}`,
+      subject: `New Website Enquiry: ${division}`,
       text: [
         "NEW APPAREL FASTENER WEBSITE ENQUIRY",
         "",

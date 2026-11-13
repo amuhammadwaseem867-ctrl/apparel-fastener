@@ -50,7 +50,7 @@ export default function Footer() {
         <div className="container">
           <div className="footer-main__top">
             <div className="footer-brand">
-              <Link href="/" className="footer-brand__logo" aria-label={`${company.name} — home`}>
+              <Link href="/" className="footer-brand__logo" aria-label={`${company.name} home`}>
                 <Image src="/logos/logo in white.png" alt="" width={200} height={63} />
               </Link>
 

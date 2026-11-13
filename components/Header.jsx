@@ -82,7 +82,7 @@ export default function Header() {
         </div>
 
         <div className="container site-header__main">
-          <Link href="/" className="site-header__logo" aria-label={`${company.name} — home`}>
+          <Link href="/" className="site-header__logo" aria-label={`${company.name} home`}>
             <Image
               src="/logos/logo in white.png"
               alt=""

@@ -152,11 +152,11 @@ export default function Home() {
                 From design to <em>quality control.</em>
               </>
             }
-            intro="Every stage — from procurement to grading and beyond — is highly supervised, in a controlled environment with quality assurance."
+            intro="Every stage, from procurement to grading and beyond, is highly supervised, in a controlled environment with quality assurance."
           />
           <ProcessCards />
           <div className="section-foot">
-            <span className="kicker">Quality management system — ENSURE200</span>
+            <span className="kicker">Quality management system: ENSURE200</span>
             <Link href="/quality" className="text-link">
               Our approach to quality
               <ArrowUpRight size={15} strokeWidth={1.8} />
@@ -177,7 +177,7 @@ export default function Home() {
                 Trusted by <em>global</em> brands.
               </>
             }
-            intro={`Through the quality of our products and resources, we create unmatched value for our global clientele — with relationships across ${company.markets.join(" and ")} built to last a lifetime.`}
+            intro={`Through the quality of our products and resources, we create unmatched value for our global clientele, with relationships across ${company.markets.join(" and ")} built to last a lifetime.`}
           />
         </div>
         <ClientsMarquee />
@@ -246,7 +246,7 @@ export default function Home() {
                 Selling on a <em>global level.</em>
               </>
             }
-            intro="A masterly unification of three mainstream companies in Asia — Hong Kong, China, and Pakistan — selling on a global level."
+            intro="A masterly unification of three mainstream companies in Asia (Hong Kong, China, and Pakistan) selling on a global level."
           />
           <OfficeCards />
         </div>

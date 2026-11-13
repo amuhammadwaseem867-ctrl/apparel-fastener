@@ -24,7 +24,7 @@ import {
 export const metadata = {
   title: "About",
   description:
-    "A privately owned family business uniting three companies in Hong Kong, China and Pakistan — with more than 15 years of experience in textiles and apparel.",
+    "A privately owned family business uniting three companies in Hong Kong, China and Pakistan, with more than 15 years of experience in textiles and apparel.",
 };
 
 export default function AboutPage() {
