@@ -10,7 +10,7 @@ const division = divisions.find((item) => item.id === "fabrics");
 export const metadata = {
   title: "Fabrics",
   description:
-    "Sustainable, woven, knitted and denim fabrics — from organic cotton, Tencel and recycled polyester to jersey, gabardine and selvedge denim — for applications from clothing to technical purposes.",
+    "Sustainable, woven, knitted and denim fabrics, from organic cotton, Tencel and recycled polyester to jersey, gabardine and selvedge denim, for applications from clothing to technical purposes.",
 };
 
 export default function FabricsPage() {
@@ -20,7 +20,7 @@ export default function FabricsPage() {
         index="03"
         label="Fabrics"
         title={["Fabrics for", "every", <em key="a">application.</em>]}
-        lead="A great number of fabric structures — used for a wide range of applications, from clothing to technical purposes."
+        lead="A great number of fabric structures, used for a wide range of applications, from clothing to technical purposes."
         image={images.fabricsHero}
         imageAlt="Wall of textured fabric panels in a material library"
         meta={[
@@ -120,7 +120,7 @@ export default function FabricsPage() {
                 From fabric to <em>finished garment.</em>
               </>
             }
-            intro="A single enterprise with multiple manufacturing hubs — we also manufacture the garments and garment accessories that complete your product."
+            intro="A single enterprise with multiple manufacturing hubs. We also manufacture the garments and garment accessories that complete your product."
           />
           <DivisionCards exclude="fabrics" />
         </div>

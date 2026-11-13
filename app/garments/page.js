@@ -11,7 +11,7 @@ const productCount = garmentCategories.reduce((sum, category) => sum + category.
 export const metadata = {
   title: "Garments",
   description:
-    "Jackets and sweaters co-created with the best in the industry — bomber, woolen, trench, puffy, pull over and hooded jackets; fisherman's, cardigan, cashmere, chunky, crew neck and funnel neck sweaters.",
+    "Jackets and sweaters co-created with the best in the industry: bomber, woolen, trench, puffy, pull over and hooded jackets; fisherman's, cardigan, cashmere, chunky, crew neck and funnel neck sweaters.",
 };
 
 export default function GarmentsPage() {
@@ -21,7 +21,7 @@ export default function GarmentsPage() {
         index="02"
         label="Garments"
         title={["Jackets", <em key="a">&amp; sweaters.</em>]}
-        lead="We co-create with the best in the industry to fabricate jackets and sweaters — from raw material to finished product."
+        lead="We co-create with the best in the industry to fabricate jackets and sweaters, from raw material to finished product."
         image={images.garmentsHero}
         imageAlt="Jackets and knitwear displayed on a gallery wall"
         meta={[
@@ -150,7 +150,7 @@ export default function GarmentsPage() {
                 Everything your <em>garment</em> needs.
               </>
             }
-            intro="A single enterprise with multiple manufacturing hubs — source the fabrics and garment accessories for your collection from the same group."
+            intro="A single enterprise with multiple manufacturing hubs. Source the fabrics and garment accessories for your collection from the same group."
           />
           <DivisionCards exclude="garments" />
         </div>

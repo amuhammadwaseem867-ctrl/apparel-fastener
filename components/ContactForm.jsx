@@ -33,7 +33,7 @@ export default function ContactForm() {
       form.reset();
       setStatus({
         type: "success",
-        message: "Thank you — your enquiry has been received. Our team will be in touch shortly.",
+        message: "Thank you. Your enquiry has been received. Our team will be in touch shortly.",
       });
     } catch (error) {
       setStatus({

@@ -8,7 +8,7 @@ import { company, images, offices } from "@/lib/site";
 export const metadata = {
   title: "Contact",
   description:
-    "Contact Apparel Fastener Group — offices in Hong Kong, Guangzhou and Lahore. Email info@afgroup.com.hk or message +852 9850 9479 on WhatsApp / WeChat.",
+    "Contact Apparel Fastener Group with offices in Hong Kong, Guangzhou and Lahore. Email info@afgroup.com.hk or message +852 9850 9479 on WhatsApp / WeChat.",
 };
 
 export default function ContactPage() {

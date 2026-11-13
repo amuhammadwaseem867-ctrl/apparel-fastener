@@ -23,7 +23,7 @@ const focusIcons = ["energy", "waste", "process"];
 export const metadata = {
   title: "Sustainability",
   description:
-    "Our global responsibility — climate and energy, waste control management and reliable management of core processes, with sustainable fabrics, garment accessories and garments.",
+    "Our global responsibility: climate and energy, waste control management and reliable management of core processes, with sustainable fabrics, garment accessories and garments.",
 };
 
 export default function SustainabilityPage() {

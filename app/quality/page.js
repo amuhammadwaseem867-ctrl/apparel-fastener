@@ -12,7 +12,7 @@ const accountable = strengths.find((item) => item.title === "Highly Accountable"
 export const metadata = {
   title: "Quality",
   description:
-    "Quality at every stage — design, production, manufacturing and quality control, managed through our ENSURE200 quality management system.",
+    "Quality at every stage: design, production, manufacturing and quality control, managed through our ENSURE200 quality management system.",
 };
 
 export default function QualityPage() {
@@ -52,7 +52,7 @@ export default function QualityPage() {
             <div className="callout">
               <strong>ENSURE200</strong>
               <p>
-                Our extensive quality management system — focused on defining and optimizing procedures in
+                Our extensive quality management system, focused on defining and optimizing procedures in
                 order to reduce waste.
               </p>
             </div>
@@ -72,7 +72,7 @@ export default function QualityPage() {
                 Four stages, <em>fully supervised.</em>
               </>
             }
-            intro="From procurement to grading and beyond, every stage is highly supervised — so the product meets the specifications demanded by our clientele."
+            intro="From procurement to grading and beyond, every stage is highly supervised, so the product meets the specifications demanded by our clientele."
           />
 
           <div className="cycle-rows">

@@ -16,7 +16,7 @@ const accessoryCount = accessoryGroups.reduce((sum, group) => sum + group.items.
 export const metadata = {
   title: "Garment Accessories",
   description:
-    "Your one-stop shop for garment accessories — zippers, interlining, buttons, motifs, velcro, elastic, cords, ribbons, toggles, rivets, hang tags, polybags, tapes, fringes and tassels.",
+    "Your one-stop shop for garment accessories: zippers, interlining, buttons, motifs, velcro, elastic, cords, ribbons, toggles, rivets, hang tags, polybags, tapes, fringes and tassels.",
 };
 
 export default function GarmentAccessoriesPage() {
@@ -132,7 +132,7 @@ export default function GarmentAccessoriesPage() {
                 The complete <em>garment.</em>
               </>
             }
-            intro="The hassle of dealing with multiple companies is eliminated — our group also manufactures the fabrics and garments your accessories belong to."
+            intro="The hassle of dealing with multiple companies is eliminated. Our group also manufactures the fabrics and garments your accessories belong to."
           />
           <DivisionCards exclude="garment-accessories" />
         </div>

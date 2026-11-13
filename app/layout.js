@@ -23,13 +23,13 @@ const poppins = Poppins({
 });
 
 const description =
-  "Apparel Fastener Group manufactures garments, fabrics and garment accessories — one integrated group across Hong Kong, China and Pakistan with more than 15 years in textiles and apparel.";
+  "Apparel Fastener Group manufactures garments, fabrics and garment accessories as one integrated group across Hong Kong, China and Pakistan with more than 15 years in textiles and apparel.";
 
 export const metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${company.name} — Garments, Fabrics & Garment Accessories`,
-    template: `%s — ${company.name}`,
+    default: `${company.name} | Garments, Fabrics & Garment Accessories`,
+    template: `%s | ${company.name}`,
   },
   description,
   keywords: [
@@ -46,7 +46,7 @@ export const metadata = {
   openGraph: {
     type: "website",
     siteName: company.name,
-    title: `${company.name} — Garments, Fabrics & Garment Accessories`,
+    title: `${company.name} | Garments, Fabrics & Garment Accessories`,
     description,
   },
 };
