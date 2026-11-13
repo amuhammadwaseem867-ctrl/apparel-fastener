@@ -9,6 +9,17 @@ const nextConfig = {
   images: {
     qualities: [75, 90, 92, 95],
   },
+  // The old cPanel site answered /webmail and /cpanel itself. Now that www
+  // points to Vercel, send those paths to the cPanel server instead.
+  async redirects() {
+    const server = "https://web1016.dataplugs.com";
+    return [
+      { source: "/webmail", destination: `${server}:2096/`, permanent: false },
+      { source: "/webmail/:path*", destination: `${server}:2096/`, permanent: false },
+      { source: "/cpanel", destination: `${server}:2083/`, permanent: false },
+      { source: "/cpanel/:path*", destination: `${server}:2083/`, permanent: false },
+    ];
+  },
   async rewrites() {
     return [
       { source: "/af7", destination: `${af7Origin}/af7` },
